@@ -2,15 +2,15 @@
   "name": "Yump",
   "version": "1.0.0",
   "description": "[Heroku link](http://www.herokuapp.com)",
-  "main": "index.js",
+  "main": "yump.jsx",
   "directories": {
     "doc": "docs",
     "test": "test"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack",
-    
+    "webpack": "webpack"
+
   },
   "repository": {
     "type": "git",

@@ -4,7 +4,7 @@
 * [React Components](./component-hierachy.md)
 * [API endpoints](./api-endpoints.md)
 * [Sample State](./sample-state.md)
-* [DB schema](docs/schema.md)
+* [DB schema](./docs/schema.md)
 
 describe features
 
