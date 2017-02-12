@@ -17,7 +17,14 @@
       longitude: -74,001900,
       picture: "http://www.menu.com/images/recipes/eeey_taco",
       tags: {
-        1: {}
+        1: {
+          id: 1,
+          name: "family_friendly",
+        },
+        2: {
+          id: 2,
+          name: "accepts_creditcards"
+        }
       }
     }
   },
