@@ -1,16 +1,10 @@
 
 ## Design Docs
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [API endpoints][api-endpoints]
-* [Sample State][sample-state]
-* [DB schema][schema]
-
-[wireframes]: docs/wireframes
-[components]: docs/component-hierachy.md
-[api-endpoints]: docs/api-endpoints.md
-[sample-state]: docs/sample-state.md
-[schema]: docs/schema.md
+* [View Wireframes](./wireframes)
+* [React Components](./component-hierachy.md)
+* [API endpoints](./api-endpoints.md)
+* [Sample State](./sample-state.md)
+* [DB schema](docs/schema.md)
 
 describe features
 
