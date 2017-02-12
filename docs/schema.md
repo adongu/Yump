@@ -6,7 +6,7 @@
 | id              | integer   | not null, primary key |
 | username        | string    | not null, unique, indexed      |
 | password_digest | password  | not null              |
-| session_token   | string    | not null, unqiue, indexed      |
+| session_token   | string    | not null, unique, indexed      |
 | f_name          | string    | not null              |
 | l_name          | string    | not null           |
 | picture          | url      | not null              |
@@ -22,7 +22,6 @@
 | city        | string    | not null                               |
 | state       | string    | not null                               |
 | zip         | integer   | not null                               |
-| ratings     | integer   | not null, inclusive [1, 2, 3, 4, 5]    |
 | review_id   | integer   | not null, indexed, foreign_key(references review)         |
 | price       | string    | not null, inclusive [$, $$, $$$, $$$$] |
 | longitude   | float     | not null                               |
@@ -41,15 +40,6 @@
 
 ## pictures
 
-| column name | data type |          details          |
-|:-----------:|:---------:|:-------------------------:|
-| id          | integer   | not null, primary id      |
-| user_id     | integer   | not null, unique, indexed |
-| business_id | integer   | not null, unique, indexed |
-| image_url   | url       | not null                  |
-
-
-## bookmarks
 | column name | data type |          details          |
 |:-----------:|:---------:|:-------------------------:|
 | id          | integer   | not null, primary id      |
