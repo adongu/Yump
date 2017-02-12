@@ -17,7 +17,7 @@ Phase 1: Front End Auth/Back End Auth
 
 [Heroku link](http://www.herokuapp.com)
 
-[Trello link](www.trello.com)
+[Trello link](https://trello.com/b/VHYOHvPK/yump)
 
 ## Minimum Viable Product Check List
 Yump is an web application excited by Yelp and built using Ruby on Rails and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
