@@ -49,6 +49,8 @@
 
 |          path          |         components         |
 |:----------------------:|:--------------------------:|
+| "/"                    | "SessionFromContainer"     |
+| "/"                    | "HomeContainer"            |
 | "/sign-up"             | "AuthFormContainer"        |
 | "/sign-in"             | "AuthFormContainer"        |
 | "home"                 | "HomeContainer"            |

@@ -13,7 +13,8 @@
 
 [wireframes]: docs/wireframes
 [schema]: docs/schema.md
-[components]: docs/component-hierarchy.md
+[components]:
+ docs/component-hierarchy.md
 [sample-state]: docs/sample-state.md
 [api-endpoints]: docs/api-endpoints.md
 
