@@ -6,15 +6,15 @@
 
 ## Design Docs
 * [View Wireframes][wireframes]
+* [DB schema][schema]
 * [React Components][components]
 * [Sample State][sample-state]
-* [DB Schema][schema]
-* [API Endpoints][api-endpoints]
+* [API endpoints][api-endpoints]
 
 [wireframes]: docs/wireframes
+[schema]: docs/schema.md
 [components]: docs/component-hierarchy.md
 [sample-state]: docs/sample-state.md
-[schema]: docs/schema.md
 [api-endpoints]: docs/api-endpoints.md
 
 ## Minimum Viable Product Check List
