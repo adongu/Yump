@@ -20,7 +20,8 @@
 
 ## BusinessHeaderContainer
 * BusinessIndex
-* BusinessIndexItems
+* BusinessIndexItem
+* BusinessIndexItemDetail
 
 ## BusinessReviewsContainer
 * BusinessReviewForm
@@ -41,7 +42,8 @@
 * Filter
 * Header
 * Search
-* BusinessInfo
+* BusinessIndex
+* BusinessDetail
 
 # Routes
 
