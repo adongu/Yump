@@ -1,20 +1,44 @@
+# Yump
+
+[Heroku link](http://www.herokuapp.com)
+
+[Trello link](https://trello.com/b/VHYOHvPK/yump)
 
 ## Design Docs
 * [View Wireframes][wireframes]
 * [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
 * [Sample State][sample-state]
+* [DB Schema][schema]
+* [API Endpoints][api-endpoints]
 
-[wireframes]: (docs/wireframes)
-[components]: (docs/component-hierarchy.md)
-[sample-state]: (docs/sample-state.md)
-[api-endpoints]: (docs/api-endpoints.md)
-[schema]: (docs/schema.md)
+[wireframes]: docs/wireframes
+[components]: docs/component-hierarchy.md
+[sample-state]: docs/sample-state.md
+[schema]: docs/schema.md
+[api-endpoints]: docs/api-endpoints.md
 
-describe features
+## Minimum Viable Product Check List
+Yump is an web application excited by Yelp and built using Ruby on Rails and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
-outline a development timeline for application
+- [ ] 1. New account creation, login, guest/demo login
+- [ ] 2. A production README, replacing this README
+- [ ] 3. Hosting on Heroku
+- [ ] 4. Business Page
+* - [ ] Has business information
+* - [ ] Can leave reviews
+* - [ ] Have pictures
+- [ ] 5. Search / filters
+* - [ ] Filter by price/orientation/location/rating/popularity
+* - [ ] Search has name and location input
+* - [ ] Has suggestions dropdown
+- [ ] 6. Reviews / ratings
+* - [ ] Has form to leave review and leave start ratings(between 1-5)
+* - [ ] Can add/delete pictures
+* - [ ] Can add/update/delete reviews
+- [ ] 7. Map
+* - [ ] Shows 10 businesses in the zip code filtered
+* - [ ] User can drag map around
+* - [ ] map updates page with 10 new business within near location(persisting search filters)
 
 ## Implementation timeline:
 ### Phase 1: Front End Auth/Back End Auth (1 Day W8D3 6:00PM)
@@ -36,34 +60,7 @@ outline a development timeline for application
 
 
 
-# Yump
 
-[Heroku link](http://www.herokuapp.com)
-
-[Trello link](https://trello.com/b/VHYOHvPK/yump)
-
-## Minimum Viable Product Check List
-Yump is an web application excited by Yelp and built using Ruby on Rails and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
-
-- [ ] 1. New account creation, login, guest/demo login
-- [ ] 2. A production README, replacing this README
-- [ ] 3. Hosting on Heroku
-- [ ] 4. Business Page
-  * - [ ] Has business information
-  * - [ ] Can leave reviews
-  * - [ ] Have pictures
-- [ ] 5. Search / filters
-  * - [ ] Filter by price/orientation/location/rating/popularity
-  * - [ ] Search has name and location input
-  * - [ ] Has suggestions dropdown
-- [ ] 6. Reviews / ratings
-  * - [ ] Has form to leave review and leave start ratings(between 1-5)
-  * - [ ] Can add/delete pictures
-  * - [ ] Can add/update/delete reviews
-- [ ] 7. Map
-  * - [ ] Shows 10 businesses in the zip code filtered
-  * - [ ] User can drag map around
-  * - [ ] map updates page with 10 new business within near location(persisting search filters)
 
 Bonus Features:
 - [ ] omniauth fb/twitter
