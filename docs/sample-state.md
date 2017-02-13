@@ -1,3 +1,4 @@
+```javascipt
 {
   session: {
     currentUser: {
@@ -49,3 +50,4 @@
     }
   }
 }
+```
