@@ -1,26 +1,46 @@
-# Development docs and Readme
-* [View docs](./docs/README.md)
-
 
 ## Design Docs
-* [View Wireframes](./wireframes)
-* [React Components](./component-hierachy.md)
-* [API endpoints](./api-endpoints.md)
-* [Sample State](./sample-state.md)
-* [DB schema](./schema.md)
+* [View Wireframes][wireframes]
+* [React Components][components]
+* [API endpoints][api-endpoints]
+* [DB schema][schema]
+* [Sample State][sample-state]
+
+[wireframes]: (docs/wireframes)
+[components]: (docs/component-hierarchy.md)
+[sample-state]: (docs/sample-state.md)
+[api-endpoints]: (docs/api-endpoints.md)
+[schema]: (docs/schema.md)
 
 describe features
 
-outline a development timeline for applicaiton
+outline a development timeline for application
 
 ## Implementation timeline:
-Phase 1: Front End Auth/Back End Auth
+### Phase 1: Front End Auth/Back End Auth (1 Day W8D3 6:00PM)
+**Objective:** Create functioning rails project with front-end Authentication Page(currentUser persisting)
+### Phase 2: Model, API, and components (1 days W8D4 6:00PM)
+**Objective:** Complete Business, review, and photo models(with taggings), controllers, and views(Jbuilder)
+### Phase 3: Default Home Page(1 day W8D5 6:00PM)
+**Objective:** Set up homepage with header, search, and suggested businesses
+### Phase 4: Business Page(1 day W8D6 6:00PM)
+**Objective:**
+### Phase 5: Search Results/Filters (1 day W8D7 6:00PM)
+**Objective:** Search businesses with tagging and tags, businesses should be able to re-filter(especially with maps) without redirecting)
+### Phase 6: Search Results/Filters (2 day W9D2 6:00PM)
+**Objective:** Tags/tagging to allow filtering of results
+### Phase 7: Map (1 days W9D3 6:00PM)
+**Objective:** Map feature showing all business within 5 mile of center of map, allow redo search with dragging of map center
+### Phase 8: Buffer (1.5 days W9D5 12:00PM)
+**Objective:** Allow Extra room for ironing out kinks and potentially add on bonus features
+
+
 
 # Yump
 
 [Heroku link](http://www.herokuapp.com)
 
-[Trello link](www.https://trello.com/b/VHYOHvPK.com)
+[Trello link](https://trello.com/b/VHYOHvPK/yump)
 
 ## Minimum Viable Product Check List
 Yump is an web application excited by Yelp and built using Ruby on Rails and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
@@ -47,7 +67,7 @@ Yump is an web application excited by Yelp and built using Ruby on Rails and Rea
 
 Bonus Features:
 - [ ] omniauth fb/twitter
-- [ ] Mark reviews funny, cool, useful
 - [ ] Profile Page
+- [ ] Mark reviews funny, cool, useful
 - [ ] Friends
 - [ ] Followers
