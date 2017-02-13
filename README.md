@@ -49,7 +49,7 @@ Yump is an web application excited by Yelp and built using Ruby on Rails and Rea
 ### Phase 3: Default Home Page(1 day W8D5 6:00PM)
 **Objective:** Set up homepage with header, search, and suggested businesses
 ### Phase 4: Business Page(1 day W8D6 6:00PM)
-**Objective:**
+**Objective:** Business page will have a review submission form and list of reviews. Users can submit reviews with ratings and pictures.
 ### Phase 5: Search Results/Filters (1 day W8D7 6:00PM)
 **Objective:** Search businesses with tagging and tags, businesses should be able to re-filter(especially with maps) without redirecting)
 ### Phase 6: Search Results/Filters (2 day W9D2 6:00PM)
