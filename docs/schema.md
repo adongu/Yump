@@ -9,7 +9,8 @@
 | session_token   | string    | not null, unique, indexed|
 | f_name          | string    | not null              |
 | l_name          | string    | not null              |
-| picture          | url      | not null              |
+| zip_code        | string    | not null              |
+| picture          | attachment      | not null              |
 
 ## businesses
 
