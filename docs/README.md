@@ -11,11 +11,11 @@
 * [Sample State][sample-state]
 * [API endpoints][api-endpoints]
 
-[wireframes]: docs/wireframes
-[schema]: docs/schema.md
-[components]:docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
+[wireframes]: ./wireframes
+[schema]: ./schema.md
+[components]: ./component-hierarchy.md
+[sample-state]: ./sample-state.md
+[api-endpoints]: ./api-endpoints.md
 
 ## Minimum Viable Product Check List
 Yump is an web application excited by Yelp and built using Ruby on Rails and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
