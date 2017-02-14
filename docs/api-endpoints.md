@@ -12,20 +12,18 @@
 
 ### Session
 * `POST /api/session`
-* `DESTROY /api/session`
+* `DELETE /api/session`
 
 
 ### Businesses
-* `GET /api/business/:id`
-* `POST /api/business/new`
-* `PATCH /api/business/:id`
-* `DESTROY api/business/id`
-
-### Pictures
-* `POST /api/pictures/new`
-* `DESTROY api/pictures/id`
+* `GET /api/businesses`
+* `GET /api/businesses/:id`
+* `POST /api/businesses`
+* `PATCH /api/businesses/:id`
+* `DELETE api/businesses/:id`
 
 ### Reviews
-* `POST /api/business/new`
-* `PATCH /api/business/:id`
-* `DESTROY api/business/id`
+* `GET /api/business/id/reviews`
+* `POST /api/business/id/reviews`
+* `PATCH /api/business/id/reviews/:id`
+* `DELETE api/business/id/reviews:id`

@@ -13,8 +13,7 @@
 
 [wireframes]: docs/wireframes
 [schema]: docs/schema.md
-[components]:
- docs/component-hierarchy.md
+[components]:docs/component-hierarchy.md
 [sample-state]: docs/sample-state.md
 [api-endpoints]: docs/api-endpoints.md
 
@@ -22,7 +21,7 @@
 Yump is an web application excited by Yelp and built using Ruby on Rails and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
 - [ ] 1. New account creation, login, guest/demo login
-- [ ] 2. A production README [sample](docs/production_readme.md)
+- [ ] 2. A production README [sample](docs/sample_production_readme.md)
 - [ ] 3. Hosting on Heroku
 - [ ] 4. Business Page
   *  Has business information
@@ -42,19 +41,18 @@ Yump is an web application excited by Yelp and built using Ruby on Rails and Rea
   * map updates page with 10 new business within near location(persisting search filters)
 
 ## Implementation timeline:
-### Phase 1: Front End Auth/Back End Auth (1 Day W8D3 6:00PM)
+
+### Phase 1: Front End Auth/Back End Auth (2 Days W8D4 6:00PM)
 **Objective:** Create functioning rails project with front-end Authentication Page(currentUser persisting)
-### Phase 2: Model, API, and components (1 days W8D4 6:00PM)
+### Phase 2: Model, API, and components (1 days W8D5 6:00PM)
 **Objective:** Complete Business, review, and photo models(with taggings), controllers, and views(Jbuilder)
-### Phase 3: Default Home Page(1 day W8D5 6:00PM)
+### Phase 3: Default Home Page(1 day W8D6 6:00PM)
 **Objective:** Set up homepage with header, search, and suggested businesses
-### Phase 4: Business Page(1 day W8D6 6:00PM)
+### Phase 4: Business Page(2 day W9D1 6:00PM)
 **Objective:** Business page will have a review submission form and list of reviews. Users can submit reviews with ratings and pictures.
-### Phase 5: Search Results/Filters (1 day W8D7 6:00PM)
+### Phase 5: Search Results/Filters (1 day W9D2 6:00PM)
 **Objective:** Search businesses with tagging and tags, businesses should be able to re-filter(especially with maps) without redirecting)
-### Phase 6: Search Results/Filters (2 day W9D2 6:00PM)
-**Objective:** Tags/tagging to allow filtering of results
-### Phase 7: Map (1 days W9D3 6:00PM)
+### Phase 7: Map (1 day W9D3 6:00PM)
 **Objective:** Map feature showing all business within 5 mile of center of map, allow redo search with dragging of map center
 ### Phase 8: Buffer (1.5 days W9D5 12:00PM)
 **Objective:** Allow Extra room for ironing out kinks and potentially add on bonus features
