@@ -22,7 +22,7 @@ Yump is an web application excited by Yelp and built using Ruby on Rails and Rea
 
 - [ ] 1. New account creation, login, guest/demo login
 - [ ] 2. A production README [sample](./sample_production_readme.md)
-- [ ] 3. Hosting on Heroku
+- [x] 3. Hosting on Heroku
 - [ ] 4. Business Page
   *  Has business information
   * Can leave reviews
