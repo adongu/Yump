@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in?
-    !!current_user?
+    !!current_user
   end
 
   def login!(user)
@@ -30,6 +30,6 @@ class ApplicationController < ActionController::Base
   end
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :f_name, :l_name, :email, :zip)
   end
 end
