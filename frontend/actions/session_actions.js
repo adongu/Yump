@@ -8,7 +8,7 @@ const receiveCurrentUser = (currentUser) => {
 }
 
 const receiveErrors = (errors) => {
-  type: receiveErrors,
+  type: RECEIVE_ERRORS,
   errors
 }
 
