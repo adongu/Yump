@@ -13,7 +13,6 @@ const receiveErrors = (errors) => ({
 });
 
 export const login = (user) => {
-  debugger
   return (dispatch) => {
     return APIUtil.login(user)
     .then( (user) => {

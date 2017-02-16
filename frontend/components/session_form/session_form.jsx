@@ -3,7 +3,6 @@ import { Link, withRouter } from "react-router";
 import LogInForm from "./log_in_form";
 import SignUpForm from "./sign_up_form";
 
-
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -83,15 +82,29 @@ class SessionForm extends React.Component {
     return(
       <div>
         <div className="login__logo-box">
-          <h3 className="login__logo">Yump</h3>
+          <img
+            className="login__logo"
+            src={ window.assets.logo }
+            />
         </div>
         <section className="row">
           <div className="login__form-box">
             <div className="login__form">
-              <button onClick={this.handleGuest}>Login as Guest</button>
-              Welcome to Yump!
-              Please {this.props.formType} or {this.navLink()}
+
+              <div>
+                Welcome to Yump!
+              </div>
+
               {this.renderForm()}
+
+              <button className="login__submit-guest" onClick={this.handleGuest}>Login as Guest</button>
+
+              <div>
+                Please {this.props.formType} {"or "}
+                <div className="login__submit-switch">
+                  {this.navLink()}
+                </div>
+              </div>
             </div>
           </div>
           <div className="login__image-box">

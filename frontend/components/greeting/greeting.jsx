@@ -6,8 +6,12 @@ const sessionLinks = () => (
     <div>
       <h3>Yump</h3>
     </div>
-    <Link to="/login" activeClassName="current">Login</Link>
-    <Link to="/signup" activeClassName="current">Sign Up</Link>
+    <div>
+      <Link to="/login" activeClassName="current">Login</Link>
+    </div>
+    <div>
+      <Link to="/signup" activeClassName="current">Sign Up</Link>
+    </div>
   </nav>
 );
 

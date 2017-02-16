@@ -72,7 +72,7 @@ const SignUpForm = (props) => {
           onChange={props.update('zip')}
         />
       </div>
-      <button onClick={props.handleSubmit}>Sign Up</button>
+      <button className="login__submit-login" onClick={props.handleSubmit}>Sign Up</button>
     </form>
   )
 };
