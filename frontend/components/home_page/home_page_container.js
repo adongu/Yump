@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Greeting from './greeting'
+import HomePage from './home_page'
 import { logout } from '../../actions/session_actions';
 
 // state is { session } like in reducer
@@ -14,4 +14,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Greeting);
+)(HomePage);
