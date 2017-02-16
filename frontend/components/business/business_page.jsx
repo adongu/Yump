@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router'
 import BusinessAll from "./business_all";
 import BusinessShow from "./business_show";
 
-class BusinessPage extends React.Component() {
+class BusinessPage extends React.Component {
   constructor () {
     this.state = this.props.businesses
   }
@@ -16,4 +16,4 @@ class BusinessPage extends React.Component() {
   }
 }
 
-export default BusinessPage;
+export default withRouter(BusinessPage)

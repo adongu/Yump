@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { showBusinesses, showBusiness } from '../../actions/business_actions';
-import { BusinessPage } from "./business_"
+import { BusinessPage } from '../../actions/business_actions';
 
 const mapStateToProps = ({ businesses }) => ({
   businesses: businesses.business,
