@@ -8,18 +8,24 @@ class BusinessPage extends React.Component {
     super(props)
 
     this.state = this.props.businesses;
+    this.fetchBusinesses = this.props.fetchBusinesses.bind(this);
+    this.fetchBusiness = this.props.fetchBusiness.bind(this);
+  }
+
+  componentDidMount(){
+    if (typeof this.props.businessId !== "undefined") {
+      this.props.fetchBusiness(this.props.businessId)
+    } else {
+      this.props.fetchBusinesses();
+    }
   }
   //
-  // componentDidMount(){
-  //   this.props.fetchBusinesses()
-  // }
-  // //
   // componentWIllReceiveProp(nextProp){
-  //   this.props.fetchBusinesses(this.props.params.id)
+  //   this.props.fetchBusinesses()
   // }
 
   renderBusinesses () {
-    if (this.props.businessId) {
+    if (typeof this.props.businessId !== "undefined") {
       return(
         <BusinessPageShow
           businessId={this.props.businessId}

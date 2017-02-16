@@ -1,6 +1,6 @@
 class Api::BusinessesController < ApplicationController
   def show
-    @business = Business.find_by(params[:id]);
+    @business = Business.find(params[:id]);
     if @business
       render :show
     else

@@ -15,7 +15,7 @@ export const fetchBusinesses = () => dispatch => {
 export const fetchBusiness = (id) => dispatch => {
   return (
     APIUtil.fetchBusiness(id)
-    .then( (business) => dispatch(receivelBusiness(business)))
+    .then( (business) => dispatch(receiveBusiness(business)))
   )
 }
 

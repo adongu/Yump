@@ -17,8 +17,7 @@ const BusinessReducer = (preLoadedState = _nullBusiness, action) => {
     case RECEIVE_ALL_BUSINESSES:
       let businesses = action.businesses
       return merge({}, _nullBusiness, { businesses})
-      case RECEIVE_BUSINESS:
-      debugger
+    case RECEIVE_BUSINESS:
       let business = [action.business]
       return merge({}, _nullBusiness, { business })
     case RECEIVE_ERRORS:
