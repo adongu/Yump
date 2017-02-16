@@ -20,5 +20,5 @@
 class Business < ApplicationRecord
   validates :name, :street, :city, :state, :zip, :phone, :latitude, :longitude, presence: true
   validates :zip, length: { minimum: 5 }
-  
+
 end
