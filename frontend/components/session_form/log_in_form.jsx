@@ -3,26 +3,29 @@ import React from 'react';
 const LogInForm = (props) => {
   return (
 
-    <form onSubmit={props.handleSubmit} className="login-form-box log_in">
-      <label> Username
+    <form className="login-form-box log_in">
+
+      <div>
         <input
+          placeholder="Username"
           type="text"
           key={props.state}
           value={props.state.username}
           onChange={props.update('username')}
         />
-      </label>
+      </div>
 
-      <label> Password
+      <div>
         <input
+          placeholder="Password"
           type="password"
           key={props.state}
           value={props.state.password}
           onChange={props.update('password')}
         />
-      </label>
+      </div>
 
-      <input type="submit" value="Log In"/>
+      <button onClick={props.handleSubmit}>Sign Up</button>
     </form>
   )
 };

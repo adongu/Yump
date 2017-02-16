@@ -3,63 +3,76 @@ import React from 'react';
 const SignUpForm = (props) => {
   return (
 
-    <form onSubmit={props.handleSubmit} className="login-form-box sign_up">
+    <form className="login-form-box sign_up">
 
-      <label> First Name
-        <input
-          type="text"
-          className={props.state}
-          value={props.state.f_name}
-          onChange={props.update('f_name')}
-        />
-      </label>
+      <div className="row form__first-name-box">
+        <div className="form__first-name">
+          <input
+            className="form__first-name-input"
+            placeholder="First Name"
+            type="text"
+            className={props.state}
+            value={props.state.f_name}
+            onChange={props.update('f_name')}
+          />
+        </div>
 
-      <label> Last Name
-        <input
-          type="text"
-          key={props.state}
-          value={props.state.l_name}
-          onChange={props.update('l_name')}
-        />
-      </label>
+        <div className="form__last-name">
+          <input
+            className="form__last-name-input"
+            placeholder="Last Name"
+            type="text"
+            key={props.state}
+            value={props.state.l_name}
+            onChange={props.update('l_name')}
+          />
+        </div>
+      </div>
 
-      <label> Email
+      <div>
         <input
+          className="form__email"
+          placeholder="Email"
           type="text"
           key={props.state}
           value={props.state.email}
           onChange={props.update('email')}
         />
-      </label>
+      </div>
 
-      <label> Zip Code
+      <div>
         <input
+          className="form__username"
+          placeholder="Username"
+          type="text"
+          key={props.state}
+          value={props.state.username}
+          onChange={props.update('username')}
+          />
+      </div>
+
+      <div>
+        <input
+          className="form__password"
+          placeholder="Password"
+          type="password"
+          key={props.state}
+          value={props.state.password}
+          onChange={props.update('password')}
+          />
+      </div>
+
+      <div>
+        <input
+          className="form__zip-code"
+          placeholder="Zip Code"
           type="text"
           key={props.state}
           value={props.state.zip}
           onChange={props.update('zip')}
         />
-      </label>
-
-      <label> Username
-        <input
-          type="text"
-          key={props.state}
-          value={props.state.username}
-          onChange={props.update('username')}
-        />
-      </label>
-
-      <label> Password
-        <input
-          type="password"
-          key={props.state}
-          value={props.state.password}
-          onChange={props.update('password')}
-        />
-      </label>
-
-      <input type="submit" value="Sign Up"/>
+      </div>
+      <button onClick={props.handleSubmit}>Sign Up</button>
     </form>
   )
 };

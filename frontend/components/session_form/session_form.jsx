@@ -81,11 +81,22 @@ class SessionForm extends React.Component {
 
     const title = (this.props.formType === "login") ? "Log In" : "Sign Up";
     return(
-      <div className="login-form-box">
-        <button onClick={this.handleGuest}>Login as Guest</button>
-        Welcome to Yump!
-        Please {this.props.formType} or {this.navLink()}
-        {this.renderForm()}
+      <div>
+        <div className="login__logo-box">
+          <h3 className="login__logo">Yump</h3>
+        </div>
+        <section className="row">
+          <div className="login__form-box">
+            <div className="login__form">
+              <button onClick={this.handleGuest}>Login as Guest</button>
+              Welcome to Yump!
+              Please {this.props.formType} or {this.navLink()}
+              {this.renderForm()}
+            </div>
+          </div>
+          <div className="login__image-box">
+          </div>
+        </section>
       </div>
     );
   }
