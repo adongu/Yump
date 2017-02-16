@@ -1,3 +1,14 @@
+.login__logo {
+  display: inline-block;
+  justify-content: space-around;
+  width: 100px;
+
+  &:hover {
+    transform: scale(1.4);
+    cursor: pointer;
+  }
+}
+
 .login-form-box input {
   box-sizing: border-box;
   width: 100%;
@@ -7,6 +18,7 @@
   background: rgba(250, 250, 249, .9);
   border-radius: 1px;
   font-size: 14px;
+  font-weight: 550;
   line-height: 1.3em;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15),
   0 0 5px rgba(0, 126, 255, 0.3);
@@ -18,9 +30,12 @@
     padding: 5px 0;
     margin: 3px 0;
     cursor: pointer;
-    color: #fff;
-    background: linear-gradient(#ed0008, #dd1600);
-    font-weight: bold;
+    color: white;
+    border: 1px solid #8d0005;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    background-color: #d90007;
+    background: linear-gradient(#d90007, #c91400);
+    font-weight: bolder;
     vertical-align: middle;
     text-align: center;
     border-radius: 3px;
@@ -42,7 +57,7 @@
 .login {
   &__logo-box {
     width: 100%;
-    background-color: #d32323;
+    background: linear-gradient(#d90007, #c91400);
     color: white;
     text-align: center;
     padding: 12px 0;
@@ -69,13 +84,18 @@
     // display: flex;
     flex-basis: 50%;
   }
+
   &__first-name-box {
     display: flex;
     justify-content: space-between;
   }
+
   &__email, &__username, &__password, &__zip-code {
     width: 100%;
+  }
 
+  &__password {
+    border-bottom: 9px;
   }
 }
 

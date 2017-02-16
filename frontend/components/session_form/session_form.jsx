@@ -82,10 +82,12 @@ class SessionForm extends React.Component {
     return(
       <div>
         <div className="login__logo-box">
-          <img
-            className="login__logo"
-            src={ window.assets.logo }
-            />
+            <Link to="/" activeClassName="current">
+              <img
+                className="login__logo"
+                src={ window.assets.logo }
+              />
+            </Link>
         </div>
         <section className="row">
           <div className="login__form-box">
