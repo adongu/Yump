@@ -9,33 +9,38 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      f_name: "",
+      l_name: "",
+      email: "",
+      zip: ""
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.redirectIfLogged = this.redirectIfLogged.bind(this)
+    this.handleGuest = this.handleGuest.bind(this)
   }
 
-componentDidUpdate() {
-  this.redirectIfLogged();
-}
-
-redirectIfLogged() {
-  if (this.props.loggedIn) {
-    this.props.router.push("/")
+  componentDidUpdate() {
+    this.redirectIfLogged();
   }
-}
+
+  redirectIfLogged() {
+    if (this.props.loggedIn) {
+      this.props.router.push("/")
+    }
+  }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then( () => {this.redirect()});
+    this.props.processForm(user).then( () => {this.redirectIfLogged()});
   }
 
   handleGuest(e) {
     e.preventDefault();
-    const guest = {username: "guest",};
-    this.props.processForm(user).then( () => {this.redirect()});
+    const guest = {username: "Foodie", password: "cupcake"};
+    this.props.login(guest).then( () => {this.redirectIfLogged()});
   }
 
   update(field) {
@@ -77,7 +82,7 @@ redirectIfLogged() {
     const title = (this.props.formType === "login") ? "Log In" : "Sign Up";
     return(
       <div className="login-form-box">
-
+        <button onClick={this.handleGuest}>Login as Guest</button>
         Welcome to Yump!
         Please {this.props.formType} or {this.navLink()}
         {this.renderForm()}
