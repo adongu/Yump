@@ -1,7 +1,7 @@
 import {
   RECEIVE_ALL_BUSINESSES,
   RECEIVE_BUSINESSES,
-  RECEIVE_ERRORS } from '../actions/business_action';
+  RECEIVE_ERRORS } from '../actions/business_actions';
 
 import { merge } from 'lodash';
 
