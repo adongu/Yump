@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 //  react router accepts store and renders routes wrapped by Provider
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import SessionFormContainer from './session_form/session_form_container';
+import BusinessContainer from './business/business_container';
 
 
 // Route tells router to render App component at root url '/'

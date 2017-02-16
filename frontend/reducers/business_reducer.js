@@ -1,6 +1,6 @@
 import {
   RECEIVE_ALL_BUSINESSES,
-  RECEIVE_BUSINESSES,
+  RECEIVE_BUSINESS,
   RECEIVE_ERRORS } from '../actions/business_actions';
 
 import { merge } from 'lodash';
