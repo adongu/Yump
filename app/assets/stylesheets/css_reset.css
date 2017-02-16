@@ -1,0 +1,44 @@
+body, ul, li, a, h1, h2, h3, h4, main, nav, form, input,
+button, div, section, article, header  {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  text-decoration: inherit;
+  background: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.43;
+  color: #484848;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
