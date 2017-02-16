@@ -1,6 +1,6 @@
 # Yump
 
-[Heroku link](http://www.herokuapp.com)
+[Heroku link](http://yump.herokuapp.com)
 
 [Trello link](https://trello.com/b/VHYOHvPK/yump)
 

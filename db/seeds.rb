@@ -8,9 +8,21 @@
 
 User.destroy_all
 User.create!(username: "Foodie", password:"cupcake", f_name: "mario", l_name: "luigi", email: "mario@yumper.com", zip: "10009")
-User.create!(username: "a", password:"asdasd", f_name: "mario", l_name: "luigi", email: "mario@yumper.com", zip: "10009")
+User.create!(username: "a", password:"asdasd", f_name: "mario", l_name: "luigi", email: "a@gmail.com", zip: "10009")
+
+businesses = [];
 
 Business.destroy_all
+Faker::Config.locale = 'en-US'
 10.times do
-  Business.create!(name: Faker::)
+  businesses << Business.create!({
+    name: Faker::Company.name,
+    street: Faker::Address.street_address,
+    city: Faker::Address.city,
+    state: Faker::Address.state,
+    zip: Faker::Address.zip_code,
+    phone: Faker::PhoneNumber.phone_number,
+    latitude: Faker::Address.latitude,
+    longitude: Faker::Address.longitude
+  })
 end
