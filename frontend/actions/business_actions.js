@@ -4,31 +4,32 @@ export const RECEIVE_ALL_BUSINESSES = "RECEIVE_ALL_BUSINESSES";
 export const RECEIVE_BUSINESS = "RECEIVE_BUSINESSES";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
-export const showBusinesses = () => dispatch => {
+export const fetchBusinesses = () => dispatch => {
   return (
     APIUtil.fetchBusinesses()
-    .then( (businesses) => dispatch(receiveAllBusinesses(businesses)))
-  )
+    .then( (businesses) => {
+      return dispatch(receiveAllBusinesses(businesses))}
+  ))
 }
 
-export const showBusiness = (id) => dispatch => {
+export const fetchBusiness = (id) => dispatch => {
   return (
     APIUtil.fetchBusiness(id)
     .then( (business) => dispatch(receivelBusiness(business)))
   )
 }
 
-const receiveAllBusinesses = (businesses) => {
+const receiveAllBusinesses = (businesses) => ({
   type: RECEIVE_ALL_BUSINESSES,
   businesses
-}
+})
 
-const receiveBusiness = (business) => {
+const receiveBusiness = (business) => ({
   type: RECEIVE_BUSINESS,
   business
-}
+})
 
-const receiveErrors = (errors) => {
+const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
   errors
-}
+})

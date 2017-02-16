@@ -1,16 +1,22 @@
 import { connect } from 'react-redux';
-import { showBusinesses, showBusiness } from '../../actions/business_actions';
+import { fetchBusinesses, fetchBusiness } from '../../actions/business_actions';
 import BusinessPage from './business_page';
 
-const mapStateToProps = ({ businesses }) => ({
-  businesses: businesses.business,
-  errors: businesses.errors
-});
+const mapStateToProps = ({ businesses }, ownProps) => {
+  let businessId = ownProps.params.id;
+  return ({
+    businesses: businesses,
+    errors: businesses.errors,
+    businessId
+  })
+}
 
-const mapDispatchToProps = (dispatch) => ({
-  showBusinesses: () => dispatch(showBusinesses()),
-  showBusiness: (id) => dispatch(showBusiness(id))
-});
+const mapDispatchToProps = (dispatch, { location }) => {
+  return ({
+    fetchBusinesses: () => dispatch(fetchBusinesses()),
+    fetchBusiness: (id) => dispatch(fetchBusiness(id))
+  })
+};
 
 export default connect(
   mapStateToProps,
