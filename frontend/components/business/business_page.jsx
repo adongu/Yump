@@ -6,12 +6,12 @@ import BusinessPageShow from "./business_page_show";
 class BusinessPage extends React.Component {
   constructor (props) {
     super(props)
-    this.state = this.props.businesses
   }
 
   render () {
     return (
       <div>
+        <h2>hello</h2>
       </div>
     );
   }

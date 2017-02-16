@@ -1,14 +1,14 @@
 import React from 'react';
 import HomePageContainer from "./home_page/home_page_container";
+import BusinessContainer from './business/business_container';
 // props.children are content between opening and closing tag
 
-const App = ({ children }) => {
-  return (
-    <div>
-      <HomePageContainer />
-      { children }
-    </div>
-  )
-};
+const App = ({ children }) => (
+
+  <div>
+    <HomePageContainer />
+    { children }
+  </div>
+);
 
 export default App;
