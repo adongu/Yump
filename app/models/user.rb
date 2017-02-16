@@ -9,7 +9,7 @@
 #  email           :string           not null
 #  f_name          :string           not null
 #  l_name          :string           not null
-#  zip             :integer          not null
+#  zip             :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
