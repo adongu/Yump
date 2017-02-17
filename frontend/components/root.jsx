@@ -4,7 +4,8 @@ import { Provider } from "react-redux";
 //  react router accepts store and renders routes wrapped by Provider
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import SessionFormContainer from './session_form/session_form_container';
-import BusinessContainer from './business/business_container'
+import BusinessIndexContainer from './business/business_index_container'
+import BusinessShowContainer from './business/business_show_container'
 
 
 // Route tells router to render App component at root url '/'
@@ -29,8 +30,8 @@ const Root = ({ store }) => {
       <Router history={ hashHistory }>
         <Route path="/" component={ App }>
           <IndexRoute component={ BusinessContainer } />
-          <Route path="/businesses" component={ BusinessContainer } />
-          <Route path="/businesses/:id" component={ BusinessContainer } />
+          <Route path="/businesses" component={ BusinessIndexContainer } />
+          <Route path="/businesses/:id" component={ BusinessShowContainer } />
         </Route>
         <Route path="/login" component={ SessionFormContainer} onEnter={_redirectIfLoggedIn} />
         <Route path="/signup" component={ SessionFormContainer} onEnter={_redirectIfLoggedIn} />

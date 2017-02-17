@@ -1,6 +1,7 @@
 import React from 'react';
 
-const BusinessPageShow = () => {
+const BusinessPageShow = ({fetchBusiness, businessId}) => {
+  debugger
   return (
     <div>
       {props.fetchBusiness(props.businessId)}
