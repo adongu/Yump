@@ -25,7 +25,7 @@ const LogInForm = (props) => {
         />
       </div>
 
-      <button className="login__submit-signup" onClick={props.handleSubmit}>Sign Up</button>
+      <button className="login__submit-login" onClick={props.handleSubmit}>Log In</button>
     </form>
   )
 };

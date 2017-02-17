@@ -2,10 +2,10 @@ import { connect } from "react-redux";
 import { fetchBusinesses, fetchBusiness } from '../../actions/business_actions';
 import BusinessIndexPage from './business_index_page'
 
-const mapStateToProps = ({ business }) => {
+const mapStateToProps = ({ businesses }) => {
   return ({
-    business: business.businesses,
-    errors: business.errors
+    businesses: Object.keys(businesses.businesses).map( id => businesses.businesses[id]),
+    errors: businesses.errors
   })
 }
 

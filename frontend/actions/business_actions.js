@@ -1,7 +1,7 @@
 import * as APIUtil from '../util/business_api_util';
 
 export const RECEIVE_ALL_BUSINESSES = "RECEIVE_ALL_BUSINESSES";
-export const RECEIVE_BUSINESS = "RECEIVE_BUSINESSES";
+export const RECEIVE_BUSINESS = "RECEIVE_BUSINESS";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
 export const fetchBusinesses = () => dispatch => {
@@ -15,8 +15,11 @@ export const fetchBusinesses = () => dispatch => {
 export const fetchBusiness = (id) => dispatch => {
   return (
     APIUtil.fetchBusiness(id)
-    .then( (business) => dispatch(receiveBusiness(business)))
-  )
+    .then( (business) => {
+      console.log("hit action", business)
+      return dispatch(receiveBusiness(business))
+    }
+  ))
 }
 
 const receiveAllBusinesses = (businesses) => ({

@@ -7,6 +7,7 @@ import { merge } from 'lodash';
 
 let _nullBusiness = Object.freeze({
   businesses: [],
+  currentBusiness: {},
   errors: []
 });
 
@@ -16,13 +17,16 @@ const BusinessReducer = (preLoadedState = _nullBusiness, action) => {
   switch (action.type) {
     case RECEIVE_ALL_BUSINESSES:
       let businesses = action.businesses
-      return merge({}, _nullBusiness, { businesses})
+      let businessesResult = merge({}, preLoadedState, {businesses: [...businesses]});
+      return businessesResult;
     case RECEIVE_BUSINESS:
-      let business = [action.business]
-      return merge({}, _nullBusiness, { business })
+      let business = action.business;
+      let businessResult = merge({}, preLoadedState, { currentBusiness: business });
+      console.log("hit reducer", business)
+      return businessResult;
     case RECEIVE_ERRORS:
       let errors = action.errors
-      return merge({}, _nullBusiness, { errors })
+      return merge({}, preLoadedState, errors)
     default:
       return preLoadedState
   }
