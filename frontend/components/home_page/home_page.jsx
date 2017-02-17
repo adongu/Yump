@@ -33,6 +33,7 @@ const personalGreeting = (currentUser, logout ) => (
 
 const HomePage = ({ currentUser, logout }) => {
   const sessionBar = () => {
+    debugger
     if (currentUser) {
       return personalGreeting(currentUser, logout)
     } else {
