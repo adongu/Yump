@@ -1,13 +1,13 @@
 import { Link } from "react-router";
 import React from 'react';
 
-const headerBar = () => {
+const HomeHeaderBar = () => {
   return (
-    <div className="header__box">
-      <div className="header__logo-box">
+    <div className="home__header-img-box">
+      <div className="home__header-logo-box">
         <Link to="/" activeClassName="current">
           <img
-            className="header__logo"
+            className="home__header-logo"
             src={ window.assets.logo }
           />
         </Link>
@@ -17,4 +17,4 @@ const headerBar = () => {
   )
 };
 
-export default headerBar;
+export default HomeHeaderBar;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import BusinessIndexPageItem from './business_index_page_item';
 import { fetchBusinesses } from '../../actions/business_actions';
-
+import headerBar from '../header/header_bar';
 
 class BusinessIndexPage extends React.Component {
 
@@ -13,17 +13,6 @@ class BusinessIndexPage extends React.Component {
   render () {
     return (
       <div className="business__index-box">
-          <div className="home__search-box">
-            <div className="home__logo-box">
-              <Link to="/" activeClassName="current">
-                <img
-                  className="home__logo"
-                  src={ window.assets.logo }
-                />
-              </Link>
-
-            </div>
-          </div>
         {
           this.props.businesses.map( business => {
             return (

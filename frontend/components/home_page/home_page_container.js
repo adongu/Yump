@@ -3,9 +3,9 @@ import HomePage from './home_page'
 import { logout } from '../../actions/session_actions';
 
 // state is { session } like in reducer
-const mapStateToProps = ({ session }) => ({
-  currentUser: session.currentUser
-});
+const mapStateToProps = ({ session }) => {
+  return {currentUser: session.currentUser}
+};
 
 const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout())

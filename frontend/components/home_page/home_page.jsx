@@ -1,33 +1,61 @@
 import React from 'react';
 import { Link } from 'react-router';
+import HomeHeaderBar from '../header/home_header';
 
-const sessionLinks = () => (
+const sessionLinks = () => {
+  return (
+    <div className="home__header-session-box">
+      <nav className="home__header-session-links">
 
-  <div className="home__box">
-    <nav className="home__header">
-      <div>
-        <h3>Yump</h3>
-      </div>
-      <div>
-        <Link to="/login" activeClassName="current">Login</Link>
-      </div>
-      <div>
-        <Link to="/signup" activeClassName="current">Sign Up</Link>
-      </div>
-    </nav>
+        <div className="home__header-login-link">
+          <Link to="/login" activeClassName="current">Login</Link>
+        </div>
+
+        <div className="home__header-signup-link">
+          <Link to="/signup" activeClassName="current">Sign Up</Link>
+        </div>
+      </nav>
+
+    </div>
+  )
+};
+
+const personalGreeting = (currentUser, logout ) => (
+  <div className="home__header-loggedin">
+    <hgroup className="home__header-group">
+      <h2 className="home__header-name">Hi, {currentUser.username}!</h2>
+      <button className="home__header-logout-btn" onClick={logout}>Log Out</button>
+    </hgroup>
 
   </div>
 );
 
-const personalGreeting = (currentUser, logout ) => (
-  <hgroup className="header-group">
-    <h2 className="header-name">Hi, {currentUser.username}!</h2>
-    <button className="header-button" onClick={logout}>Log Out</button>
-  </hgroup>
-);
 
-const HomePage = ({ currentUser, logout }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
-);
+const HomePage = ({ currentUser, logout }) => {
+  const sessionBar = () => {
+    debugger
+    if (currentUser) {
+      return personalGreeting(currentUser, logout)
+    } else {
+      return sessionLinks()
+    }
+  };
+
+  return(
+    <div className="home__header-bar-box">
+      {sessionBar()}
+
+      <div className="home__header-logo-box">
+        <Link to="/" activeClassName="current">
+          <img
+            className="home__header-logo"
+            src={ window.assets.logo }
+          />
+        </Link>
+      </div>
+
+    </div>
+  )
+}
 
 export default HomePage;

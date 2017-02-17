@@ -14,8 +14,9 @@ class BusinessPageShow extends React.Component{
     console.log(business)
     return (
       <div className="business__current-box">
-
-
+        <div className="">
+          <headerBar />
+        </div>
         <ul className="business__current-info">
           <li>{business.name}</li>
           <li>{business.street}</li>
