@@ -16,11 +16,11 @@ class SessionForm extends React.Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
-    this.redirectIfLogged = this.redirectIfLogged.bind(this)
-    this.handleGuest = this.handleGuest.bind(this)
+    this.redirectIfLogged = this.redirectIfLogged.bind(this);
+    this.handleGuest = this.handleGuest.bind(this);
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(newProps) {
     this.redirectIfLogged();
   }
 
@@ -33,13 +33,15 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then( () => {this.redirectIfLogged()});
+    this.props.processForm(user)
+      .then( () => {this.redirectIfLogged()});
   }
 
   handleGuest(e) {
     e.preventDefault();
     const guest = {username: "Foodie", password: "cupcake"};
-    this.props.login(guest).then( () => {this.redirectIfLogged()});
+    this.props.login(guest)
+      .then( () => {this.redirectIfLogged()});
   }
 
   update(field) {
@@ -55,6 +57,21 @@ class SessionForm extends React.Component {
       return <Link to="/login">Log In Instead</Link>;
     }
   }
+
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => {
+          return (
+            <li key={`error-${i}`} className="Form__errors">
+              {error}
+            </li>
+          )
+        })
+        }
+      </ul>
+    );
+  };
 
   renderForm() {
     if (this.props.formType === "login") {
@@ -77,7 +94,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-
     const title = (this.props.formType === "login") ? "Log In" : "Sign Up";
     return(
       <div>
@@ -97,6 +113,7 @@ class SessionForm extends React.Component {
                 Welcome to Yump!
               </div>
 
+              {this.renderErrors()}
               {this.renderForm()}
 
               <button className="login__submit-guest" onClick={this.handleGuest}>Login as Guest</button>

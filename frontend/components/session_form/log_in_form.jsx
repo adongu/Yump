@@ -4,7 +4,6 @@ const LogInForm = (props) => {
   return (
 
     <form className="login-form-box log_in">
-
       <div>
         <input
           placeholder="Username"
