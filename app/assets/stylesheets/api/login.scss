@@ -12,7 +12,6 @@
 
 .login-form-box input {
   box-sizing: border-box;
-  width: 100%;
   margin: 0 0 18px;
   padding: 5px;
   border: 1px solid #bbb;
@@ -100,13 +99,18 @@
 
 .form {
   &__first-name-input, &__last-name-input {
-    // display: flex;
+    width: 95%;
+  }
+  &__first-name, &__last-name {
+    justify-content: flex-start;;
+  }
+  &__last-name {
     flex-basis: 50%;
+    justify-content: flex-end;;
   }
 
   &__first-name-box {
     display: flex;
-    justify-content: space-between;
   }
 
   &__email, &__username, &__password, &__zip-code {

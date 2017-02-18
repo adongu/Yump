@@ -11,7 +11,7 @@ const SignUpForm = (props) => {
             className="form__first-name-input"
             placeholder="First Name"
             type="text"
-            className={props.state}
+            key={props.state}
             value={props.state.f_name}
             onChange={props.update('f_name')}
           />

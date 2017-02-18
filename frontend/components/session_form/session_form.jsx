@@ -127,7 +127,7 @@ class SessionForm extends React.Component {
               {this.renderErrors()}
               {this.renderForm()}
 
-              <button className="login__submit-guest" onClick={this.handleGuest}>Login as Guest</button>
+              <button className="login__submit-guest" onClick={this.handleGuest}>Continue as a Guest</button>
 
               <div>
                 Please {this.props.formType} {"or "}
