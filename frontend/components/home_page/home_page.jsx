@@ -30,13 +30,13 @@ const HomePage = ({ currentUser, logout }) => {
   };
 
   return(
-    <div className="Home">
+    <div className="row Home">
       <div className="home__header-bar-box">
 
 
         <div className="row home__header-bar-nav-box">
-          <div className="">
-            <Link to="/">Write a Review</Link>
+          <div className="home__header-bar-left">
+            <Link className="home__header-bar-review" to="/">Write a Review</Link>
           </div>
           <div className="home__header-bar-session">
             {sessionBar()}
