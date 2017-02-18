@@ -2,7 +2,6 @@ import React from 'react';
 
 const LogInForm = (props) => {
   return (
-
     <form className="login-form-box log_in">
       <div>
         <input

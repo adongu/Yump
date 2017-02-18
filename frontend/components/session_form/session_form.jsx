@@ -30,6 +30,13 @@ class SessionForm extends React.Component {
     }
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.formType !== this.props.formType) {
+      console.log("formchange")
+      newProps.clearErrors();
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
@@ -77,6 +84,7 @@ class SessionForm extends React.Component {
     if (this.props.formType === "login") {
       return (
         <LogInForm
+          clearErrors={this.clearErrors}
           handleSubmit={this.handleSubmit}
           update={this.update}
           state={this.state}
@@ -85,6 +93,7 @@ class SessionForm extends React.Component {
     } else {
       return (
         <SignUpForm
+          clearErrors={this.clearErrors}
           handleSubmit={this.handleSubmit}
           update={this.update}
           state={this.state}
@@ -112,7 +121,6 @@ class SessionForm extends React.Component {
               <div>
                 Welcome to Yump!
               </div>
-
               {this.renderErrors()}
               {this.renderForm()}
 

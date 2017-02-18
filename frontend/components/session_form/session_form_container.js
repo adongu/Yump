@@ -8,14 +8,15 @@ const mapStateToProps = ({ session }) => ({
 });
 
 // ownProps has location key
-const mapDispatchToProps = ( dispatch, { location } ) => {
-  const formType = location.pathname.slice(1);
+const mapDispatchToProps = ( dispatch, newProps ) => {
+  () => dispatch(clearErrors());
+  const formType = newProps.location.pathname.slice(1);
   const processForm =  (formType === "login") ? login : signup;
   return ({
-    processForm:  user => dispatch(processForm(user)),
+    processForm:  user => dispatch(processForm(user)).then(() => dispatch(clearErrors())),
     login: (user) => dispatch(login(user)),
-    clearErrors: () => dispatch(clearErrors()),
-    formType
+    formType,
+    clearErrors: () => dispatch(clearErrors)
   });
 };
 
