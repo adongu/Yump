@@ -9,6 +9,7 @@
   }
 }
 
+
 .login-form-box input {
   box-sizing: border-box;
   width: 100%;
@@ -76,6 +77,24 @@
   &__form {
     width: 300px;
     padding: 30px 0;
+  }
+
+  &__errors{
+
+    &-box {
+      margin-top: 18px;
+      width: 100%
+    }
+  }
+
+  &__errors li {
+    height: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-left: 1px solid #FF4136;
+    padding-left: 8px;
+    padding-bottom: 3px;
+    line-height: 110%;
   }
 }
 
