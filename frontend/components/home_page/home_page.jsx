@@ -30,7 +30,7 @@ const HomePage = ({ currentUser, logout }) => {
   };
 
   return(
-    <div className="row Home">
+    <div className="home">
       <div className="home__header-bar-box">
 
 
