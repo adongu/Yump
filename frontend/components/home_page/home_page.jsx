@@ -4,30 +4,19 @@ import HomeHeaderBar from '../header/home_header';
 
 const sessionLinks = () => {
   return (
-    <div className="home__header-session-box">
       <nav className="home__header-session-links">
 
-        <div className="home__header-login-link">
-          <Link to="/login" activeClassName="current">Login</Link>
-        </div>
-
-        <div className="home__header-signup-link">
-          <Link to="/signup" activeClassName="current">Sign Up</Link>
-        </div>
+        <Link to="/login" activeClassName="current">Log In</Link>
+        <Link to="/signup" activeClassName="current">Sign Up</Link>
       </nav>
-
-    </div>
   )
 };
 
 const personalGreeting = (currentUser, logout ) => (
-  <div className="home__header-loggedin">
     <hgroup className="home__header-group">
       <h2 className="home__header-name">Hi, {currentUser.username}!</h2>
       <button className="home__header-logout-btn" onClick={logout}>Log Out</button>
     </hgroup>
-
-  </div>
 );
 
 
@@ -41,16 +30,33 @@ const HomePage = ({ currentUser, logout }) => {
   };
 
   return(
-    <div className="home__header-bar-box">
-      {sessionBar()}
+    <div className="Home">
+      <div className="home__header-bar-box">
 
-      <div className="home__header-logo-box">
-        <Link to="/" activeClassName="current">
-          <img
-            className="home__header-logo"
-            src={ window.assets.logo }
-          />
-        </Link>
+
+        <div className="row home__header-bar-nav-box">
+          <div className="">
+            <Link to="/">Write a Review</Link>
+          </div>
+          <div className="home__header-bar-session">
+            {sessionBar()}
+          </div>
+        </div>
+
+        <div className="home__header-bar-content">
+          <div className="home__header-bar-logo-box">
+            <Link to="/" activeClassName="current">
+              <img
+                className="home__header-bar-logo"
+                src={ window.assets.logo }
+                />
+            </Link>
+
+            <div className="home__header-search-box">
+              <input placeholder="Search"/>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
