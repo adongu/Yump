@@ -99,15 +99,10 @@
 
 .form {
   &__first-name-input, &__last-name-input {
-    // width: 95%;
     width: 140px;
   }
   &__first-name, &__last-name {
   }
-  // &__last-name {
-  //   flex-basis: 50%;
-  //   justify-content: flex-end;
-  // }
 
   &__first-name-box {
     display: flex;
