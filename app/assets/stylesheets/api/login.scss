@@ -70,7 +70,7 @@
   &__form-box, &__image-box {
     display: flex;
     justify-content: center;
-    flex-basis: 50%;
+    width: 100%;
   }
 
   &__form {
@@ -102,6 +102,9 @@
     width: 140px;
   }
   &__first-name, &__last-name {
+  }
+  &__login-username, &__login-password {
+    width: 100%;
   }
 
   &__first-name-box {

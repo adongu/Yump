@@ -4,7 +4,7 @@ const LogInForm = (props) => {
   return (
     <form className="login-form-box log_in">
       <div>
-        <input
+        <input className="form__login-username"
           placeholder="Username"
           type="text"
           key={props.state}
@@ -14,7 +14,7 @@ const LogInForm = (props) => {
       </div>
 
       <div>
-        <input
+        <input className="form__login-password"
           placeholder="Password"
           type="password"
           key={props.state}
