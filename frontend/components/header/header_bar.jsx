@@ -3,15 +3,16 @@ import React from 'react';
 
 const headerBar = () => {
   return (
-    <div className="header__box">
-      <div className="header__logo-box">
-        <Link to="/" activeClassName="current">
-          <img
-            className="header__logo"
-            src={ window.assets.logo }
+    <div className="header__nav">
+      <Link to="/" activeClassName="current">
+        <img
+          className="business__show-bar-logo"
+          src={ window.assets.logo }
           />
-        </Link>
-
+      </Link>
+      <div className="header__nav-search">
+        <label>Find<input placeholder="tacos, cheap dinner, Jeff's"></input></label>
+        <label>Near<input placeholder="address, neighborhood, city, state, or zip"></input></label>
       </div>
     </div>
   )

@@ -16,7 +16,7 @@ class BusinessPageShow extends React.Component{
       <div className="header__nav">
         <Link to="/" activeClassName="current">
           <img
-            className="home__header-bar-logo"
+            className="Business__show-bar-logo"
             src={ window.assets.logo }
             />
         </Link>
