@@ -1,17 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router';
 import headerBar from '../header/header_bar';
+import HomePageContainer from '../home_page/home_page_container';
 
 class BusinessPageShow extends React.Component{
 
   componentDidMount() {
-    console.log(this.props)
     this.props.fetchBusiness(this.props.businessId)
   }
 
   render () {
     let business = (this.props.business)
-    console.log(business)
     return (
       <div className="business__current-box">
         <div className="">
@@ -27,6 +26,7 @@ class BusinessPageShow extends React.Component{
           <li>{business.latitude}</li>
           <li>{business.longitude}</li>
         </ul>
+        <HomePageContainer pageType={"show"} />
       </div>
     )
   }

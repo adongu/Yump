@@ -18,9 +18,12 @@ const personalGreeting = (currentUser, logout ) => (
       <button className="home__header-logout-btn" onClick={logout}>Log Out</button>
     </hgroup>
 );
+//
+// renderHeader(linkType) {
+// }
 
 
-const HomePage = ({ currentUser, logout }) => {
+const HomePage = ({currentUser, logout}) => {
   const sessionBar = () => {
     if (currentUser) {
       return personalGreeting(currentUser, logout)
@@ -30,35 +33,13 @@ const HomePage = ({ currentUser, logout }) => {
   };
 
   return(
-    <div className="home">
-      <div className="home__header-bar-box">
-
-        <div className="row home__header-bar-nav-box">
-          <div className="home__header-bar-left">
-            <Link className="home__header-bar-review" to="/">Write a Review</Link>
-          </div>
-          <div className="home__header-bar-session">
-            {sessionBar()}
-          </div>
-        </div>
-
-        <div className="home__header-bar-content">
-          <div className="home__header-bar-logo-box">
-            <Link to="/" activeClassName="current">
-              <img
-                className="home__header-bar-logo"
-                src={ window.assets.logo }
-                />
-            </Link>
-
-            <div className="home__header-search-box">
-              <input placeholder="Search"/>
-            </div>
-          </div>
-        </div>
+    <div>
+      <div className="home__header-bar-session">
+        {sessionBar()}
       </div>
 
     </div>
+
   )
 }
 

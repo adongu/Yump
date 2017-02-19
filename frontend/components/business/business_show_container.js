@@ -4,7 +4,6 @@ import BusinessShowPage from './business_show_page';
 
 const mapStateToProps = ({ businesses }, ownProps) => {
   let businessId = ownProps.params.id;
-  console.log("hit show container", businesses)
   return ({
     business: businesses.currentBusiness,
     errors: businesses.errors,

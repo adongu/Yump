@@ -16,7 +16,6 @@ export const fetchBusiness = (id) => dispatch => {
   return (
     APIUtil.fetchBusiness(id)
     .then( (business) => {
-      console.log("hit action", business)
       return dispatch(receiveBusiness(business))
     }
   ))
