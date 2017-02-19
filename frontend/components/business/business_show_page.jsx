@@ -12,10 +12,21 @@ class BusinessPageShow extends React.Component{
   render () {
     let business = (this.props.business)
     return (
-      <div className="business__current-box">
-        <div className="">
-          <headerBar />
+    <div className="business__show">
+      <div className="header__nav">
+        <Link to="/" activeClassName="current">
+          <img
+            className="home__header-bar-logo"
+            src={ window.assets.logo }
+            />
+        </Link>
+        <div className="header__nav-search">
+          <label>Find<input placeholder="tacos, cheap dinner, Jeff's"></input></label>
+          <label>Near<input placeholder="address, neighborhood, city, state, or zip"></input></label>
         </div>
+      </div>
+
+      <div className="business__current-box">
         <ul className="business__current-info">
           <li>{business.name}</li>
           <li>{business.street}</li>
@@ -26,8 +37,8 @@ class BusinessPageShow extends React.Component{
           <li>{business.latitude}</li>
           <li>{business.longitude}</li>
         </ul>
-        <HomePageContainer pageType={"show"} />
       </div>
+    </div>
     )
   }
 }

@@ -4,11 +4,12 @@ import HomeHeaderBar from '../header/home_header';
 
 const sessionLinks = () => {
   return (
+    <div className="session__box">
       <nav className="home__header-session-links">
-
-        <Link to="/login" activeClassName="current">Log In</Link>
-        <Link to="/signup" activeClassName="current">Sign Up</Link>
+        <div><Link to="/login" activeClassName="current">Log In</Link></div>
+        <div><Link to="/signup" activeClassName="current">Sign Up</Link></div>
       </nav>
+    </div>
   )
 };
 
@@ -18,9 +19,7 @@ const personalGreeting = (currentUser, logout ) => (
       <button className="home__header-logout-btn" onClick={logout}>Log Out</button>
     </hgroup>
 );
-//
-// renderHeader(linkType) {
-// }
+
 
 
 const HomePage = ({currentUser, logout}) => {
@@ -34,12 +33,8 @@ const HomePage = ({currentUser, logout}) => {
 
   return(
     <div>
-      <div className="home__header-bar-session">
-        {sessionBar()}
-      </div>
-
+      {sessionBar()}
     </div>
-
   )
 }
 

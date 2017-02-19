@@ -4,11 +4,8 @@ import { logout } from '../../actions/session_actions';
 
 // state is { session } like in reducer
 const mapStateToProps = ({ session }, ownProps) => {
-  let pageType = ownProps.pageType || "show";
-  console.log(pageType)
   return {
-    currentUser: session.currentUser,
-    pageType
+    currentUser: session.currentUser
   }
 };
 

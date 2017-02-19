@@ -13,7 +13,7 @@ class BusinessIndexPage extends React.Component {
 
   render () {
     return (
-    <div>
+    <div className="home">
       <div className="home__header-bar-content">
         <div className="home__header-bar-logo-box">
           <Link to="/" activeClassName="current">
@@ -43,7 +43,6 @@ class BusinessIndexPage extends React.Component {
           )
         }
       </div>
-      <HomePageContainer pageType={"index"} />
     </div>
     )
   }
