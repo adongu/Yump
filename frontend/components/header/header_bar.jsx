@@ -6,7 +6,7 @@ const headerBar = () => {
     <div className="header__nav">
       <Link to="/" activeClassName="current">
         <img
-          className="business__show-bar-logo"
+          className="header-nav-bar-logo"
           src={ window.assets.logo }
           />
       </Link>
