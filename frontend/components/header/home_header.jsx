@@ -11,10 +11,6 @@ const HomeHeaderBar = () => {
               src={ window.assets.logo }
               />
           </Link>
-
-          <div className="home__header-search-box">
-            <input placeholder="Search"/>
-          </div>
         </div>
       </div>
   )

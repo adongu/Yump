@@ -1,3 +1,53 @@
 // Place all the styles related to the API::Businesses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.show__nav-box {
+  background: linear-gradient(#d90007, #c91400);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.header__nav {
+  &-logo{
+    &-box {
+      width: 100px;
+      height: auto;
+      padding: 12px 0;
+    }
+    &-img {
+
+      width: 100%;
+
+    }
+  }
+  // search bar
+  &-search {
+
+    &-box {
+      background: #fff;
+      min-width: 712px;
+    }
+
+    &-find {
+      &-label {
+
+      }
+      &-input {
+
+      }
+    }
+
+    &-near {
+      &-label {
+
+      }
+      &-input {
+
+      }
+    }
+  }
+}
