@@ -2,12 +2,20 @@ import { connect } from 'react-redux';
 import { fetchBusiness } from '../../actions/business_actions';
 import BusinessShowPage from './business_show_page';
 
-const mapStateToProps = ({ businesses }, ownProps) => {
+const mapStateToProps = (state, ownProps) => {
+  console.log("MapState", state);
+
+  let reviews = state.busssiness.currentBusiness.reviews
+  if (reviews) {
+    numReviews = reviews.length;
+
+  }
   let businessId = ownProps.params.id;
   return ({
-    business: businesses.currentBusiness,
-    errors: businesses.errors,
-    businessId
+    business: state.businesses.currentBusiness,
+    errors: state.businesses.errors,
+    businessId,
+
   })
 }
 
