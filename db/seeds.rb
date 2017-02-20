@@ -7,8 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-user1 = User.create!(username: "Foodie", password:"cupcake", f_name: "mario", l_name: "luigi", email: "mario@yumper.com", zip: "10009")
-user2 = User.create!(username: "a", password:"asdasd", f_name: "mario", l_name: "luigi", email: "a@gmail.com", zip: "10009")
+users = User.create!([{username: "Foodie", password:"cupcake", f_name: "mario", l_name: "luigi", email: "mario@yumper.com", zip: "10009"}, {username: "a", password:"asdasd", f_name: "mario", l_name: "luigi", email: "a@gmail.com", zip: "10009"}, {username: "b", password:"asdasd", f_name: "mario", l_name: "luigi", email: "b@gmail.com", zip: "10009"}])
+
+# user1 = User.create!(username: "Foodie", password:"cupcake", f_name: "mario", l_name: "luigi", email: "mario@yumper.com", zip: "10009")
+# user2 = User.create!(username: "a", password:"asdasd", f_name: "mario", l_name: "luigi", email: "a@gmail.com", zip: "10009")
+# user3 = User.create!(username: "b", password:"asdasd", f_name: "mario", l_name: "luigi", email: "b@gmail.com", zip: "10009")
 
 businesses = [];
 
@@ -22,6 +25,7 @@ Faker::Config.locale = 'en-US'
     state: Faker::Address.state,
     zip: Faker::Address.zip_code,
     phone: Faker::PhoneNumber.phone_number,
+    price: "$$",
     latitude: Faker::Address.latitude,
     longitude: Faker::Address.longitude
   })
@@ -32,7 +36,7 @@ reviews = [];
 Review.destroy_all
 3.times do
   reviews << Review.create!({
-    user_id: user1.id,
+    user_id: users[0].id,
     business_id: businesses[2].id,
     review: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     rating: 3
@@ -40,9 +44,16 @@ Review.destroy_all
 end
 
 tags = [];
-alltags = ["Takes Reservations", "Delivery",  "Take-out "Wi-Fi", "Attire", "Waiter Service")
 Tag.destroy_all
-tags << Tag.create!({tag:""})
+alltags = ["Tacos", "Mediterrean",  "Spanish", "French", "American", "Chinese"]
+alltags.each do |tag|
+  tags << Tag.create!({tag:"#{tag}"})
+end
 
-
+Tagging.destroy_all
 taggings = [];
+5.times do |n|
+  randomBizNum = rand(businesses[0].id..businesses[9].id)
+  randomUserNum = rand(tags[0].id..tags[-1].id)
+  taggings << Tagging.create!({business_id: businesses[n].id, tag_id: tags[n].id})
+end

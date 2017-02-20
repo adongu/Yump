@@ -7,33 +7,6 @@ class BusinessPageShow extends React.Component{
     this.props.fetchBusiness(this.props.businessId)
   };
 
-  renderNumReviews () {
-    const reviews = this.props.reviews;
-    if (reviews) {
-      return (
-        <span>{reviews.length}</span>
-      )
-    }
-  };
-
-  renderAvgRating () {
-    const reviews = this.props.reviews;
-    if (reviews) {
-      let ratings = reviews.reduce((review) => {
-        return review.rating
-      })/reviews.length;
-      return (
-        <span>{ratings}</span>
-      )
-    }
-  };
-
-  renderTags () {
-
-  }
-
-
-
   render () {
     let business = (this.props.business);
     console.log(business);
@@ -42,11 +15,12 @@ class BusinessPageShow extends React.Component{
       <div className="business__show">
         <div className="business__current-box">
           <div className="business__current-review">
-            <renderNumReviews />
-            <renderAvgRating />
+            <li>{business.price}</li>
+            <li>{business.review_count}</li>
+            <li>{business.name}</li>
           </div>
           <ul className="business__current-info">
-            <li>{business.name}</li>
+
             <li>{business.street}</li>
             <li>{business.city}</li>
             <li>{business.state}</li>

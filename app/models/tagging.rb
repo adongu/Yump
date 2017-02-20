@@ -10,7 +10,7 @@
 #
 
 class Tagging < ApplicationRecord
-  validates :tag_id, :businesses_id, presence: true
+  validates :tag_id, :business_id, presence: true
   validates :tag_id, uniqueness: { scope: :business_id }
 
   belongs_to :business

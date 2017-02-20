@@ -9,6 +9,11 @@ class Api::BusinessesController < ApplicationController
     # @reviews = @business.reviews
     # @tags = @business.tags
     if @business
+
+    end
+
+    
+    if @business
       render :show
     else
       render json: ["We're sorry, we could not find that restaurant"], status: 401
