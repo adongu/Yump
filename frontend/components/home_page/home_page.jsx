@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router';
-import HomeHeaderBar from '../header/home_header';
+import { Link, withRouter } from 'react-router';
+import HeaderBar from '../header/header_bar';
+import HomeHeaderBar from '../header/header_bar';
 
 const sessionLinks = () => {
   return (
@@ -31,11 +32,12 @@ const HomePage = ({currentUser, logout}) => {
     }
   };
 
-  return(
+  return (
     <div>
+      <HeaderBar />
       {sessionBar()}
     </div>
   )
 }
 
-export default HomePage;
+export default withRouter(HomePage);
