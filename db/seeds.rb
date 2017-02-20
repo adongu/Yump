@@ -40,9 +40,9 @@ Review.destroy_all
 end
 
 tags = [];
-
+alltags = ["Takes Reservations", "Delivery",  "Take-out "Wi-Fi", "Attire", "Waiter Service")
 Tag.destroy_all
-tags << Tag.create!({})
+tags << Tag.create!({tag:""})
 
 
 taggings = [];

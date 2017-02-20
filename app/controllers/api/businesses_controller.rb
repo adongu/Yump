@@ -1,6 +1,6 @@
 class Api::BusinessesController < ApplicationController
   def index
-    @businesses = Business.all
+    @businesses = Business.includes([:reviews, :tags]).all.limit(3)
     render :index
   end
 

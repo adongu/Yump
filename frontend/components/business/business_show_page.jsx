@@ -11,23 +11,41 @@ class BusinessPageShow extends React.Component{
     let business = (this.props.business)
     console.log(business);
     return (
-    <div className="business__show">
-      <div className="business__current-box">
-        <ul className="business__current-info">
-          <li>{business.name}</li>
-          <li>{business.street}</li>
-          <li>{business.city}</li>
-          <li>{business.state}</li>
-          <li>{business.zip}</li>
-          <li>{business.phone}</li>
-        </ul>
-      </div>
+      <div className="business__show">
+        <div className="business__current-box">
+          <ul className="business__current-info">
+            <li>{business.name}</li>
+            <li>{business.street}</li>
+            <li>{business.city}</li>
+            <li>{business.state}</li>
+            <li>{business.zip}</li>
+            <li>{business.phone}</li>
+          </ul>
+        </div>
 
-      <div className="Map">
-        <span>{business.latitude}</span>
-        <span>{business.longitude}</span>
+        <div className="map">
+          <div className="map-img">
+            <span>{business.latitude}</span>
+            <span>{business.longitude}</span>
+          </div>
+          <div className="business__show-images">
+          </div>
+        </div>
+
+        <div className="business__show-body">
+          <div className="reviews__container-box">
+            <div className="reviews__container-form">
+            </div>
+
+            <div className="reviews__container-reviews">
+            </div>
+          </div>
+
+          <div className="tags">
+          </div>
+        </div>
+
       </div>
-    </div>
     )
   }
 }
