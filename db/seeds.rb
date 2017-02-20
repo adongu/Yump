@@ -38,3 +38,11 @@ Review.destroy_all
     rating: 3
   })
 end
+
+tags = [];
+
+Tag.destroy_all
+tags << Tag.create!({})
+
+
+taggings = [];

@@ -5,7 +5,9 @@ class Api::BusinessesController < ApplicationController
   end
 
   def show
-    @business = Business.find(params[:id])
+    @business = Business.includes([:reviews, :tags]).find(params[:id])
+    # @reviews = @business.reviews
+    # @tags = @business.tags
     if @business
       render :show
     else
@@ -20,6 +22,6 @@ class Api::BusinessesController < ApplicationController
   private
 
   def business_params
-    params.require(:business).permit(:name, :user_id, :street, :city, :state, :zip, :phone, :latitude, :longitude)
+    params.require(:business).permit(:name, :user_id, :street, :city, :state, :zip, :phone, :latitude, :longitude, :reviews, :tags)
   end
 end

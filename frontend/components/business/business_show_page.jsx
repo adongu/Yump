@@ -9,6 +9,7 @@ class BusinessPageShow extends React.Component{
 
   render () {
     let business = (this.props.business)
+    console.log(business);
     return (
     <div className="business__show">
       <div className="business__current-box">

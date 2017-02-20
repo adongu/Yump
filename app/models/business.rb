@@ -25,7 +25,8 @@ class Business < ApplicationRecord
   validates :name, :street, :city, :state, :zip , :phone, :latitude, :longitude, presence: true
   validates :zip, length: { minimum: 5 }
 
-  has_many :tags
+  has_many :taggings
+  has_many :tags, through: :taggings
   has_many :reviews
 
 end
