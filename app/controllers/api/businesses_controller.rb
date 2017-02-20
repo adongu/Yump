@@ -1,6 +1,11 @@
 class Api::BusinessesController < ApplicationController
+  def index
+    @businesses = Business.all
+    render :index
+  end
+
   def show
-    @business = Business.find(params[:id]);
+    @business = Business.find(params[:id])
     if @business
       render :show
     else
@@ -8,13 +13,8 @@ class Api::BusinessesController < ApplicationController
     end
   end
 
-  def index
-    @businesses = Business.all
-    render :index
-  end
 
   def edit
-    # @isOwner = (current_user.id == Business.find_by(params[:user_id]))
   end
 
   private

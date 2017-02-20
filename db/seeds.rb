@@ -31,5 +31,10 @@ reviews = [];
 
 Review.destroy_all
 3.times do
-  reviews << Review.create!(user_id: user1.id, business_id: businesses[2].id, review: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", rating: 3)
+  reviews << Review.create!({
+    user_id: user1.id,
+    business_id: businesses[2].id,
+    review: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    rating: 3
+  })
 end

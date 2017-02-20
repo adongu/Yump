@@ -13,7 +13,7 @@ export const fetchReview = (id) => {
 }
 
 export const createReview = (review) => {
-  return &.ajax({
+  return $.ajax({
     METHOD:"POST",
     url: "api/reviews",
     data: { review }
@@ -21,7 +21,7 @@ export const createReview = (review) => {
 }
 
 export const updateReview = (review) => {
-  return &.ajax({
+  return $.ajax({
     METHOD:"PATCH",
     url: `api/reviews/${review.id}`,
     data: { review }
@@ -29,7 +29,7 @@ export const updateReview = (review) => {
 }
 
 export const deleteReview = (id) => {
-  return &.ajax({
+  return $.ajax({
     METHOD:"DELETE",
     url: `api/reviews/${id}`
   })
