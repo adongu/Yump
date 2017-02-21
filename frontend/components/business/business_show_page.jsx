@@ -35,7 +35,19 @@ class BusinessPageShow extends React.Component{
             <span>{business.longitude}</span>
           </div>
           <div className="business__show-images">
+            <img
+              className="home__header-bar-images"
+              src={ window.assets.oysters }
+              />
           </div>
+          <img
+            className="home__header-bar-images"
+            src={ window.assets.steak }
+            />
+          <img
+            className="home__header-bar-images"
+            src={ window.assets.soup }
+            />
         </div>
 
         <div className="business__show-body">

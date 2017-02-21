@@ -8,12 +8,12 @@ import HomeSearchBar from '../searchbar/home_search_bar';
 
 const sessionLinks = () => {
   return (
-    <div className="home__nav-login-box">
-      <nav className="home__nav-login-links">
+    <nav className="home__nav-login-box">
+      <div className="home__nav-login-links">
         <Link to="/login" activeClassName="current">Log In</Link>
-        <Link to="/signup" activeClassName="current">Sign Up</Link>
-      </nav>
-    </div>
+        <Link to="/signup" activeClassName="current" className="home__nav-login-signup">Sign Up</Link>
+      </div>
+    </nav>
   )
 };
 
