@@ -60,10 +60,10 @@
 .business__show {
   &-container {
     width: 100%;
-    background: #f5f5f5;
   }
 
   &-box {
+    background: #f5f5f5;
     max-width: 960px;
     margin: 0 auto;
     padding: 10px 18px;
@@ -150,34 +150,49 @@
 
 // map and images
 .business__map-img-box {
-  border: 1px solid #ccc;
   max-width: 960px;
   height: 336px;
 }
 // map
 .business__map {
-  flex-basis: 33.333333%
+  flex-basis: 33.333333%;
+  border: 1px solid #ccc;
+  padding: 5px 5px;
+  background: #fff;
 }
 
 .business__header-map-image {
+  border: 1px solid #ccc;
+
 }
 
 .business__current-info {
-
+  padding: 10px 10px;
 }
+.business__current-address {
+  font-weight: bold;
+}
+
 // images
 .business__show-images {
+  margin: auto;
   flex-basis: 66.666666%;
   // box-sizing: content-box;
 }
 
 .business__header-images {
+  display: block;
   width: 33.333333%;
-  max-height: 180px;
+  max-height: 220px;
   max-width: 220px;
+  -webkit-backface-visibility: hidden;
+  //  -webkit-transform: translateZ(2) scale(1.0, 1.0);
+
 
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.3);
+    transition: transform .35s ease-out;
+    cursor: pointer;
   }
 }
 

@@ -48,10 +48,10 @@ class BusinessPageShow extends React.Component{
               <span>{business.longitude}</span>
 
               <ul className="business__current-info">
-                <li>{business.street}</li>
-                <li>{business.city}</li>
-                <li>{business.state}</li>
-                <li>{business.zip}</li>
+                <li className="business__current-address">{business.street}</li>
+                <li className="business__current-address">{business.city}</li>
+                <li className="business__current-address">{business.state}</li>
+                <li className="business__current-address">{business.zip}</li>
                 <li>{business.phone}</li>
               </ul>
             </div>
@@ -62,7 +62,7 @@ class BusinessPageShow extends React.Component{
                 src={ window.assets.oysters }
                 />
               <img
-                className="business__header-images:hover"
+                className="business__header-images"
                 src={ window.assets.steak }
                 />
               <img
@@ -87,6 +87,17 @@ class BusinessPageShow extends React.Component{
               </div>
 
               <div className="reviews__container-reviews">
+                <div className="business__review-user">
+                  name
+
+                </div>
+
+                <div className="business__review-text">
+                  rating
+                  date
+                  picture
+                  review
+                </div>
               </div>
 
             </div>
