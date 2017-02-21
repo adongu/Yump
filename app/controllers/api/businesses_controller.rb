@@ -12,7 +12,7 @@ class Api::BusinessesController < ApplicationController
 
     end
 
-    
+
     if @business
       render :show
     else

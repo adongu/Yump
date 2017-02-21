@@ -4,41 +4,37 @@
 
 .home__nav {
   // login
-  &-login {
-
-    &-box {
-
-    }
-
-    &-links {
-
-    }
-
-    &-btn {
-
-    }
-  // signup
-  &-signup {
-    &-btn {
-
-    }
+  &-login-box {
+    width: 20%;
   }
+
+  &-login-links {
+
+  }
+
+  &-login-btn {
+
+  }
+  // signup
+  &-login-signup {
+
+  }
+
+  &-login-signup-btn {
 
   }
 
   // logout
-  &-profile{
-    &-box {
+  &-profile-box {
 
-    }
-    &-content {
+  }
+  &-profile-content {
 
-    }
-    &-greeting {
+  }
+  &-profile-greeting {
 
-    }
-    &-logout-btn {
+  }
+  &-profile-logout-btn {
 
-    }
   }
 }

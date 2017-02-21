@@ -2,52 +2,47 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.show__nav-box {
-  background: linear-gradient(#d90007, #c91400);
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
+.show__nav {
+  &-container {
+    width: 100%;
+    background: linear-gradient(#d90007, #c91400);
+  }
+  &-box {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 960px;
+  }
 }
 
 .header__nav {
-  &-logo{
-    &-box {
-      width: 100px;
-      height: auto;
+  &-logo-box {
+      width: 20%;
       padding: 12px 0;
-    }
-    &-img {
-
-      width: 100%;
-
-    }
   }
-  // search bar
-  &-search {
 
-    &-box {
-      background: #fff;
-      min-width: 712px;
-    }
+  &-logo-img {
+    width: 100px;
+    height: auto;
+  }
 
-    &-find {
-      &-label {
+  &-search-box {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
 
-      }
-      &-input {
+  &-search-find-label {
+    width: 100%;
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+  }
 
-      }
-    }
-
-    &-near {
-      &-label {
-
-      }
-      &-input {
-
-      }
-    }
+  &-search-find-input {
+    width: 70%;
+    background: #fff;
   }
 }

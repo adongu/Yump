@@ -10,8 +10,8 @@ const sessionLinks = () => {
   return (
     <div className="home__nav-login-box">
       <nav className="home__nav-login-links">
-        <div className="home__nav-login-btn"><Link to="/login" activeClassName="current">Log In</Link></div>
-        <div className="home__nav-signup-btn"><Link to="/signup" activeClassName="current">Sign Up</Link></div>
+        <Link to="/login" activeClassName="current">Log In</Link>
+        <Link to="/signup" activeClassName="current">Sign Up</Link>
       </nav>
     </div>
   )
@@ -30,7 +30,6 @@ const personalGreeting = (currentUser, logout ) => {
 
 const HomePage = ({currentUser, logout, router}) => {
 
-  console.log(router);
   const sessionBar = () => {
     if (currentUser) {
       return personalGreeting(currentUser, logout)
@@ -42,12 +41,14 @@ const HomePage = ({currentUser, logout, router}) => {
   const renderHeader = () => {
     if (router.params.id) {
       return(
-        <div className="show__nav-box">
-          <HeaderBar />
-          <SearchBar />
-          {sessionBar()}
+        <div className="show__nav-container">
+          <div className="show__nav-box">
+            <HeaderBar />
+            <SearchBar />
+            {sessionBar()}
+          </div>
         </div>
-      );
+      )
     } else {
       return(
         <div>
