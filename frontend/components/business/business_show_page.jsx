@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import BusinessShowReview from './reviews/business_show_reviews';
 class BusinessPageShow extends React.Component{
+// need createreview method
 
   componentDidMount() {
     this.props.fetchBusiness(this.props.businessId)
