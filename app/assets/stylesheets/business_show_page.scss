@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .show__nav {
   &-container {
     width: 100%;
@@ -50,17 +51,29 @@
     padding: 8px;
   }
 }
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
 // business header
 .business__show {
+  &-container {
+    width: 100%;
+    background: #f5f5f5;
+  }
 
+  &-box {
+    max-width: 960px;
+    margin: 0 auto;
+  }
 }
 // header left
 .business__box {
-
 }
 
 .business__header-left {
-
+  flex-basis: 33.333333%
 }
 
 .business__name-box {
@@ -68,14 +81,38 @@
 }
 
 .business__name {
-
+  font-size: 36px;
+  font-weight: bold;
 }
 
 .business__review-box {
 
 }
 
-.business__review-rating {
+.business__review {
+  &-rating {
+    text-align: center;
+  }
+  &-rating > span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+  }
+  &-rating:hover > span {
+  	color: transparent;
+  }
+  &-rating > span:hover ~ span {
+  	color: black;
+  }
+  &-rating:hover > span:before {
+  	content: "\2605";
+  	position: absolute;
+  	left: 0;
+  	color: gold;
+  }
+  &-rating > span:hover ~ span:before {
+  	color: transparent;
+  }
 
 }
 
@@ -88,7 +125,26 @@
 }
 // header right
 .business__header-right {
+  display: flex;
+  flex-basis: 66.666666%;
+  align-items: center;
+  margin: auto;
 
+  & button {
+    width: 20%;
+    padding: 5px 0;
+    margin: 3px 0;
+    cursor: pointer;
+    color: white;
+    border: 1px solid #8d0005;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    background-color: #d90007;
+    background: linear-gradient(#d90007, #c91400);
+    font-weight: bolder;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 3px;
+  }
 }
 
 // map and images
@@ -135,5 +191,5 @@
 
 // all reviews
 .reviews__container-reviews {
-  
+
 }
