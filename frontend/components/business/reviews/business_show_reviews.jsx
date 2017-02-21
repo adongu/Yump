@@ -1,6 +1,7 @@
 import React from 'react';
 
 const BusinessShowReview = ({review}) => {
+  let {reviewer} = review
   return (
     <div className="reviews__container">
       <div className="reviews__container-left">
@@ -23,7 +24,7 @@ const BusinessShowReview = ({review}) => {
         </div>
 
         <div className="reviews__body-text">
-          review text
+          {review.review}
         </div>
 
         <div className="reviews__body-images">
