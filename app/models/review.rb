@@ -20,7 +20,7 @@ class Review < ApplicationRecord
   validates :review, length: { minimum: 30 }
   validates :rating, inclusion: { in: 1..5 , message: "%(value) is not a valid value" }
 
-  belongs_to :user,
+  belongs_to :reviewer,
   primary_key: :id,
   foreign_key: :user_id,
   class_name: "User"

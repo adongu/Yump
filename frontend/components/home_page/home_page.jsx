@@ -10,8 +10,8 @@ const sessionLinks = () => {
   return (
     <nav className="home__nav-login-box">
       <div className="home__nav-login-links">
-        <Link to="/login" activeClassName="current">Log In</Link>
-        <Link to="/signup" activeClassName="current" className="home__nav-login-signup">Sign Up</Link>
+        <Link to="/login" activeClassName="current" className="home__nav-login">Log In</Link>
+        <Link to="/signup" activeClassName="current" className="home__nav-signup">Sign Up</Link>
       </div>
     </nav>
   )

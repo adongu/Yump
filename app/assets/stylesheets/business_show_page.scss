@@ -27,6 +27,10 @@
     width: 100px;
     height: auto;
   }
+  &-logo-img:hover {
+    transform: scale(1.2);
+    transition: transform 0.25s ease-out;
+  }
 
   &-search-box {
     width: 60%;

@@ -25,7 +25,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   attr_reader :password
 
-  has_many :user,
+  has_many :reviews,
   primary_key: :id,
   foreign_key: :user_id,
   class_name: "Review"

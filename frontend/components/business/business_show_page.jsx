@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import BusinessShowReview from './reviews/business_show_reviews';
 
 class BusinessPageShow extends React.Component{
 
@@ -9,7 +10,7 @@ class BusinessPageShow extends React.Component{
 
   render () {
     let business = (this.props.business);
-    console.log(business);
+    console.log(this.props);
 
     return (
       <div className="business__show-container">
@@ -87,17 +88,9 @@ class BusinessPageShow extends React.Component{
               </div>
 
               <div className="reviews__container-reviews">
-                <div className="business__review-user">
-                  name
-
-                </div>
-
-                <div className="business__review-text">
-                  rating
-                  date
-                  picture
-                  review
-                </div>
+                <BusinessShowReview
+                  user
+                />
               </div>
 
             </div>

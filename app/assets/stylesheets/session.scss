@@ -19,20 +19,20 @@
     font-size: 16px;
   }
 
-  &-login-btn:hover {
+  &-login:hover, &-signup:hover {
     background: #a71c1c;
   }
-  // signup
-  &-login-signup:hover {
-    background: #a71c1c;
 
+  &-login {
+    border: 1px solid transparent;
+    padding: 5px 10px;
+    border-radius: 5px;
   }
 
-  &-login-signup {
+  &-signup {
     border: 1px solid white;
     padding: 5px 10px;
     border-radius: 5px;
-
   }
 
   // logout

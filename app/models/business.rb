@@ -23,12 +23,12 @@
 #
 
 class Business < ApplicationRecord
-  validates :name, :street, :city, :state, :zip , :phone, :latitude, :longitude, :price,presence: true
+  validates :name, :street, :city, :state, :zip , :phone, :latitude, :longitude, :price ,presence: true
   validates :zip, length: { minimum: 5 }
   validates :price, inclusion: { in: %w($ $$ $$$ $$$$), message: "%{value} is not a valid price"}
 
   has_many :taggings
   has_many :tags, through: :taggings
   has_many :reviews
-
+  has_many :reviewers, through: :reviews
 end
