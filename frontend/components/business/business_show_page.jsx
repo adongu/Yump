@@ -38,10 +38,10 @@ class BusinessPageShow extends React.Component{
             </div>
           </div>
 
-          <div className="business__map-img-box">
+          <div className="business__map-img-box row">
             <div className="business__map">
               <img
-                className="home__header-bar-images"
+                className="business__header-map-image"
                 src={ window.assets.static_map }
               />
               <span>{business.latitude}</span>
@@ -56,20 +56,20 @@ class BusinessPageShow extends React.Component{
               </ul>
             </div>
 
-            <div className="business__show-images">
+            <div className="business__show-images row">
               <img
                 className="business__header-images"
                 src={ window.assets.oysters }
                 />
+              <img
+                className="business__header-images:hover"
+                src={ window.assets.steak }
+                />
+              <img
+                className="business__header-images"
+                src={ window.assets.soup }
+                />
             </div>
-            <img
-              className="business__header-images"
-              src={ window.assets.steak }
-              />
-            <img
-              className="business__header-images"
-              src={ window.assets.soup }
-              />
           </div>
 
           <div className="business__show-reviews">
