@@ -9,6 +9,8 @@
 #
 
 class Tag < ApplicationRecord
+  include PgSearch
+
   has_many :taggings
   has_many :businesses, through: :taggings
 end

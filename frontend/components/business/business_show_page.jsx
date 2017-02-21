@@ -1,12 +1,26 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import BusinessShowReview from './reviews/business_show_reviews';
-
 class BusinessPageShow extends React.Component{
 
   componentDidMount() {
     this.props.fetchBusiness(this.props.businessId)
   };
+
+  renderReviews(reviews) {
+    return (
+      reviews.map( (review) => {
+        return (
+          <li className="business__show-reviews" key={`review-${review.id}`}>
+            <BusinessShowReview
+              review={review}
+            />
+          </li>
+        )
+      })
+    )
+  }
+
 
   render () {
     let business = (this.props.business);
@@ -73,24 +87,26 @@ class BusinessPageShow extends React.Component{
             </div>
           </div>
 
-          <div className="business__show-reviews">
+          <div className="business__show-reviews-container">
             <div className="reviews__container-box">
 
-              <div className="reviews__container-form">
-                <form>
-                  <span className="business__review-rating">
-                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                  </span>
-
-                  <label>Your Review</label>
-                  <textarea />
-                </form>
-              </div>
-
               <div className="reviews__container-reviews">
-                <BusinessShowReview
-                  user
-                />
+                <ul>
+                  <li>
+                    <div className="reviews__container-form">
+                      <form>
+                        <span className="business__review-rating">
+                          <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                        </span>
+
+                        <label>Your Review</label>
+                        <textarea />
+                      </form>
+                    </div>
+                  </li>
+
+                  {this.renderReviews(this.props.reviews)}
+                </ul>
               </div>
 
             </div>

@@ -4,20 +4,14 @@ import BusinessShowPage from './business_show_page';
 
 const mapStateToProps = ({ businesses }, ownProps) => {
   let businessId = ownProps.params.id;
-  let reviewsArray;
-  let reviewers;
+  let reviews = [];
   if (businesses.currentBusiness.reviews) {
-    reviewsArray = businesses.currentBusiness.reviews.reverse();
-    if(business.currentBusiness.reviewers) {
-      reviewers = businesses.currentBusiness.reviewers;
-    }
+    reviews = businesses.currentBusiness.reviews;
   }
-
   return ({
     business: businesses.currentBusiness,
     errors: businesses.errors,
-    reviews: reviewsArray,
-    reviewers: reviewers,
+    reviews: reviews,
     businessId
   })
 }

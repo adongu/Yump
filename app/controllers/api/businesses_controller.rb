@@ -1,18 +1,11 @@
 class Api::BusinessesController < ApplicationController
   def index
-    @businesses = Business.includes([:reviews, :reviewers, :tags]).all.limit(3)
+    @businesses = Business.includes(:tags, reviews: :reviewer).all.limit(3)
     render :index
   end
 
   def show
-    @business = Business.includes([:reviews, :reviewers, :tags]).find(params[:id])
-    # @reviews = @business.reviews
-    # @tags = @business.tags
-    if @business
-
-    end
-
-
+    @business = Business.includes(:tags, reviews: :reviewer).find(params[:id])
     if @business
       render :show
     else

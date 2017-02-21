@@ -16,6 +16,8 @@
 #
 
 class Review < ApplicationRecord
+  include PgSearch
+
   validates :user, :business, :review, :rating, presence: true
   validates :review, length: { minimum: 30 }
   validates :rating, inclusion: { in: 1..5 , message: "%(value) is not a valid value" }

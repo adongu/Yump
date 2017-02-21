@@ -1,6 +1,7 @@
 import React from 'react';
 
-const BusinessShowReview = ({review, reviewers}) => {
+const BusinessShowReview = ({review}) => {
+  console.log()
   return (
     <div className="reviews__container">
       <div className="reviews__container-left">

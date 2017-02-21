@@ -10,6 +10,15 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    if @user
+      render "api/users/show"
+    else
+      render json: ["This username does not match any of our users, please signup or try again to continue"], status: 403
+    end
+  end
+
   def update
     @user = User.find_by(params[:id])
     if @user.save
