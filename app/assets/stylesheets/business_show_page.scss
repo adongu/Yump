@@ -74,11 +74,11 @@
 }
 
 .business__header-left {
-  flex-basis: 33.333333%
+  flex-basis: 50%;
 }
 
 .business__name-box {
-
+  padding: 8px 0;
 }
 
 .business__name {
@@ -97,22 +97,29 @@
   &-rating > span {
     display: inline-block;
     position: relative;
-    width: 1.1em;
+    width: 1.0em;
+    indent: 5px;
+    border-radius: 5px;
+    color: white;
+    background: #ccc;
   }
   &-rating:hover > span {
-  	color: transparent;
+  	background: transparent;
+    cursor: pointer;
+    border: 1px solid orange;
   }
   &-rating > span:hover ~ span {
-  	color: black;
+  	// background: black;
   }
   &-rating:hover > span:before {
   	content: "\2605";
   	position: absolute;
   	left: 0;
-  	color: gold;
+  	background: orange;
+    border-radius: 1px;
   }
   &-rating > span:hover ~ span:before {
-  	color: transparent;
+  	background: transparent;
   }
 
 }
@@ -130,13 +137,15 @@
   flex-basis: 66.666666%;
   align-items: center;
   margin: auto;
+  padding: 0 12px;
 
   & button {
-    width: 20%;
+    width: 30%;
     padding: 5px 0;
     margin: 3px 0;
     cursor: pointer;
     color: white;
+    font-weight: bold;
     border: 1px solid #8d0005;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
     background-color: #d90007;
@@ -163,7 +172,7 @@
 
 .business__header-map-image {
   border: 1px solid #ccc;
-
+  cursor: pointer;
 }
 
 .business__current-info {
