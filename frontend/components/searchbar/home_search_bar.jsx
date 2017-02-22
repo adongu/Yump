@@ -11,9 +11,13 @@ const HomeSearchBar = () => {
 
   return (
     <form className="home__nav-search-box">
-      <label className="home__nav-search-find-label"><span>Find</span><input placeholder="tacos, cheap dinner, Jeff's"></input></label>
+      <label className="home__nav-search-find-label">
+        <span>Find</span>
+        <input placeholder="tacos, cheap dinner, Jeff's"></input>
+      </label>
 
-      <button className="home__search-find-btn">Find</button>
+      <button onClick={search} className="home__search-find-btn">Find</button>
+      <i className="fa fa-search" aria-hidden="true"></i>
     </form>
   )
 }
