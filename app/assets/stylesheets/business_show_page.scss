@@ -95,38 +95,47 @@
 
 }
 
-.business__review {
-  &-rating {
-    text-align: center;
-  }
-  &-rating > span {
-    display: inline-block;
-    position: relative;
-    width: 1.0em;
-    indent: 5px;
-    border-radius: 5px;
-    color: white;
-    background: #ccc;
-  }
-  &-rating:hover > span {
-  	background: transparent;
-    cursor: pointer;
-    border: 1px solid orange;
-  }
-  &-rating > span:hover ~ span {
-  	// background: black;
-  }
-  &-rating:hover > span:before {
-  	content: "\2605";
-  	position: absolute;
-  	left: 0;
-  	background: orange;
-    border-radius: 1px;
-  }
-  &-rating > span:hover ~ span:before {
-  	background: transparent;
-  }
+// .business__review {
+//   &-rating {
+//     text-align: center;
+//   }
+//   &-rating > span {
+//     display: inline-block;
+//     position: relative;
+//     width: 1.0em;
+//     indent: 5px;
+//     border-radius: 5px;
+//     color: white;
+//     background: #ccc;
+//   }
+//   &-rating:hover > span {
+//   	background: transparent;
+//     cursor: pointer;
+//     border: 1px solid orange;
+//   }
+//   &-rating > span:hover ~ span {
+//   	// background: black;
+//   }
+//   &-rating:hover > span:before {
+//   	content: "\2605";
+//   	position: absolute;
+//   	left: 0;
+//   	background: orange;
+//     border-radius: 1px;
+//   }
+//   &-rating > span:hover ~ span:before {
+//   	background: transparent;
+//   }
+// }
 
+.active_star{
+  font-size: 36px;
+  content: "\2605";
+  // position: relative;
+  font: #fff;
+  color: orange;
+  border-radius: 1px;
+  indent: 5px;
 }
 
 .business__review-count {
@@ -197,8 +206,10 @@
 .business__header-images {
   display: block;
   width: 33.333333%;
-  max-height: 220px;
-  max-width: 220px;
+  overflow: hidden;
+  // height: 33.333333%;
+  height: 220px;
+  width: 220px;
   -webkit-backface-visibility: hidden;
   //  -webkit-transform: translateZ(2) scale(1.0, 1.0);
 
@@ -209,6 +220,7 @@
     cursor: pointer;
   }
 }
+
 
 // Reviews
 .business__show-reviews {

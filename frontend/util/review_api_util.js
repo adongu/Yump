@@ -12,21 +12,18 @@ export const fetchReview = (id) => {
   })
 }
 
-export const createReview = (formData, callback) => {
+export const createReview = (formData) => {
   return $.ajax({
     METHOD:"POST",
     url: "api/reviews",
     datatype: "json",
     contentType: false,
     processData: false,
-    data: formData,
-    succuess: function() {
-      callback();
-    }
+    data: formData
   });
 };
 
-export const updateReview = (review) => {
+export const updateReview = (formData) => {
   return $.ajax({
     METHOD:"PATCH",
     url: `api/reviews/${review.id}`,

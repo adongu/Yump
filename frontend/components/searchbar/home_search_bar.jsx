@@ -10,10 +10,10 @@ const HomeSearchBar = () => {
   }
 
   return (
-    <form className="Home__search-box">
-      <label className="Home__search-find-label"><span>Find</span><input placeholder="tacos, cheap dinner, Jeff's"></input></label>
+    <form className="home__nav-search-box">
+      <label className="home__nav-search-find-label"><span>Find</span><input placeholder="tacos, cheap dinner, Jeff's"></input></label>
 
-      <button className="Home__search-find-btn">Find</button>
+      <button className="home__search-find-btn">Find</button>
     </form>
   )
 }

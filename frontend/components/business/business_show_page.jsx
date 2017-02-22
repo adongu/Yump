@@ -1,12 +1,32 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import BusinessShowReview from './reviews/business_show_reviews';
+
+
+
 class BusinessPageShow extends React.Component{
 // need createreview method
+  constructor(props) {
+    super(props)
+    this.state = {
+      selectedStar: null
+    }
+    this.renderStars = this.renderStars.bind(this)
+  }
 
   componentDidMount() {
     this.props.fetchBusiness(this.props.businessId)
   };
+
+  renderStars() {
+    let stars = [1, 2, 3, 4, 5];
+    return stars.map((ele)=>{
+      return (
+        <span className={ele <= this.state.selectedStar?'active_star':''} onClick={()=>{this.setState({selectedStar: ele})}} key={ele}>☆</span>
+      )
+    })
+  }
+
 
   render () {
     let { business } = (this.props);
@@ -24,8 +44,9 @@ class BusinessPageShow extends React.Component{
 
               <div className="business__review-box">
                 <span className="business__review-rating">
-                  <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                  {this.renderStars()}
                 </span>
+
                 <span className="business__review-count">{business.review_count} Reviews</span>
               </div>
 
@@ -58,18 +79,24 @@ class BusinessPageShow extends React.Component{
             </div>
 
             <div className="business__show-images row">
-              <img
-                className="business__header-images"
-                src={ window.assets.oysters }
-                />
-              <img
-                className="business__header-images"
-                src={ window.assets.steak }
-                />
+              <section>
+                <img
+                  className="business__header-images"
+                  src={ window.assets.oysters }
+                  />
+              </section>
+              <section>
+                <img
+                  className="business__header-images active"
+                  src={ window.assets.steak }
+                  />
+              </section>
+              <section>
               <img
                 className="business__header-images"
                 src={ window.assets.soup }
                 />
+              </section>
             </div>
           </div>
 
@@ -78,7 +105,9 @@ class BusinessPageShow extends React.Component{
 
               <div className="reviews__container-reviews">
                   <BusinessShowReview
-                    reviews={this.props.reviews} />
+                    reviews={this.props.reviews}
+                    renderStars={this.renderStars}
+                  />
               </div>
 
             </div>

@@ -14,10 +14,11 @@ class BusinessShowReview extends React.Component {
   }
 
   handleSubmit(e) {
-    var formData = new FoormData();
+    var formData = new FormData();
     formData.append("review[body]", this.state.body);
+    formData.append("review[rating]", this.state.rating);
     formData.append("review[image]", this.state.imageFile);
-    reviewApi.createReview(formData, this.goBack);
+    reviewApi.createReview(formData);
   }
 
   updateFile(e) {
@@ -32,9 +33,9 @@ class BusinessShowReview extends React.Component {
     }
   }
 
-  updateBody (e) {
+  updateReview(e) {
     this.setState({
-      body: e.target.value
+      review: e.target.value
     });
   }
 
@@ -45,19 +46,18 @@ class BusinessShowReview extends React.Component {
   }
 
   renderReviews(review) {
-    debugger
-    // let review = props
-    // let {reviewer} = props.review
+    console.log(this);
+    let {reviewer} = review
     return (
       <div className="reviews__container">
         <div className="reviews__container-left">
           <ul>
             <li className="reviews__reviewer-name">
-              <span>{review.reviewer.f_name}</span>
-              <span>{review.reviewer.l_name}</span>
+              <span>{reviewer.f_name}</span>
+              <span>{reviewer.l_name}</span>
             </li>
             <li>
-              {review.reviewer.zip}
+              {reviewer.zip}
             </li>
           </ul>
         </div>
@@ -82,34 +82,35 @@ class BusinessShowReview extends React.Component {
     )
   }
 
-render (){
-  return (
-    <ul className="business__reviews-container">
-      <li>
-        <div className="reviews__container-form">
-          <form>
-            <span className="business__review-rating">
-              <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-            </span>
+  render (){
+    return (
+      <ul className="business__reviews-container">
+        <li>
+          <div className="reviews__container-form">
+            <form>
+              <span className="business__review-rating">
+                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+              </span>
 
-            <label>Your Review</label>
-            <textarea onChange={this.updateReview} />
-            <input type="file" onChange={this.props.updateFile}/>
-            <button onClick={this.handleSubmit}>Post Review</button>
-            <img src={this.state.imageUrl}/>
-          </form>
-        </div>
-      </li>
+              <label>Your Review</label>
+              <textarea onChange={this.updateReview} />
+              <input type="file" onChange={this.props.updateFile}/>
+              <button onClick={this.handleSubmit}>Post Review</button>
+              <img src={this.state.imageUrl}/>
+            </form>
+          </div>
+        </li>
 
-      {this.props.reviews.map( (review) => {
-        return (
-          <li className="business__show-reviews" key={`review-${review.id}`}>
-            {this.renderReviews(review)}
-          </li>
-        )
-      })}
-    </ul>
-  )}
+        {this.props.reviews.map( (review) => {
+          return (
+            <li className="business__show-reviews" key={`review-${review.id}`}>
+              {this.renderReviews(review)}
+            </li>
+          )
+        })}
+      </ul>
+    )
+  }
 }
 
 

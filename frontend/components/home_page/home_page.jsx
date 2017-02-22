@@ -51,12 +51,20 @@ const HomePage = ({currentUser, logout, router}) => {
       )
     } else {
       return(
-        <div>
+        <div className="home__nav-container">
           <div className="home__nav-box">
-            <HomeHeaderBar />
-            {sessionBar()}
+            <div className="home__nav-session-bar">
+              {sessionBar()}
+            </div>
+
+            <div className="home__nav-header-bar">
+              <HomeHeaderBar />
+            </div>
+
+            <div className='home__nav-search-bar'>
+              <HomeSearchBar />
+            </div>
           </div>
-          <HomeSearchBar />
         </div>
       );
     }

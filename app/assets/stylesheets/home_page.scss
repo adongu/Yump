@@ -1,0 +1,100 @@
+
+.home__nav-container{
+  height: 575px;
+  width: 100%;
+  background: image_url("pasta_time_freeze.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.home__nav-box{
+  width: 100%;
+  max-width: 960px;
+  margin: auto;
+  padding-top: 30px;
+  height: 100%;
+}
+
+.home__nav {
+  &-header-bar {
+    display: flex;
+    background: white;
+    max-width: 960px;
+    margin: auto;
+    padding-top: 30px;
+    height: 20%;
+    padding: 10px 10px;
+    background: linear-gradient(45deg, rgba(20,20,20, .5), rgba(20,20,20, .75));
+    height: 80px;
+    width: 160px;
+    border-radius: 40px;
+  }
+
+  &-search-bar {
+    display: flex;
+    background: white;
+    max-width: 960px;
+    margin: auto;
+    padding-top: 30px;
+    height: 20%;
+    padding: 10px 10px;
+    background: #fff;
+    // background: linear-gradient(45deg, rgba(20,20,20, .5), rgba(20,20,20, .75));
+    height: 80px;
+    // width: 160px;
+    border-radius: 40px;
+  }
+}
+// search bar
+.home__nav-search {
+  &-box {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &-label {
+
+  }
+
+  &-input {
+
+  }
+
+  &-btn {
+
+  }
+}
+
+
+
+
+// logo and search
+.home__nav-bar{
+
+  &-content {
+    display: flex;
+    justify-content: center;
+    // padding-top: 80px;
+    height: 435px;
+    width: 100%;
+  }
+
+  &-logo-box {
+    padding: 10px 10px;
+    background: linear-gradient(45deg, rgba(20,20,20, .5), rgba(20,20,20, .75));
+    height: 80px;
+    width: 160px;
+    border-radius: 40px;
+  }
+
+  &-logo {
+    object-fit: cover;
+  }
+
+  &-search {
+    color: white;
+  }
+
+}
