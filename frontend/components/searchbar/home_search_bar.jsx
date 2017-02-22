@@ -16,8 +16,8 @@ const HomeSearchBar = () => {
         <input placeholder="tacos, cheap dinner, Jeff's"></input>
       </label>
 
-      <button onClick={search} className="home__search-find-btn">Find</button>
-      <i className="fa fa-search" aria-hidden="true"></i>
+      <button onClick={search} className="home__search-find-btn"><i className="fa fa-search" aria-hidden="true"></i></button>
+
     </form>
   )
 }

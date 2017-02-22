@@ -32,29 +32,6 @@
     transform: scale(1.2);
     transition: transform 0.25s ease-out;
   }
-
-  &-search-box {
-    width: 60%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  &-search-find-label {
-    width: 100%;
-    background: #fff;
-    padding: 8px 12px;
-    border-radius: 5px;
-  }
-
-  &-search-find-input {
-    width: 70%;
-    background: #fff;
-  }
-  &-search-btn {
-    padding: 8px;
-  }
 }
 
 .row {

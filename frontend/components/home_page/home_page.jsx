@@ -3,8 +3,6 @@ import { Link, withRouter } from 'react-router';
 import HeaderBar from '../header/header_bar';
 import HomeHeaderBar from '../header/header_bar';
 import SearchBar from '../searchbar/search_bar';
-import HomeSearchBar from '../searchbar/home_search_bar';
-
 
 const sessionLinks = () => {
   return (
@@ -54,7 +52,9 @@ const HomePage = ({currentUser, logout, router}) => {
         <div className="home__nav-container">
           <div className="home__nav-box">
             <div className="home__nav-session-bar">
-              {sessionBar()}
+              <div>
+                {sessionBar()}
+              </div>
             </div>
 
             <div className="home__nav-header-bar">
@@ -62,7 +62,8 @@ const HomePage = ({currentUser, logout, router}) => {
             </div>
 
             <div className='home__nav-search-bar'>
-              <HomeSearchBar />
+              <SearchBar />
+
             </div>
           </div>
         </div>
