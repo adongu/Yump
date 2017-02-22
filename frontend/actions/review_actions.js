@@ -21,10 +21,10 @@ export const fetchReview = (id) => dispatch => {
   return APIUtil.fetchReviews(id).then((review) => dispatch(receiveReview(review)));
 }
 
+
 export const createReview = (review) => dispatch => {
   return APIUtil.createReview(review)
     .then((review) => {
-      // console.log("success after ajax", review)
       return dispatch(receiveReview(review)
     )})
 }

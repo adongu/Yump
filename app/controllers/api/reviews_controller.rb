@@ -6,12 +6,20 @@ class Api::ReviewsController < ApplicationController
   end
 
   def create
-    debugger
+    # debugger
     @review = Review.new(review_params)
-    if @review.save
-      render :show
+
+    if current_user
+      @review.user_id = current_user.id
+
+      if @review.save
+        render :show
+      else
+        render json: ["Hmm... We would love to hear more about your experience, please describe your experience in more detail."], status: 402
+      end
+
     else
-      render json: ["Hmm... We would love to hear more about your experience, please describe your experience in more detail."], status: 401
+      render json: ["Please Sign Up or Log In to create reviews"], status: 401
     end
   end
 

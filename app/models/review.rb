@@ -21,6 +21,7 @@ class Review < ApplicationRecord
   validates :reviewer, :business, :review, :rating, presence: true
   validates :review, length: { minimum: 30 }
   validates :rating, inclusion: { in: 1..5 , message: "%(value) is not a valid value" }
+  validates :user_id, uniqueness: { scope: :business_id}
 
   has_attached_file :image, default_url: "oysters.jpg"
  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/

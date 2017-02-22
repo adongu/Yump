@@ -13,7 +13,7 @@ class BusinessPageShow extends React.Component{
   }
 
   componentDidMount() {
-    this.props.fetchBusiness(this.props.businessId)
+    this.props.fetchBusiness(this.props.params.id)
   };
 
   renderStars() {
@@ -28,8 +28,6 @@ class BusinessPageShow extends React.Component{
 
   render () {
     let { business } = (this.props);
-    console.log(this.props);
-
     return (
       <div className="business__show-container">
         <div className="business__show-box">
@@ -103,10 +101,10 @@ class BusinessPageShow extends React.Component{
 
               <div className="reviews__container-reviews">
                   <BusinessShowReview
-                    reviews={business.reviews}
+                    reviews={this.props.reviews}
                     renderStars={this.renderStars}
-                    createReview={business.createReview}
-                    business_id={business.id}
+                    createReview={this.props.createReview}
+                    businessId={this.props.params.id}
                   />
               </div>
 

@@ -15,10 +15,6 @@ class BusinessShowReview extends React.Component {
     this.updateFile = this.updateFile.bind(this)
   }
 
-  componentWillReceiveProps(newProps) {
-
-  }
-
   renderStars() {
     let stars = [1, 2, 3, 4, 5];
     return stars.map((ele)=>{
@@ -28,14 +24,41 @@ class BusinessShowReview extends React.Component {
     })
   }
 
+  renderReviewStars(rating) {
+    let stars = [1, 2, 3, 4, 5];
+    return stars.map((ele)=>{
+      return (
+        <span className={ele <= rating ? 'active_star' : ''} onClick={()=>{this.setState({rating: ele})}} key={ele}>☆</span>
+      )
+    })
+  }
+
+  shouldComponentReceiveProps(nextProps) {
+    if (Object.is_Equal(nextProps.reviews, this.props.reviews)) {
+      this.forceUpdate()
+    }
+  }
+
+  resetForm () {
+    this.setState({
+      rating: null,
+      review: "",
+      imageFile: null,
+      imageUrl: null
+    });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     let formData = new FormData();
     formData.append("review[rating]", this.state.rating);
     formData.append("review[review]", this.state.review);
-    formData.append("review[image]", this.state.imageFile);
-    console.log("hit end state", this.state)
+    formData.append("review[business_id]", this.props.businessId);
+    if (this.state.imageFile) {
+      formData.append("review[image]", this.state.imageFile);
+    }
     this.props.createReview(formData);
+    this.resetForm();
   }
 
   updateFile(e) {
@@ -68,7 +91,6 @@ class BusinessShowReview extends React.Component {
   }
 
   renderReviews(review) {
-    console.log(this);
     let {reviewer} = review
     return (
       <div className="reviews__container">
@@ -104,29 +126,35 @@ class BusinessShowReview extends React.Component {
     )
   }
 
+  renderEditDelete () {
+
+  }
+
   render (){
     return (
       <ul className="business__reviews-container">
         <li>
           <div className="reviews__container-form">
-            <form>
+            <form className="reviews__form">
               <span className="business__review-rating">
                 {this.renderStars()}
               </span>
 
               <label>Your Review</label>
               <textarea className="bussiness__reviews-review" onChange={this.update("review")} />
-              <input type="file" onChange={this.updateFile}/>
+              <input type="file" onChange={this.updateFile} />
               <button onClick={this.handleSubmit}>Post Review</button>
-              <img src={this.state.imageUrl}/>
+              <img src={this.state.imageUrl} />
             </form>
           </div>
         </li>
 
         {this.props.reviews.map( (review) => {
+          console.log(review)
           return (
             <li className="business__show-reviews" key={`review-${review.id}`}>
               {this.renderReviews(review)}
+              {this.renderEditDelete}
             </li>
           )
         })}
