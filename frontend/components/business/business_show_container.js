@@ -1,12 +1,14 @@
 import { connect } from 'react-redux';
 import { fetchBusiness } from '../../actions/business_actions';
+import { createReview } from '../../actions/review_actions';
 import BusinessShowPage from './business_show_page';
 
 const mapStateToProps = ({ businesses }, ownProps) => {
-  let businessId = ownProps.params.id;
+  let businessId;
   let reviews = [];
   if (businesses.currentBusiness.reviews) {
     reviews = businesses.currentBusiness.reviews;
+    businessId = businesses.currentBusiness.id;
   }
   return ({
     business: businesses.currentBusiness,
@@ -18,7 +20,8 @@ const mapStateToProps = ({ businesses }, ownProps) => {
 
 const mapDispatchToProps = (dispatch, { location }) => {
   return ({
-    fetchBusiness: (id) => dispatch(fetchBusiness(id))
+    fetchBusiness: (id) => dispatch(fetchBusiness(id)),
+    createReview: (formData) => dispatch(createReview(formData))
   })
 };
 

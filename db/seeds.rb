@@ -39,9 +39,7 @@ Review.destroy_all
     user_id: users[0].id,
     business_id: businesses[2].id,
     review: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    rating: 3,
-    img.url:
-
+    rating: 3
   })
 end
 
@@ -54,8 +52,8 @@ end
 
 Tagging.destroy_all
 taggings = [];
+randomBizNum = rand(businesses[0].id..businesses[9].id)
+randomUserNum = rand(tags[0].id..tags[-1].id)
 5.times do |n|
-  randomBizNum = rand(businesses[0].id..businesses[9].id)
-  randomUserNum = rand(tags[0].id..tags[-1].id)
   taggings << Tagging.create!({business_id: businesses[n].id, tag_id: tags[n].id})
 end

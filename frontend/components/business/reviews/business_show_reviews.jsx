@@ -6,24 +6,41 @@ class BusinessShowReview extends React.Component {
     super(props)
     this.state = {
       rating: null,
-      body: "",
+      review: "",
       imageFile: null,
       imageUrl: null
     }
-    this.renderReviews = this.renderReviews.bind(this)
+
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.updateFile = this.updateFile.bind(this)
+  }
+
+  componentWillReceiveProps(newProps) {
+
+  }
+
+  renderStars() {
+    let stars = [1, 2, 3, 4, 5];
+    return stars.map((ele)=>{
+      return (
+        <span className={ele <= this.state.rating ? 'active_star' : ''} onClick={()=>{this.setState({rating: ele})}} key={ele}>☆</span>
+      )
+    })
   }
 
   handleSubmit(e) {
-    var formData = new FormData();
-    formData.append("review[body]", this.state.body);
+    e.preventDefault();
+    let formData = new FormData();
     formData.append("review[rating]", this.state.rating);
+    formData.append("review[review]", this.state.review);
     formData.append("review[image]", this.state.imageFile);
-    reviewApi.createReview(formData);
+    console.log("hit end state", this.state)
+    this.props.createReview(formData);
   }
 
   updateFile(e) {
-    var file = e.currentTarget.file[0];
-    var fileReader = new FileReader();
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
     fileReader.onloadend = function () {
       this.setState({ imageFile: file, imageUrl: fileReader.result });
     }.bind(this)
@@ -38,6 +55,11 @@ class BusinessShowReview extends React.Component {
       review: e.target.value
     });
   }
+
+  update(field) {
+    return (e) => this.setState({ [field]: e.target.value });
+  }
+
 
   updateRating (e) {
     this.setState({
@@ -89,12 +111,12 @@ class BusinessShowReview extends React.Component {
           <div className="reviews__container-form">
             <form>
               <span className="business__review-rating">
-                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                {this.renderStars()}
               </span>
 
               <label>Your Review</label>
-              <textarea onChange={this.updateReview} />
-              <input type="file" onChange={this.props.updateFile}/>
+              <textarea className="bussiness__reviews-review" onChange={this.update("review")} />
+              <input type="file" onChange={this.updateFile}/>
               <button onClick={this.handleSubmit}>Post Review</button>
               <img src={this.state.imageUrl}/>
             </form>

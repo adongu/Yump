@@ -1,20 +1,20 @@
 export const fetchReviews = () => {
   return $.ajax({
-    METHOD: "GET",
+    method: "GET",
     url: `api/reviews`
   })
 }
 
 export const fetchReview = (id) => {
   return $.ajax({
-    METHOD: "GET",
+    method: "GET",
     url: `api/reviews/${id}`
   })
 }
 
 export const createReview = (formData) => {
   return $.ajax({
-    METHOD:"POST",
+    method: "POST",
     url: "api/reviews",
     datatype: "json",
     contentType: false,
@@ -25,15 +25,18 @@ export const createReview = (formData) => {
 
 export const updateReview = (formData) => {
   return $.ajax({
-    METHOD:"PATCH",
+    method:"PATCH",
     url: `api/reviews/${review.id}`,
-    data: { review }
+    datatype: "json",
+    contentType: false,
+    processData: false,
+    data: formData
   })
 }
 
 export const deleteReview = (id) => {
   return $.ajax({
-    METHOD:"DELETE",
+    method:"DELETE",
     url: `api/reviews/${id}`
   })
 }

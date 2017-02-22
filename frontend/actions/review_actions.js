@@ -2,25 +2,37 @@ import * as APIUtil from '../util/review_api_util';
 
 export const RECEIVE_ALL_REVIEWS = "RECEIVE_ALL_REVIEWS";
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
-export const CREATE_REVIEW = "CREATE_REVIEW";
-export const UPDATE_REVIEW = "UPDATE_REVIEW";
-export const DELETE_REVIEW = "DELETE_REVIEW";
 
-const receiveAllReviews = (reviews) => {
+const receiveAllReviews = (reviews) => ({
   type: RECEIVE_ALL_REVIEWS,
   reviews
-}
+})
 
-const receiveReview = (review) => {
-  type: RECIEVE_REVIEW,
+const receiveReview = (review) => ({
+  type: RECEIVE_REVIEW,
   review
-}
+})
 
-const updateReview = (review) => {
-  type: UPDATE_REVIEW,
-  review
-}
-
-const fetchReviews = () => dispatch => {
+export const fetchReviews = () => dispatch => {
   return APIUtil.fetchReviews().then((reviews) => dispatch(receiveAllReviews(reviews)));
+}
+
+export const fetchReview = (id) => dispatch => {
+  return APIUtil.fetchReviews(id).then((review) => dispatch(receiveReview(review)));
+}
+
+export const createReview = (review) => dispatch => {
+  return APIUtil.createReview(review)
+    .then((review) => {
+      // console.log("success after ajax", review)
+      return dispatch(receiveReview(review)
+    )})
+}
+
+export const updateReview = (id) => dispatch => {
+  return APIUtil.updateReview(id).then((review) => dispatch(receiveReview(review)));
+}
+
+export const deleteReview = (id) => dispatch => {
+  return APIUtil.deleteReview(id).then(() => dispatch(receiveReview(null)));
 }

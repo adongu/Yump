@@ -2,14 +2,12 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import BusinessShowReview from './reviews/business_show_reviews';
 
-
-
 class BusinessPageShow extends React.Component{
 // need createreview method
   constructor(props) {
     super(props)
     this.state = {
-      selectedStar: null
+      rating: null
     }
     this.renderStars = this.renderStars.bind(this)
   }
@@ -22,7 +20,7 @@ class BusinessPageShow extends React.Component{
     let stars = [1, 2, 3, 4, 5];
     return stars.map((ele)=>{
       return (
-        <span className={ele <= this.state.selectedStar?'active_star':''} onClick={()=>{this.setState({selectedStar: ele})}} key={ele}>☆</span>
+        <span className={ele <= this.state.rating ? 'active_star' : ''} onClick={()=>{this.setState({rating: ele})}} key={ele}>☆</span>
       )
     })
   }
@@ -105,8 +103,10 @@ class BusinessPageShow extends React.Component{
 
               <div className="reviews__container-reviews">
                   <BusinessShowReview
-                    reviews={this.props.reviews}
+                    reviews={business.reviews}
                     renderStars={this.renderStars}
+                    createReview={business.createReview}
+                    business_id={business.id}
                   />
               </div>
 
