@@ -38,7 +38,10 @@ class SearchResults extends React.Component {
         }
       </div>
       <div className="business__index-map">
-
+        <business__index-map
+          center={}
+          coorderinates={}
+        />
       </div>
     </div>
     )
