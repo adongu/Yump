@@ -12,6 +12,17 @@ class SearchBar extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+  componentWillReceiveProps (newProps){
+    if (newProps.location) {
+      if (this.props.location.query.query !== newProps.location.query.query) {
+        console.log("this.props", this.props.location.query.query)
+        console.log("newProps", newProps.location.query.query)
+        this.props.fetchResults(newProps.location.query.query)
+      }
+    }
+  }
+
+
   handleSubmit(e) {
     e.preventDefault();
     if (this.state) {
@@ -31,12 +42,12 @@ class SearchBar extends React.Component {
 
   render(){
     return(
-      <form className="header__nav-search-box">
+      <form onSubmit={this.handleSubmit} className="header__nav-search-box">
         <label className="header__nav-search-find-label"> <span>Find</span>
           <input onChange={this.update("keywords")} className="header__nav-search-find-input" placeholder="tacos, cheap dinner, Jeff's"></input>
         </label>
 
-        <button onClick={this.handleSubmit} className="header__nav-search-btn"><i className="fa fa-search" aria-hidden="true"></i></button>
+        <button className="header__nav-search-btn"><i className="fa fa-search" aria-hidden="true"></i></button>
       </form>
     )
   }

@@ -6,15 +6,15 @@ const _NullSearch = {
   errors: []
 }
 
-const SearchReducer = (preLoadedState = _NullSearch, action) => {
+const SearchReducer = (oldState = _NullSearch, action) => {
   switch (action.type) {
     case RECEIVE_RESULTS:
     console.log("hit reducer", action.results);
     // debugger
       let results = action.results
-      return merge({}, {results: [action.results]} )
+      return Object.assign({}, {results: action.results} )
     default:
-      return preLoadedState;
+      return oldState;
   }
 
 }
