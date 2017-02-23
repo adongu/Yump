@@ -38,7 +38,7 @@ const HomePage = ({currentUser, logout, router}) => {
 
   const renderHeader = () => {
     console.log(router)
-    if (router.params.id != "") {
+    if (router.location.pathname != "/") {
       return(
         <div className="show__nav-container">
           <div className="show__nav-box">

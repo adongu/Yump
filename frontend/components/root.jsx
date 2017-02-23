@@ -33,7 +33,7 @@ const Root = ({ store }) => {
           <IndexRoute component={ BusinessIndexContainer } />
           <Route path="/businesses" component={ BusinessIndexContainer } />
           <Route path="/businesses/:id" component={ BusinessShowContainer } />
-          <Route path="/search" component={ SearchResultContainer } />
+          <Route path="/searches" component={ SearchResultContainer } />
         </Route>
         <Route path="/login" component={ SessionFormContainer} onEnter={_redirectIfLoggedIn} />
         <Route path="/signup" component={ SessionFormContainer} onEnter={_redirectIfLoggedIn} />

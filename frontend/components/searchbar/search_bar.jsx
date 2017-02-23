@@ -12,15 +12,16 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit(e) {
-    // e = preventDefault();
-    // router.push({
-    //   pathname:`/search/`,
-    //   query: { this.state.keywords }
-    // })
+    e = preventDefault();
+    let query = this.state.keywords
+    router.push({
+      pathname:`/search/`,
+      query: { query }
+    })
   }
 
 
-  update(e) {
+  update(keywords) {
     return (e) => this.setState({ [keywords]: e.target.value })
   }
 

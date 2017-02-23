@@ -28,7 +28,8 @@ class Business < ApplicationRecord
   validates :zip, length: { minimum: 5 }
   validates :price, inclusion: { in: %w($ $$ $$$ $$$$), message: "%{value} is not a valid price"}
 
-  pg_search_scope :search_content_for, against:[:name, :city, :state, :zip, :price, :tag], using: { tsearch: { any_word: true } }
+  pg_search_scope :search_content_for, against:[:name, :city, :state, :zip, :price, :tag], using: { tsearch: { any_word: true } }, using: [:trigram]
+  multisearchable :against => [:name], using: [:trigram]
 
   has_many :taggings
   has_many :tags, through: :taggings
