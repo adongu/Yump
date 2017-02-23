@@ -12,18 +12,22 @@ class BusinessIndexPage extends React.Component {
   render () {
     return (
 
-      <div className="business__index-box">
-        {
-          this.props.businesses.map( business => {
-            return (
-              <BusinessIndexPageItem
-                key={business.id}
-                business={business}
-              />
+      <div className="business__index-box-container">
+        <div className="business__index-box">
+          {
+            this.props.businesses.map( business => {
+              return (
+                <div className="business__index-individual">
+                  <BusinessIndexPageItem
+                    key={business.id}
+                    business={business}
+                    />
+                </div>
+              )
+            }
             )
           }
-          )
-        }
+        </div>
       </div>
     )
   }

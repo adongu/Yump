@@ -13,7 +13,7 @@ button, div, section, article, header  {
   background: transparent;
 }
 
-ul {
+ul, li{
   list-style: none;
 }
 

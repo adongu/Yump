@@ -5,6 +5,9 @@
 .home__nav {
   // login
   &-login-box {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
   }
 
   &-login-links {
@@ -38,16 +41,16 @@
   // logout
   &-session-bar {
     display: flex;
+    justify-content: flex-end;
     width: 100%;
   }
 
   &-profile-box {
     width: 120px;
     height: 100%;
-    margin: auto;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: space-around;
+    // align-items: center;
     color: white;
     font-weight: bold;
     font-size: 16px;

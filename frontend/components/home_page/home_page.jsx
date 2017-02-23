@@ -53,9 +53,7 @@ const HomePage = ({currentUser, logout, router}) => {
         <div className="home__nav-container">
           <div className="home__nav-box">
             <div className="home__nav-session-bar">
-              <div>
                 {sessionBar()}
-              </div>
             </div>
 
             <div className="home__nav-header-bar">
