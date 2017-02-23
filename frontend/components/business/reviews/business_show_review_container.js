@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 import { fetchReviews, deleteReview, editReview } from '../../actions/business_actions';
-import BusinessIndexPage from './business_index_page'
-
+import BusinessShowReviews from './business_show_reviews'
 const mapStateToProps = (state) => {
   console.log("hitmapStatereview", state)
   return ({
@@ -12,12 +11,11 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = ( dispatch ) => {
   return ({
     fetchReviews: () => dispatch(fetchReviews()),
-    deleteReview: () => dispatch(deleteReview()),
-    deleteReview: () => dispatch(deleteReview())
+    deleteReview: (review) => dispatch(deleteReview())
   })
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(BusinessIndexPage);
+)(BusinessShowReviews);

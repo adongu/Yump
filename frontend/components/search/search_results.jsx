@@ -3,21 +3,29 @@ import React from 'react';
 class SearchResults extends React.Component {
   constructor (props) {
     super(props)
-    this.state={
-      results: []
-    }
+
+  }
+
+  componentDidMount(){
+    this.props.fetchResults(this.props.location.query.query)
   }
 
   componentWillReceiveProps (newProps){
-    this.setState(this.props.results)
+    // if (newProps) {
+      if (this.props.location.query.query !== newProps.location.query.query) {
+        console.log("this.props", this.props.location.query.query)
+        console.log("newProps", newProps.location.query.query)
+        this.props.fetchResults(newProps.location.query.query)
+      }
+    // }
   }
 
   render(){
-    console.log(this.state.results)
+    console.log("Hit Render", this.props.results)
     return(
       <div className="business__index-box">
         {
-          this.state.results.map( business => {
+          this.props.results.map( business => {
             return (
               <li key={business.id} className="business__index-item">
                 <Link className="business__pic" to={`/businesses/${business.id}`}>{business.name}</Link>

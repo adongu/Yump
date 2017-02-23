@@ -17,8 +17,10 @@ class BusinessPageShow extends React.Component{
     // this.setState({reviews: this.props.reviews})
   };
 
-  componentWillReceiveProps(newProps) {
+  componentWillUpdateProps(newProps) {
     if (this.props.params.id !== newProps.params.id) {
+      console.log("newprops param", this.props.businesses.currentBusiness.reviews)
+      // console.log("thisProps param", newProps.currentBusiness.reviews)
       this.props.fetchBusiness(newProps.params.id)
     }
     console.log(this.props.reviews)
@@ -114,6 +116,7 @@ class BusinessPageShow extends React.Component{
                     createReview={this.props.createReview}
                     businessId={this.props.params.id}
                     fetchBusiness={this.props.fetchBusiness}
+                    deleteReview={this.props.deleteReview}
                   />
               </div>
 

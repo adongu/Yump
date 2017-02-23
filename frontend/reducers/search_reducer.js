@@ -9,8 +9,10 @@ const _NullSearch = {
 const SearchReducer = (preLoadedState = _NullSearch, action) => {
   switch (action.type) {
     case RECEIVE_RESULTS:
+    console.log("hit reducer", action.results);
+    // debugger
       let results = action.results
-      return merge({}, preLoadedState, { results } )
+      return merge({}, {results: [action.results]} )
     default:
       return preLoadedState;
   }

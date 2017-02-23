@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+
 class BusinessShowReview extends React.Component {
   constructor (props) {
     super(props)
@@ -12,18 +13,9 @@ class BusinessShowReview extends React.Component {
       imageUrl: null
     }
 
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.updateFile = this.updateFile.bind(this)
-    this.resetForm = this.resetForm.bind(this)
-  }
-
-  componentWillReceiveProps(newProps) {
-    if (newProps.params) {
-      if (this.props.params.id !== newProps.params.id) {
-        this.resetForm()
-        this.props.setState(reviews: newProps.reviews)
-      }
-    }
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateFile = this.updateFile.bind(this);
+    this.resetForm = this.resetForm.bind(this);
   }
 
   renderStars() {
@@ -64,7 +56,6 @@ class BusinessShowReview extends React.Component {
     }
     this.props.createReview(formData);
     this.resetForm();
-
   }
 
   updateFile(e) {
@@ -88,7 +79,6 @@ class BusinessShowReview extends React.Component {
   update(field) {
     return (e) => this.setState({ [field]: e.target.value });
   }
-
 
   updateRating (e) {
     this.setState({
@@ -132,13 +122,6 @@ class BusinessShowReview extends React.Component {
     )
   }
 
-  renderEditDelete () {
-    <div>
-      <button >Edit Review</button>
-      <button onClick={this.deleteReview()}>Delete Review</button>
-    </div>
-  }
-
   render (){
 
     return (
@@ -163,7 +146,8 @@ class BusinessShowReview extends React.Component {
           return (
             <li className="business__show-reviews" key={`review-${review.id}`}>
               {this.renderReviews(review)}
-              {this.renderEditDelete}
+              <button >Edit Review</button>
+              <button onClick={() => this.props.deleteReview(review.id)}>Delete Review</button>
             </li>
           )
         })}

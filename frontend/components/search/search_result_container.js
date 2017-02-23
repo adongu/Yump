@@ -3,11 +3,10 @@ import SearchResults from './search_results';
 import { fetchResults } from '../../actions/search_actions';
 
 const mapStateToProps = ({results}) => {
-  // console.log("Hit container", state)
     let businesses = []
-    if (results) {
+    if (results.length > 0) {
       businesses = results
-      console.log("hit results", results)
+      console.log("hit results", businesses)
     }
   return {
     results: businesses
@@ -16,7 +15,7 @@ const mapStateToProps = ({results}) => {
 
 const mapDispatchToProps = (dispatch, {location}) => {
   return {
-    fetchResults: () => dispatch(fetchResults())
+    fetchResults: (queryString) => dispatch(fetchResults(queryString))
   }
 }
 

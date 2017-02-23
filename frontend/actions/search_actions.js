@@ -2,8 +2,11 @@ import * as APITUtil from '../util/search_api_util';
 export const RECEIVE_RESULTS = "RECEIVE_RESULTS";
 
 const receiveResults = (results) => {
-  type: RECEIVE_RESULTS,
-  results
+  console.log("hit actions", results);
+  return {
+    type: RECEIVE_RESULTS,
+    results
+  }
 }
 
 export const fetchResults = (query) => dispatch => {

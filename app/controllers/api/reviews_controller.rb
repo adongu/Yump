@@ -1,7 +1,8 @@
 class Api::ReviewsController < ApplicationController
 
   def index
-    @reviews = Business.reviews.businesses.find(params[:id])
+    @business = Business.find(params[:id])
+    @reviews = @business.reviews
     render :index
   end
 
@@ -22,8 +23,8 @@ class Api::ReviewsController < ApplicationController
     end
   end
 
-  def delete
-    @review = currentUser.reviews.find(params[:id])
+  def destroy
+    @review = current_user.reviews.find(params[:id])
     if @review
       render :index
     else

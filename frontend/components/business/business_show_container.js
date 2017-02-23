@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchBusiness } from '../../actions/business_actions';
-import { createReview } from '../../actions/review_actions';
+import { createReview, deleteReview } from '../../actions/review_actions';
 import BusinessShowPage from './business_show_page';
 
 const mapStateToProps = ({ businesses }) => {
@@ -11,14 +11,15 @@ const mapStateToProps = ({ businesses }) => {
   return ({
     business: businesses.currentBusiness,
     errors: businesses.errors,
-    reviews: reviews
+    reviews: businesses.currentBusiness.reviews
   })
 }
 
 const mapDispatchToProps = (dispatch, { location }) => {
   return ({
     fetchBusiness: (id) => dispatch(fetchBusiness(id)),
-    createReview: (formData) => dispatch(createReview(formData))
+    createReview: (formData) => dispatch(createReview(formData)),
+    deleteReview: (formData) => dispatch(deleteReview(formData))
   })
 };
 
