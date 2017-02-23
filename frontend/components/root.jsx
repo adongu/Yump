@@ -8,7 +8,6 @@ import BusinessIndexContainer from './business/business_index_container';
 import BusinessShowContainer from './business/business_show_container';
 import SearchResultContainer from './search/search_result_container';
 
-
 // Route tells router to render App component at root url '/'
 const Root = ({ store }) => {
 

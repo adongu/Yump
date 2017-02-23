@@ -6,6 +6,6 @@ const receiveResults = (results) => {
   results
 }
 
-export const fetchResults = () => dispatch => {
-  return APITUtil.fetchResults().then((results) => dispatch(receiveResults(results)))
+export const fetchResults = (query) => dispatch => {
+  return APITUtil.fetchResults(query).then((results) => dispatch(receiveResults(results)))
 }

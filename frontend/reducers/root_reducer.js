@@ -8,7 +8,7 @@ const rootReducer = combineReducers({
   session: SessionReducer,
   businesses: BusinessReducer,
   user: UserReducer,
-  result: SearchReducer
+  results: SearchReducer
 });
 
 export default rootReducer;

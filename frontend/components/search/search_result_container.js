@@ -2,16 +2,21 @@ import { connect } from "react-redux";
 import SearchResults from './search_results';
 import { fetchResults } from '../../actions/search_actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({results}) => {
+  // console.log("Hit container", state)
+    let businesses = []
+    if (results) {
+      businesses = results
+      console.log("hit results", results)
+    }
   return {
-    state: state
+    results: businesses
   }
 }
 
 const mapDispatchToProps = (dispatch, {location}) => {
   return {
-    fetchResults: () => dispatch(fetchResults()),
-    query: location.query
+    fetchResults: () => dispatch(fetchResults())
   }
 }
 

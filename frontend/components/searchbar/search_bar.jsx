@@ -9,15 +9,19 @@ class SearchBar extends React.Component {
 
     // this.handleSubmit = this.handleSubmit.bind(this)
     this.update = this.update.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleSubmit(e) {
-    e = preventDefault();
-    let query = this.state.keywords
-    router.push({
-      pathname:`/search/`,
-      query: { query }
-    })
+    e.preventDefault();
+    if (this.state) {
+      let query = this.state.keywords
+      console.log("hit", query)
+      hashHistory.push({
+        pathname:`/searches`,
+        query: { query }
+      })
+    }
   }
 
 
