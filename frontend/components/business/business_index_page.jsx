@@ -29,4 +29,4 @@ class BusinessIndexPage extends React.Component {
   }
 }
 
-export default withRouter(BusinessIndexPage);
+export default BusinessIndexPage;

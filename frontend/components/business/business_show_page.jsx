@@ -7,14 +7,22 @@ class BusinessPageShow extends React.Component{
   constructor(props) {
     super(props)
     this.state = {
-      rating: null
+      rating: null,
     }
     this.renderStars = this.renderStars.bind(this)
   }
 
   componentDidMount() {
     this.props.fetchBusiness(this.props.params.id)
+    this.setState({reviews: this.props.reviews})
   };
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.params.id !== newProps.params.id) {
+      this.props.fetchBusiness(newProps.params.id)
+    }
+    console.log(this.props.reviews)
+  }
 
   renderStars() {
     let stars = [1, 2, 3, 4, 5];
@@ -105,6 +113,7 @@ class BusinessPageShow extends React.Component{
                     renderStars={this.renderStars}
                     createReview={this.props.createReview}
                     businessId={this.props.params.id}
+                    fetchBusiness={this.props.fetchBusiness}
                   />
               </div>
 
@@ -116,4 +125,4 @@ class BusinessPageShow extends React.Component{
   }
 }
 
-export default withRouter(BusinessPageShow);
+export default BusinessPageShow;

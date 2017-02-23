@@ -6,7 +6,6 @@ class Api::ReviewsController < ApplicationController
   end
 
   def create
-    # debugger
     @review = Review.new(review_params)
 
     if current_user
@@ -29,15 +28,6 @@ class Api::ReviewsController < ApplicationController
       render :index
     else
       render json: ["Please log in to delete review"], status: 401
-    end
-  end
-
-  def show
-    @review = Review.find(params[:id])
-    if @review
-      render :show
-    else
-      render json: ["We're sorry, we could not find that Review"], status: 401
     end
   end
 

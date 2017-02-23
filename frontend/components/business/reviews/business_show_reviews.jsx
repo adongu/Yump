@@ -5,6 +5,7 @@ class BusinessShowReview extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      reviews: this.props.reviews,
       rating: null,
       review: "",
       imageFile: null,
@@ -13,6 +14,14 @@ class BusinessShowReview extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this)
     this.updateFile = this.updateFile.bind(this)
+  }
+
+  componentWillUpdate(newProps) {
+    if (newProps.params) {
+      if (this.props.params.id !== newProps.params.id) {
+        this.props.setState(reviews: newProps.reviews)
+      }
+    }
   }
 
   renderStars() {
@@ -31,12 +40,6 @@ class BusinessShowReview extends React.Component {
         <span className={ele <= rating ? 'active_star' : ''} onClick={()=>{this.setState({rating: ele})}} key={ele}>☆</span>
       )
     })
-  }
-
-  shouldComponentReceiveProps(nextProps) {
-    if (Object.is_Equal(nextProps.reviews, this.props.reviews)) {
-      this.forceUpdate()
-    }
   }
 
   resetForm () {
@@ -59,6 +62,7 @@ class BusinessShowReview extends React.Component {
     }
     this.props.createReview(formData);
     this.resetForm();
+
   }
 
   updateFile(e) {
@@ -131,6 +135,7 @@ class BusinessShowReview extends React.Component {
   }
 
   render (){
+
     return (
       <ul className="business__reviews-container">
         <li>
@@ -150,7 +155,6 @@ class BusinessShowReview extends React.Component {
         </li>
 
         {this.props.reviews.map( (review) => {
-          console.log(review)
           return (
             <li className="business__show-reviews" key={`review-${review.id}`}>
               {this.renderReviews(review)}
