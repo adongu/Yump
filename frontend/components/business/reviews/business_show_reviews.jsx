@@ -14,11 +14,13 @@ class BusinessShowReview extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this)
     this.updateFile = this.updateFile.bind(this)
+    this.resetForm = this.resetForm.bind(this)
   }
 
-  componentWillUpdate(newProps) {
+  componentWillReceiveProps(newProps) {
     if (newProps.params) {
       if (this.props.params.id !== newProps.params.id) {
+        this.resetForm()
         this.props.setState(reviews: newProps.reviews)
       }
     }
@@ -131,7 +133,10 @@ class BusinessShowReview extends React.Component {
   }
 
   renderEditDelete () {
-
+    <div>
+      <button >Edit Review</button>
+      <button onClick={this.deleteReview()}>Delete Review</button>
+    </div>
   }
 
   render (){

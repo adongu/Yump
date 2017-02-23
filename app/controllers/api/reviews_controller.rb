@@ -1,7 +1,7 @@
 class Api::ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.all
+    @reviews = Business.reviews.businesses.find(params[:id])
     render :index
   end
 
@@ -14,7 +14,7 @@ class Api::ReviewsController < ApplicationController
       if @review.save
         render :show
       else
-        render json: ["Hmm... We would love to hear more about your experience, please describe your experience in more detail."], status: 402
+        render json: ["Hmm... We would love to hear more about your experience, please describe your experience in more detail."], status: 401
       end
 
     else

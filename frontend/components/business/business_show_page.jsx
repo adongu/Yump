@@ -7,21 +7,19 @@ class BusinessPageShow extends React.Component{
   constructor(props) {
     super(props)
     this.state = {
-      rating: null,
-      reviews: []
+      rating: null
     }
     this.renderStars = this.renderStars.bind(this)
   }
 
   componentDidMount() {
     this.props.fetchBusiness(this.props.params.id)
-    this.setState({reviews: this.props.reviews})
+    // this.setState({reviews: this.props.reviews})
   };
 
   componentWillReceiveProps(newProps) {
     if (this.props.params.id !== newProps.params.id) {
       this.props.fetchBusiness(newProps.params.id)
-      this.setState({reviews: newprops.reviews})
     }
     console.log(this.props.reviews)
   }
@@ -111,7 +109,7 @@ class BusinessPageShow extends React.Component{
 
               <div className="reviews__container-reviews">
                   <BusinessShowReview
-                    reviews={this.state.reviews}
+                    reviews={this.props.reviews}
                     renderStars={this.renderStars}
                     createReview={this.props.createReview}
                     businessId={this.props.params.id}
