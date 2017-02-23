@@ -7,7 +7,7 @@ const BusinessIndexPageItem = ({business}) => {
     let stars = [1, 2, 3, 4, 5];
     return stars.map((ele)=>{
       return (
-        <span className={ele <= this.state.rating ? 'active_star' : ''} onClick={()=>{this.setState({rating: ele})}} key={ele}>☆</span>
+        <span key={ele} className={ele <= this.state.rating ? 'active_star' : ''} onClick={()=>{this.setState({rating: ele})}} >☆</span>
       )
     })
   }
@@ -36,7 +36,7 @@ const BusinessIndexPageItem = ({business}) => {
       <div className="business__index-box-right">
         <div className="business__review-box">
           <span className="business__review-rating">
-            {this.renderStars()}
+            {renderStars}
           </span>
 
           <span className="business__review-count">{business.review_count} Reviews</span>

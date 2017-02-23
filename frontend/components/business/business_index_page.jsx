@@ -17,9 +17,9 @@ class BusinessIndexPage extends React.Component {
           {
             this.props.businesses.map( business => {
               return (
-                <div className="business__index-individual">
+                <div key={business.id} className="business__index-individual">
                   <BusinessIndexPageItem
-                    key={business.id}
+
                     business={business}
                     />
                 </div>
