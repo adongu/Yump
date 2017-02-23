@@ -1,8 +1,6 @@
 import { RECEIVE_USER } from '../actions/user_actions';
 import { merge } from "lodash";
 
-
-
 const UserReducer = (preloadedState = {}, action) => {
   Object.freeze(preloadedState)
   switch (action.type) {
