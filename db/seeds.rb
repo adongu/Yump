@@ -23,7 +23,6 @@ images[
   "https://s3.amazonaws.com/yumpapp-pro/salad.jpg",
   "https://s3.amazonaws.com/yumpapp-pro/soup.jpg",
   "https://s3.amazonaws.com/yumpapp-pro/steak.jpg",
-  "https://s3.amazonaws.com/yumpapp-pro/steak.jpg",
   "https://s3.amazonaws.com/yumpapp-pro/sushi-wallpaper-2.jpg
 "
 ]
@@ -39,7 +38,7 @@ Faker::Config.locale = 'en-US'
     state: Faker::Address.state,
     zip: Faker::Address.zip_code,
     phone: Faker::PhoneNumber.phone_number,
-    image_url: images[n]
+    image_url: images[n],
     price: "$$",
     latitude: Faker::Address.latitude,
     longitude: Faker::Address.longitude
