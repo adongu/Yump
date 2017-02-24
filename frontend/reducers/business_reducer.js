@@ -30,8 +30,7 @@ const BusinessReducer = (preLoadedState = _nullBusiness, action) => {
     case RECEIVE_BUSINESS:
       let business = action.business;
       newState.currentBusiness = action.business
-      // debugger
-      let businessResult = Object.assign({}, preLoadedState, { currentBusiness: business });
+      // let businessResult = Object.assign({}, preLoadedState, { currentBusiness: business });
       // debugger
       return newState;
     case RECEIVE_ERRORS:
@@ -40,12 +39,13 @@ const BusinessReducer = (preLoadedState = _nullBusiness, action) => {
     case RECEIVE_REVIEW:
       console.log("Hits RECEIVE_REVIEW", action.review)
       let review = action.review;
-      // let newReview = newState.currentBusiness.reviews.push(review)
-      let businessReviews = Object.assign({}, preLoadedState, { currentBusiness: { reviews:{ review } }});
-      return businessReviews;
+      debugger
+      // newState.currentBusiness.reviews.push({ review })
+      let businessReviews = Object.assign({}, preLoadedState, { currentBusiness: {reviews: review }});
+      return newState;
     case DELETE_REVIEW:
 
-      delete newState.currentBusiness.reviews[action.review];
+      delete newState.currentBusiness.reviews[ action.review ];
       debugger
       return newState
     default:
