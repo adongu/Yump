@@ -15,8 +15,6 @@ class SearchResults extends React.Component {
   componentWillReceiveProps (newProps){
     if (newProps.location) {
       if (this.props.location.query.query !== newProps.location.query.query) {
-        // console.log("this.props", this.props.location.query.query)
-        // console.log("newProps", newProps.location.query.query)
         this.props.fetchResults(newProps.location.query.query)
       }
     }
@@ -32,7 +30,6 @@ class SearchResults extends React.Component {
   }
 
   render(){
-    console.log("Hit Render", this.props.results)
     return (
     <div className="business__search-parent">
       <div className="business__search-index-box">

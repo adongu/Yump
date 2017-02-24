@@ -12,7 +12,6 @@ const BusinessIndexPageItem = ({business}) => {
       )
     })
   }
-  console.log(business);
 
   // <li>{business.latitude}</li>
   // <li>{business.longitude}</li>

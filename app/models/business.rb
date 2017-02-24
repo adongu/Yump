@@ -36,7 +36,8 @@ class Business < ApplicationRecord
   has_many :reviews
   has_many :reviewers, through: :reviews
 
-  pg_search_scope :search_content_for, against:[:name, :city, :state, :zip, :price], :using => {tsearch: {prefix: true}, :trigram }
+  pg_search_scope :search_content_for, :against => [:name, :city, :state, :zip, :price], :using => { :tsearch => {:any_word => true, :prefix =>true} }
+  # {:tsearch => {:prefix => true}, :trigram]
   # , using: { tsearch: { any_word: true } }, using: [:trigram]
   multisearchable :against => [:name], using: [:trigram]
 

@@ -43,12 +43,10 @@ class BusinessShowReview extends React.Component {
       formData.append("review[image]", this.state.imageFile);
     }
     this.props.createReview(formData);
-    console.log("hit before setstate", this.state)
     this.setState({rating: 0,
     review: "",
     imageUrl: ""})
 
-    console.log("hit before setstate", this.state)
   }
 
   updateFile(e) {
@@ -80,7 +78,6 @@ class BusinessShowReview extends React.Component {
   }
 
   renderReviews(review) {
-    console.log(review)
     let {reviewer} = review
     return (
       <div className="reviews__container">

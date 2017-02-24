@@ -9,7 +9,7 @@ const _NullSearch = {
 const SearchReducer = (oldState = _NullSearch, action) => {
   switch (action.type) {
     case RECEIVE_RESULTS:
-    console.log("hit reducer", action.results);
+
       let results = action.results
       return Object.assign({}, {results: action.results} )
     default:

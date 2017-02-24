@@ -36,7 +36,6 @@ const BusinessReducer = (preLoadedState = _nullBusiness, action) => {
       let errors = action.errors
       return merge({}, preLoadedState, errors)
     case RECEIVE_REVIEW:
-      console.log("Hits RECEIVE_REVIEW", action.review)
       let review = action.review;
       newState.currentBusiness.reviews.push( review )
       // let businessReviews = Object.assign({}, preLoadedState, { currentBusiness: {reviews: review }});

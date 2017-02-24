@@ -18,11 +18,8 @@ class BusinessPageShow extends React.Component{
 
   componentWillReceiveProps(newProps) {
     if (this.props.params.id !== newProps.params.id) {
-      console.log("newprops param", this.props.business.reviews)
-      // console.log("thisProps param", newProps.currentBusiness.reviews)
       this.props.fetchBusiness(newProps.params.id)
     }
-    console.log(this.props.reviews)
   }
 
   renderStars(ratings) {
@@ -37,7 +34,6 @@ class BusinessPageShow extends React.Component{
 
   render () {
     let { business } = (this.props);
-    console.log("hitrender", this.props)
     return (
       <div className="business__show-container">
         <div className="business__show-box">

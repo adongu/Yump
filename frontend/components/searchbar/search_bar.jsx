@@ -10,24 +10,37 @@ class SearchBar extends React.Component {
     // this.handleSubmit = this.handleSubmit.bind(this)
     this.update = this.update.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleRTSearch = this.handleRTSearch.bind(this)
   }
 
-  // componentWillReceiveProps (newProps){
-  //   if (newProps.location) {
-  //     if (this.props.location.query.query !== newProps.location.query.query) {
-  //       // console.log("this.props", this.props.location.query.query)
-  //       // console.log("newProps", newProps.location.query.query)
-  //       this.props.fetchResults(newProps.location.query.query)
-  //     }
-  //   }
-  // }
+  componentDidMount (){
+    this.setState={keywords: location.search}
+  }
+  componentWillReceiveProps (newProps){
+    if (newProps.location) {
+      if (this.props.location.query.query !== newProps.location.query.query) {
+        this.setState({keywords: newProps.location.query.query})
+        this.props.fetchResults(newProps.location.query.query)
+      }
+    }
+  }
 
 
   handleSubmit(e) {
     e.preventDefault();
     if (this.state) {
       let query = this.state.keywords
-      console.log("hit Submit", query)
+      hashHistory.push({
+        pathname:`/searches`,
+        query: { query }
+      })
+    }
+  }
+
+  handleRTSearch(e) {
+    // e.preventDefault();
+    if (this.state) {
+      let query = e.target.value
       hashHistory.push({
         pathname:`/searches`,
         query: { query }
@@ -40,14 +53,16 @@ class SearchBar extends React.Component {
     return (e) => this.setState({ [keywords]: e.target.value })
   }
 
+
+// <input onChange={this.update("keywords")}
   render(){
     return(
       <form onSubmit={this.handleSubmit} className="header__nav-search-box">
         <label className="header__nav-search-find-label"> <span>Find</span>
-          <input onChange={this.update("keywords")} className="header__nav-search-find-input" placeholder="tacos, cheap dinner, Jeff's"></input>
+          <input onInput={this.handleRTSearch} className="header__nav-search-find-input" placeholder="tacos, cheap dinner, Jeff's"></input>
         </label>
 
-        <button className="header__nav-search-btn"><i className="fa fa-search fa" aria-hidden="true"></i></button>
+        <button className="header__nav-search-btn"><i className="fa fa-search fa" aria-hidden="true" ></i></button>
       </form>
     )
   }
