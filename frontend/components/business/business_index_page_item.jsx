@@ -13,6 +13,8 @@ const BusinessIndexPageItem = ({business}) => {
   }
   console.log(business);
 
+  // <li>{business.latitude}</li>
+  // <li>{business.longitude}</li>
   return (
 
     <li className="business__index-item">
@@ -22,14 +24,12 @@ const BusinessIndexPageItem = ({business}) => {
 
       <div className="business__index">
         <ul className="business__index-item-container">
-          <li>{business.name}</li>
+          <li className="business__title">{business.name}</li>
           <li>{business.street}</li>
           <li>{business.city}</li>
           <li>{business.state}</li>
           <li>{business.zip}</li>
           <li>{business.phone}</li>
-          <li>{business.latitude}</li>
-          <li>{business.longitude}</li>
         </ul>
       </div>
 

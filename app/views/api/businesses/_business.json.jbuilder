@@ -1,4 +1,4 @@
-json.extract! business, :id, :name, :street, :city, :state, :price, :zip, :phone, :latitude, :longitude
+json.extract! business, :id, :name, :street, :city, :state, :price, :zip, :image, :phone, :latitude, :longitude
 # json.image_url asset_path(user.image.url)
 reviewsArray = business.reviews
 json.review_count(reviewsArray.length)
@@ -17,6 +17,6 @@ end
 
 json.tags business.tags do |tag|
   json.extract! tag, :id, :tag
-end
+end[0, 3]
 
 # json.rating(business.reviews.ratings.review.reduce/business.reviews.length)

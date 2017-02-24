@@ -20,7 +20,8 @@ ul, li{
 img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 180px;
+  -webkit-backface-visibility: hidden;
 }
 
 body {

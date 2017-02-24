@@ -3,7 +3,7 @@
   height: 575px;
   width: 100%;
   background: rgb(255, 255, 255) image_url("pasta_time_freeze.jpg") center no-repeat;
-  background-color: black;
+  // background-color: black;
   // opacity: .9;
   background-size: cover;
   // z-index: 1;
@@ -38,7 +38,7 @@
     padding: 10px 10px;
     background: linear-gradient(45deg, rgba(20,20,20, .5), rgba(20,20,20, .75));
     height: 80px;
-    width: 160px;
+    width: 33%;
     border-radius: 40px;
   }
 
@@ -105,6 +105,7 @@
 
   &-logo {
     object-fit: cover;
+    width: 100%;
   }
 
   &-search {

@@ -25,13 +25,13 @@ class SearchResults extends React.Component {
   render(){
     console.log("Hit Render", this.props.results)
     return (
-      <div className="business__index-box">
+      <div className="business__search-index-box">
         {
           this.props.results.map( business => {
             return (
-              <li key={"bizness"-business.id} className="business__index-item">
-                <Link className="business__pic" to={`/businesses/${business.id}`}>{business.name}</Link>
-                <ul className="business__index-item-box">
+              <li key={"bizness"-business.id} className="business__search-index-item">
+                <Link className="business__search-pic" to={`/businesses/${business.id}`}>{business.name}</Link>
+                <ul className="business__search-index-box">
                   <li>{business.name}</li>
                   <li>{business.street}</li>
                   <li>{business.city}</li>

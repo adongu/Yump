@@ -47,7 +47,7 @@ class SearchBar extends React.Component {
           <input onChange={this.update("keywords")} className="header__nav-search-find-input" placeholder="tacos, cheap dinner, Jeff's"></input>
         </label>
 
-        <button className="header__nav-search-btn"><i className="fa fa-search" aria-hidden="true"></i></button>
+        <button className="header__nav-search-btn"><i className="fa fa-search fa" aria-hidden="true"></i></button>
       </form>
     )
   }
