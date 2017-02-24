@@ -11,13 +11,11 @@ class Api::ReviewsController < ApplicationController
 
     if current_user
       @review.user_id = current_user.id
-
       if @review.save
         render :show
       else
         render json: ["Hmm... We would love to hear more about your experience, please describe your experience in more detail."], status: 401
       end
-
     else
       render json: ["Please Sign Up or Log In to create reviews"], status: 401
     end

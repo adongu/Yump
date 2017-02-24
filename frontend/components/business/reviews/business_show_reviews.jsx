@@ -9,7 +9,7 @@ class BusinessShowReview extends React.Component {
       rating: 0,
       review: "",
       imageFile: null,
-      imageUrl: null
+      imageUrl: ""
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -43,6 +43,12 @@ class BusinessShowReview extends React.Component {
       formData.append("review[image]", this.state.imageFile);
     }
     this.props.createReview(formData);
+    console.log("hit before setstate", this.state)
+    this.setState({rating: 0,
+    review: "",
+    imageUrl: ""})
+
+    console.log("hit before setstate", this.state)
   }
 
   updateFile(e) {
@@ -74,6 +80,7 @@ class BusinessShowReview extends React.Component {
   }
 
   renderReviews(review) {
+    console.log(review)
     let {reviewer} = review
     return (
       <div className="reviews__container">
@@ -123,7 +130,7 @@ class BusinessShowReview extends React.Component {
                 </div>
                 <div className="business__reviews-review-container">
                   <label className="business__reviews-upload-label" >Your Review</label>
-                  <textarea className="business__reviews-review" onChange={this.update("review")} />
+                  <textarea className="business__reviews-review" value={this.state.review} onChange={this.update("review")} />
                 </div>
               </div>
               <div className="business__reviews-buttons">
