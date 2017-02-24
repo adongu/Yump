@@ -13,11 +13,25 @@ users = User.create!([{username: "Foodie", password:"cupcake", f_name: "mario", 
 # user2 = User.create!(username: "a", password:"asdasd", f_name: "mario", l_name: "luigi", email: "a@gmail.com", zip: "10009")
 # user3 = User.create!(username: "b", password:"asdasd", f_name: "mario", l_name: "luigi", email: "b@gmail.com", zip: "10009")
 
+images[
+  "https://s3.amazonaws.com/yumpapp-pro/9a1b74fdcadf63cb37dc529cc48c3a85.jpg",
+  "https://s3.amazonaws.com/yumpapp-pro/Thai-Food.jpg",
+  "	https://s3.amazonaws.com/yumpapp-pro/Thai-street-food-1-of-11.jpg",
+  "https://s3.amazonaws.com/yumpapp-pro/fancy-chocolate-desserts-wallpaper-4.jpg",
+  "https://s3.amazonaws.com/yumpapp-pro/oysters.jpg",
+  "https://s3.amazonaws.com/yumpapp-pro/pasta_time_freeze.jpg",
+  "https://s3.amazonaws.com/yumpapp-pro/salad.jpg",
+  "https://s3.amazonaws.com/yumpapp-pro/soup.jpg",
+  "https://s3.amazonaws.com/yumpapp-pro/steak.jpg",
+  "https://s3.amazonaws.com/yumpapp-pro/steak.jpg",
+  "https://s3.amazonaws.com/yumpapp-pro/sushi-wallpaper-2.jpg
+"
+]
 businesses = [];
 
 Business.destroy_all
 Faker::Config.locale = 'en-US'
-10.times do
+10.times do |n|
   businesses << Business.create!({
     name: Faker::Company.name,
     street: Faker::Address.street_address,
@@ -25,6 +39,7 @@ Faker::Config.locale = 'en-US'
     state: Faker::Address.state,
     zip: Faker::Address.zip_code,
     phone: Faker::PhoneNumber.phone_number,
+    image_url: images[n]
     price: "$$",
     latitude: Faker::Address.latitude,
     longitude: Faker::Address.longitude
