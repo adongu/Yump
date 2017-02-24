@@ -6,8 +6,7 @@ class BusinessShowReview extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      reviews: this.props.reviews,
-      rating: null,
+      rating: 0,
       review: "",
       imageFile: null,
       imageUrl: null
@@ -15,7 +14,6 @@ class BusinessShowReview extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
-    this.resetForm = this.resetForm.bind(this);
   }
 
   renderReviewStars() {
@@ -26,14 +24,13 @@ class BusinessShowReview extends React.Component {
       )
     })
   }
-
-  resetForm () {
-    this.setState({
-      rating: null,
-      review: "",
-      imageFile: null,
-      imageUrl: null
-    });
+  renderStars(rating) {
+    let stars = [1, 2, 3, 4, 5];
+    return stars.map((ele)=>{
+      return (
+        <span className={ele <= rating ? 'active_star' : 'no_star'} key={ele}>☆</span>
+      )
+    })
   }
 
   handleSubmit(e) {
@@ -46,7 +43,6 @@ class BusinessShowReview extends React.Component {
       formData.append("review[image]", this.state.imageFile);
     }
     this.props.createReview(formData);
-    this.resetForm();
   }
 
   updateFile(e) {
@@ -96,7 +92,7 @@ class BusinessShowReview extends React.Component {
         <div className="reviews__container-right">
 
           <div className="reviews__body-header">
-              <span className="reviews__ratings">Rating {review.rating}</span>
+              <span className="reviews__ratings">{this.renderStars(review.rating)}</span>
               <span className="reviews__date">{review.created_at}</span>
           </div>
 
