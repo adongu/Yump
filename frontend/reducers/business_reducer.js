@@ -29,8 +29,12 @@ const BusinessReducer = (preLoadedState = _nullBusiness, action) => {
       return businessesResult;
     case RECEIVE_BUSINESS:
       let business = action.business;
-      let businessResult = merge({}, preLoadedState, { currentBusiness: business });
-      return businessResult;
+      let mergebiz = merge({}, preLoadedState)
+      mergebiz.currentBusiness = action.business
+      // debugger
+      // let businessResult = Object.assign({}, preLoadedState, { currentBusiness: business });
+      // debugger
+      return mergebiz;
     case RECEIVE_ERRORS:
       let errors = action.errors
       return merge({}, preLoadedState, errors)

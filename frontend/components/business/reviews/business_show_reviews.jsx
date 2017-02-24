@@ -120,13 +120,14 @@ class BusinessShowReview extends React.Component {
         <li>
           <div className="reviews__container-form">
             <form className="reviews__form">
-
+            <div>
               <span className="business__review-rating">
                 {this.renderReviewStars()}
               </span>
-
+            </div>
               <label className="business__review-upload-label" >Your Review</label>
               <textarea className="bussiness__reviews-review" onChange={this.update("review")} />
+
               <input className="business__review-upload-input" type="file" onChange={this.updateFile} />
               <button className="business__review-upload-btn" onClick={this.handleSubmit}>Post Review</button>
               <div className="business__reviews-upload-pic"><img src={this.state.imageUrl} /></div>
@@ -138,7 +139,6 @@ class BusinessShowReview extends React.Component {
           return (
             <li className="business__show-reviews" key={`review-${review.id}`}>
               {this.renderReviews(review)}
-              <button >Edit Review</button>
               <button onClick={() => this.props.deleteReview(review.id)}>Delete Review</button>
             </li>
           )
