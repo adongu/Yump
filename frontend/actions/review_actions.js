@@ -10,7 +10,7 @@ const receiveAllReviews = (reviews) => ({
   reviews
 })
 
-const receiveReview = (id) => ({
+const receiveReview = (review) => ({
   type: RECEIVE_REVIEW,
   review
 })

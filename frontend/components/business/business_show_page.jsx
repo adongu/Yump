@@ -37,7 +37,7 @@ class BusinessPageShow extends React.Component{
 
   render () {
     let { business } = (this.props);
-    console.log(business)
+    console.log("hitrender", this.props)
     return (
       <div className="business__show-container">
         <div className="business__show-box">
@@ -112,10 +112,10 @@ class BusinessPageShow extends React.Component{
               <div className="reviews__container-reviews">
                   <BusinessShowReview
                     reviews={business.reviews}
-                    createReview={business.createReview}
+                    createReview={this.props.createReview}
                     businessId={this.props.params.id}
-                    fetchBusiness={business.fetchBusiness}
-                    deleteReview={business.deleteReview}
+                    fetchBusiness={this.props.fetchBusiness}
+                    deleteReview={this.props.deleteReview}
                   />
               </div>
 

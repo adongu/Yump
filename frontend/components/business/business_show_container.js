@@ -16,11 +16,11 @@ const mapStateToProps = ({ businesses }) => {
 }
 
 const mapDispatchToProps = (dispatch, { location }) => {
-  return ({
+  return {
     fetchBusiness: (id) => dispatch(fetchBusiness(id)),
     createReview: (formData) => dispatch(createReview(formData)),
     deleteReview: (formData) => dispatch(deleteReview(formData))
-  })
+  }
 };
 
 export default connect(
