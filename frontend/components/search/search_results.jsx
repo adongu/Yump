@@ -45,7 +45,7 @@ class SearchResults extends React.Component {
               <div className="business__search-index-item">
                 <Link className="business__search-pic" to={`/businesses/${business.id}`}>{business.name}</Link>
                 <div>{this.renderStars(business.ratings)}</div>
-                <div>{business.review_count}</div>
+                <div>{business.review_count} Reviews</div>
                 <div>{business.price}</div>
               </div>
               </div>
