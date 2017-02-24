@@ -12,15 +12,15 @@ class SearchBar extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  componentWillReceiveProps (newProps){
-    if (newProps.location) {
-      if (this.props.location.query.query !== newProps.location.query.query) {
-        console.log("this.props", this.props.location.query.query)
-        console.log("newProps", newProps.location.query.query)
-        this.props.fetchResults(newProps.location.query.query)
-      }
-    }
-  }
+  // componentWillReceiveProps (newProps){
+  //   if (newProps.location) {
+  //     if (this.props.location.query.query !== newProps.location.query.query) {
+  //       // console.log("this.props", this.props.location.query.query)
+  //       // console.log("newProps", newProps.location.query.query)
+  //       this.props.fetchResults(newProps.location.query.query)
+  //     }
+  //   }
+  // }
 
 
   handleSubmit(e) {

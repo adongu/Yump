@@ -4,18 +4,20 @@
   width: 100%;
   background: rgb(255, 255, 255) image_url("pasta_time_freeze.jpg") center no-repeat;
   background-color: black;
-  opacity: 0.5;
+  // opacity: .9;
   background-size: cover;
+  // z-index: 1;
 }
-
-.darkOverlay {
-  background-color: black;
-  opacity: 0.5;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
+//
+// .darkOverlay {
+//   background-color: black;
+//   opacity: 0.5;
+//   position: absolute;
+//   top: 0;
+//   width: 100%;
+//   height: 100%;
+//   z-index: 2;
+// }
 
 .home__nav-box{
   width: 100%;

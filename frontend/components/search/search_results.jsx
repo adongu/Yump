@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import BusinessMap from '../map/business_map'
 
 class SearchResults extends React.Component {
   constructor (props) {
@@ -11,10 +12,19 @@ class SearchResults extends React.Component {
     this.props.fetchResults(this.props.location.query.query)
   }
 
+  componentWillReceiveProps (newProps){
+    if (newProps.location) {
+      if (this.props.location.query.query !== newProps.location.query.query) {
+        // console.log("this.props", this.props.location.query.query)
+        // console.log("newProps", newProps.location.query.query)
+        this.props.fetchResults(newProps.location.query.query)
+      }
+    }
+  }
+
   render(){
     console.log("Hit Render", this.props.results)
-    return(
-    <div>
+    return (
       <div className="business__index-box">
         {
           this.props.results.map( business => {
@@ -37,13 +47,6 @@ class SearchResults extends React.Component {
           )
         }
       </div>
-      <div className="business__index-map">
-        <business__index-map
-          center={}
-          coorderinates={}
-        />
-      </div>
-    </div>
     )
   }
 }

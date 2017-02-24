@@ -1,6 +1,9 @@
 import React from 'react';
 
-class Map extends React.Component{
+class BusinessMap extends React.Component{
+  constructor(props) {
+    super(props)
+  }
 
   componentDidMount() {
     const options = {
@@ -9,12 +12,17 @@ class Map extends React.Component{
     };
 
     this.map = new google.maps.Map(this.mapNode, mapOptions);
+    this.listenForMove();
+
   }
   render() {
     return(
-      <div ref={ map => this.mapNode = map }>
+      <span>
+        <div ref={ map => this.mapNode = map }>
+        </div>
+      </span>
     )
   }
 }
 
-export default React;
+export default BusinessMap;
