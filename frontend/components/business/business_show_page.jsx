@@ -68,9 +68,7 @@ class BusinessPageShow extends React.Component{
                 className="business__header-map-image"
                 src={ window.assets.static_map }
               />
-              <span>{business.latitude}</span>
-              <span>{business.longitude}</span>
-
+            
               <ul className="business__current-info">
                 <li className="business__current-address">{business.street}</li>
                 <li className="business__current-address">{business.city}</li>

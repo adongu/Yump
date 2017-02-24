@@ -13,8 +13,6 @@ const BusinessIndexPageItem = ({business}) => {
     })
   }
 
-  // <li>{business.latitude}</li>
-  // <li>{business.longitude}</li>
   return (
 
     <li className="business__index-item">
