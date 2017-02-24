@@ -116,40 +116,45 @@ class BusinessShowReview extends React.Component {
   render (){
 
     return (
-      <ul className="business__reviews-container">
-        <li>
+      <div className="business-reviews-box">
+
+        <div className="business__reviews-container">
           <div className="business__reviews-form-container">
-            <form className="reviews__reviews-form">
-            <div className="business__reviews-form-left">
-              <div className="business__reviews-rating-container">
-                <span className="business__reviews-rating">
-                  {this.renderReviewStars()}
-                </span>
+            <form className="business__reviews-form">
+              <div className="business__reviews-form-left">
+                <div className="business__reviews-rating-container">
+                    {this.renderReviewStars()}
+                </div>
+                <div className="business__reviews-review-container">
+                  <label className="business__reviews-upload-label" >Your Review</label>
+                  <textarea className="business__reviews-review" onChange={this.update("review")} />
+                </div>
               </div>
-              <div className="business__reviews-review-container">
-                <label className="business__reviews-upload-label" >Your Review</label>
-                <textarea className="business__reviews-review" onChange={this.update("review")} />
+              <div className="business__reviews-buttons">
+                <button className="business__reviews-submit-btn" onClick={this.handleSubmit}>Post Review</button>
+                <input className="business__reviews-upload-input" type="file" onChange={this.updateFile} />
               </div>
-            </div>
+            </form>
             <div className="business__reviews-form-right"><img src={this.state.imageUrl} />
             </div>
-            <div className="business__reviews-buttons">
-              <input className="business__reviews-upload-input" type="file" onChange={this.updateFile} />
-              <button className="business__reviews-submit-btn" onClick={this.handleSubmit}>Post Review</button>
-            </div>
-            </form>
           </div>
-        </li>
+        </div>
 
-        {this.props.reviews.map( (review) => {
-          return (
-            <li className="business__show-reviews" key={`review-${review.id}`}>
-              {this.renderReviews(review)}
-              <button onClick={() => this.props.deleteReview(review)}>Delete Review</button>
-            </li>
-          )
-        })}
-      </ul>
+        <div className="business__reviews-all">
+          {this.props.reviews.map( (review) => {
+            return (
+                <div className="business__show-reviews" key={`review-${review.id}`}>
+                  {this.renderReviews(review)}
+
+                  <div className="delete__review">
+                    <button className="business__review-delete"  onClick={() => this.props.deleteReview(review)}>Delete Review</button>
+                  </div>
+
+              </div>
+            )
+          })}
+        </div>
+      </div>
     )
   }
 }

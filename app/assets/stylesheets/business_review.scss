@@ -1,69 +1,188 @@
+.business__show-reviews-container {
+  display: flex;
+  max-width: 960px;
+  width: 100%;
+  height: 1060px;
+  border-bottom: 1px solid #ccc;
+}
+
+.reviews__container-box {
+  width: 100%;
+}
+
+
 .business__reviews {
   &-container-box {
     display: flex;
+
+    max-width: 960px;
     width: 100%;
     max-width: 960px;
+    height: 100%;
+
   }
-  &-form {
+
+  &-container {
+    display: flex;
+    display: block;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
+  &-form-container {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &-box {
+    display: flex;
+    width: 100%;
+    height: 1060px;
+  }
+
+  &-form {
+    width: 66.666666%;
+    // display: flex;
+    // flex-direction: row;
   }
 
   &-form-left {
-    width: 66%;
+    height: 100%;
+    width: 100%;
   }
   &-rating-container {
-
+    width: 100%;
+    height: 25%
   }
   &-rating {
 
   }
 
   &-review-container {
-
+    display: flex;
+    width: 100%;
+    height: 75%;
+    flex-direction: column;
   }
   &-upload-label {
+    font-size: 13px;
+    font-weight: bold;
+    width: 100%;
 
   }
   &-review {
-
+    resize: none;
+    width: 100%;
+    height: 85%;
+    overflow: hidden;
   }
 
   &-buttons {
-
+    // border-bottom: 1px solid #ccc;
+    width: 100%;
   }
-  &-upload-input {
-
+  &-upload-input{
+    // display: inline-block;
+    // text-align: center;
+    // vertical-align: middle;;
+    // overflow: hidden;
+    // border-radius: 3px;
+    // font-size: 13px;
+    // padding: 10px 0 0 5px;
+    // min-width: 84px;
+    // min-height: 35px;
+    // background-color: white;
+    // border: 3px solid cyan;
   }
+  &-upload-input>input[type="file"] {
+    // position: absolute;
+    // opacity: 0;
+    // height: 100%;
+    // background: white;
+    // cursor: pointer;
+    // background-color: black;
+    // border: 1px solid red;
+  }
+
   &-submit-btn {
-
+    display: inline-block;
+    width: 30%;
+    padding: 5px 5px 5px 0;
+    margin: 3px 3px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #8d0005;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    background-color: #d90007;
+    background: linear-gradient(#d90007, #c91400);
+    font-weight: bolder;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 3px;
   }
   &-form-right {
-    width: 30%;
+    width: 33.33333%;
+    padding: 0 10px;
+  }
+  &-form-right image {
+    // border: 5px solid rgba(255, 255, 255, .5);
+    background-image: transparent;
   }
 
+}
+
+.business__reviews-all {
+  display: flex;
+  flex-direction: row;
+  max-width: 960px;
+  // width: 100%;
+  height: 100%;
+  margin-top: 90px;
 }
 
 .business__show-reviews {
   display: flex;
-  width: 100%;
+  justify-content: space-between;
+  width: 80%;
+  height: 100%;
+  min-height: 120px;
+  border-bottom: 1px solid #ccc;
+}
+.business__show-reviews:first-child {
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.business__review-delete {
+  display: block;
+  width: 20%;
+  vertical-align: middle;
+  height: 25%;
 }
 
 .reviews {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
   &__container-left {
-
+    width: 60%;
   }
   &__container-right {
-
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
   }
+
   &__reviewer-name {
 
   }
 
-  &__container-right {
-
-  }
   &__body-header {
 
   }
@@ -75,11 +194,50 @@
   }
 
   &__body-text {
+    width: 100%;
+    word-wrap:break-word;
+    font-size: 13px;
+    font-weight: bold;
 
   }
   &__body-images {
 
   }
+}
 
+.delete__review {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+.delete__review > button{
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  min-width: 100px;
+  height: 38%;
+  margin: auto;
+  text-align: center;
+  // vertical-align: middle;
+  // justify-content: center;
+  // align-content: center;
+  // padding: 5px 10px 0 5px;
+  margin: 3px 3px;
+  color: white;
+  font: 13px;
+  font-weight: bold;
+  border: 1px solid #8d0005;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  background-color: #d90007;
+  background: linear-gradient(#d90007, #c91400);
+  font-weight: bolder;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 3px;
+}
 
+.business__review-delete {
+  // vertical-align: middle;
+  // align-self: flex-end;
 }
