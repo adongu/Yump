@@ -21,7 +21,7 @@ let _nullBusiness = Object.freeze({
 
 const BusinessReducer = (preLoadedState = _nullBusiness, action) => {
   Object.freeze(preLoadedState);
-
+  let newState = merge({}, preLoadedState)
   switch (action.type) {
     case RECEIVE_ALL_BUSINESSES:
       let businesses = action.businesses
@@ -29,23 +29,24 @@ const BusinessReducer = (preLoadedState = _nullBusiness, action) => {
       return businessesResult;
     case RECEIVE_BUSINESS:
       let business = action.business;
-      let mergebiz = merge({}, preLoadedState)
-      mergebiz.currentBusiness = action.business
+      newState.currentBusiness = action.business
       // debugger
       // let businessResult = Object.assign({}, preLoadedState, { currentBusiness: business });
       // debugger
-      return mergebiz;
+      return newState;
     case RECEIVE_ERRORS:
       let errors = action.errors
       return merge({}, preLoadedState, errors)
     case RECEIVE_REVIEW:
       console.log("Hits RECEIVE_REVIEW", action.review)
       let review = action.review;
-      let businessReviews = merge({}, preLoadedState, { currentBusiness: { reviews:{ review } }});
+      let newReview = newState.currentBusiness.reviews.push(review)
+      // let businessReviews = Object.assign({}, preLoadedState, { currentBusiness: { reviews:{ review } }});
       return businessReviews;
     case DELETE_REVIEW:
-      let newState = merge({}, preLoadedState)
-      delete newState[action.review];
+
+      delete newState.currentBusiness.reviews[action.review];
+      debugger
       return newState
     default:
       return preLoadedState

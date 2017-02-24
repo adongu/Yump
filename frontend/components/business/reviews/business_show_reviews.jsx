@@ -118,19 +118,25 @@ class BusinessShowReview extends React.Component {
     return (
       <ul className="business__reviews-container">
         <li>
-          <div className="reviews__container-form">
-            <form className="reviews__form">
-            <div>
-              <span className="business__review-rating">
-                {this.renderReviewStars()}
-              </span>
+          <div className="business__reviews-form-container">
+            <form className="reviews__reviews-form">
+            <div className="business__reviews-form-left">
+              <div className="business__reviews-rating-container">
+                <span className="business__reviews-rating">
+                  {this.renderReviewStars()}
+                </span>
+              </div>
+              <div className="business__reviews-review-container">
+                <label className="business__reviews-upload-label" >Your Review</label>
+                <textarea className="business__reviews-review" onChange={this.update("review")} />
+              </div>
             </div>
-              <label className="business__review-upload-label" >Your Review</label>
-              <textarea className="bussiness__reviews-review" onChange={this.update("review")} />
-
-              <input className="business__review-upload-input" type="file" onChange={this.updateFile} />
-              <button className="business__review-upload-btn" onClick={this.handleSubmit}>Post Review</button>
-              <div className="business__reviews-upload-pic"><img src={this.state.imageUrl} /></div>
+            <div className="business__reviews-form-right"><img src={this.state.imageUrl} />
+            </div>
+            <div className="business__reviews-buttons">
+              <input className="business__reviews-upload-input" type="file" onChange={this.updateFile} />
+              <button className="business__reviews-submit-btn" onClick={this.handleSubmit}>Post Review</button>
+            </div>
             </form>
           </div>
         </li>
@@ -139,7 +145,7 @@ class BusinessShowReview extends React.Component {
           return (
             <li className="business__show-reviews" key={`review-${review.id}`}>
               {this.renderReviews(review)}
-              <button onClick={() => this.props.deleteReview(review.id)}>Delete Review</button>
+              <button onClick={() => this.props.deleteReview(review)}>Delete Review</button>
             </li>
           )
         })}
