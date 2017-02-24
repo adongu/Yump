@@ -5,6 +5,7 @@ import BusinessMap from '../map/business_map'
 class SearchResults extends React.Component {
   constructor (props) {
     super(props)
+    this.renderStars = this.renderStars.bind(this)
   }
 
   componentDidMount(){
@@ -21,6 +22,15 @@ class SearchResults extends React.Component {
     }
   }
 
+  renderStars(ratings) {
+    let stars = [1, 2, 3, 4, 5];
+    return stars.map((ele)=>{
+      return (
+        <span className={ele <= ratings ? 'active_star' : 'no_star'} key={ele}>☆</span>
+      )
+    })
+  }
+
   render(){
     console.log("Hit Render", this.props.results)
     return (
@@ -34,8 +44,9 @@ class SearchResults extends React.Component {
               <div className='business__search-left'>
               <div className="business__search-index-item">
                 <Link className="business__search-pic" to={`/businesses/${business.id}`}>{business.name}</Link>
+                <div>{this.renderStars(business.ratings)}</div>
+                <div>{business.review_count}</div>
                 <div>{business.price}</div>
-                <div>{business.ratings}</div>
               </div>
               </div>
               <ul className="business__search-right">

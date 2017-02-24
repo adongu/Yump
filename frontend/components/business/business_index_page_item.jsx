@@ -20,7 +20,7 @@ const BusinessIndexPageItem = ({business}) => {
 
     <li className="business__index-item">
       <div className="business__pic-box">
-        <Link to={`/businesses/${business.id}`}><img className="business__img" src="https://s3.amazonaws.com/yumpapp-dev/harold.jpg"/></Link>
+        <Link to={`/businesses/${business.id}`}><img className="business__img" src={`${business.image_url}`}/></Link>
       </div>
 
       <div className="business__index">
