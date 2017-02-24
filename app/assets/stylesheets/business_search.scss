@@ -40,11 +40,15 @@
   }
 
   &-search-left {
-    // display: block;
+    display: block;
+    height: auto;
     width: 40%
+
   }
   &-search-right {
+    height: auto;
     display: block;
+    min-width: 150px;
     width: 60%;
   }
 }
