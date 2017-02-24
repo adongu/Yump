@@ -1,19 +1,48 @@
 .business__search {
+
+
+  &-parent {
+    width: 100%;
+    height: 1060px;
+    // display: flex;
+    // flex-direction: column;
+  }
   &-index-box {
     width: 100%;
+    height: 1060px;
+    max-width: 960px;
     display: flex;
-    justify-content: space-between;;
+    margin: auto;
+    flex-direction: column;
+  }
+
+  &-item {
+    padding-top: 30px;
+    font-size: 16px;
+
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 150px;
   }
 
   &-index-item {
-    max-width: 960px;
+    width: 100%;
+    height: 100%;
   }
 
   &-pic {
 
   }
 
-  &-index-box {
-
+  &-search-left {
+    // display: block;
+    width: 40%
+  }
+  &-search-right {
+    display: block;
+    width: 60%;
   }
 }

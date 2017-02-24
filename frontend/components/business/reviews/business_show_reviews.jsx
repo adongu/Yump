@@ -87,7 +87,7 @@ class BusinessShowReview extends React.Component {
               <span>{reviewer.f_name}</span>
               <span>{reviewer.l_name}</span>
             </li>
-            <li>
+            <li>Zip:
               {reviewer.zip}
             </li>
           </ul>
