@@ -5,7 +5,6 @@ import BusinessMap from '../map/business_map'
 class SearchResults extends React.Component {
   constructor (props) {
     super(props)
-
   }
 
   componentDidMount(){
@@ -29,7 +28,7 @@ class SearchResults extends React.Component {
         {
           this.props.results.map( business => {
             return (
-              <li key={"bizness"-business.id} className="business__search-index-item">
+              <li key={`bizness-${business.id}`} className="business__search-index-item">
                 <Link className="business__search-pic" to={`/businesses/${business.id}`}>{business.name}</Link>
                 <ul className="business__search-index-box">
                   <li>{business.name}</li>
@@ -38,8 +37,6 @@ class SearchResults extends React.Component {
                   <li>{business.state}</li>
                   <li>{business.zip}</li>
                   <li>{business.phone}</li>
-                  <li>{business.latitude}</li>
-                  <li>{business.longitude}</li>
                 </ul>
               </li>
             )

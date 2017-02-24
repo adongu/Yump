@@ -18,20 +18,11 @@ class BusinessShowReview extends React.Component {
     this.resetForm = this.resetForm.bind(this);
   }
 
-  renderStars() {
+  renderReviewStars() {
     let stars = [1, 2, 3, 4, 5];
     return stars.map((ele)=>{
       return (
-        <span className={ele <= this.state.rating ? 'active_star' : ''} onClick={()=>{this.setState({rating: ele})}} key={ele}>☆</span>
-      )
-    })
-  }
-
-  renderReviewStars(rating) {
-    let stars = [1, 2, 3, 4, 5];
-    return stars.map((ele)=>{
-      return (
-        <span className={ele <= rating ? 'active_star' : ''} onClick={()=>{this.setState({rating: ele})}} key={ele}>☆</span>
+        <span className={ele <= this.state.rating ? 'active_star' : 'no_star'} onClick={()=>{this.setState({rating: ele})}} key={ele}>☆</span>
       )
     })
   }
@@ -129,15 +120,16 @@ class BusinessShowReview extends React.Component {
         <li>
           <div className="reviews__container-form">
             <form className="reviews__form">
+
               <span className="business__review-rating">
-                {this.renderStars()}
+                {this.renderReviewStars()}
               </span>
 
-              <label>Your Review</label>
+              <label className="business__review-upload-label" >Your Review</label>
               <textarea className="bussiness__reviews-review" onChange={this.update("review")} />
-              <input type="file" onChange={this.updateFile} />
-              <button onClick={this.handleSubmit}>Post Review</button>
-              <img src={this.state.imageUrl} />
+              <input className="business__review-upload-input" type="file" onChange={this.updateFile} />
+              <button className="business__review-upload-btn" onClick={this.handleSubmit}>Post Review</button>
+              <div className="business__reviews-upload-pic"><img src={this.state.imageUrl} /></div>
             </form>
           </div>
         </li>

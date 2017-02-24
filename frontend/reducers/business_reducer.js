@@ -36,7 +36,7 @@ const BusinessReducer = (preLoadedState = _nullBusiness, action) => {
       return merge({}, preLoadedState, errors)
     case RECEIVE_REVIEW:
       let review = action.review;
-      let businessReviews = merge({}, preLoadedState, { currentBusiness: { reviews:[{ review }] }});
+      let businessReviews = merge({}, preLoadedState, { currentBusiness: { reviews:{ review } }});
       return businessReviews;
     case DELETE_REVIEW:
       let newState = merge({}, preLoadedState)

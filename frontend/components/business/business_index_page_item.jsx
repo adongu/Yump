@@ -3,11 +3,12 @@ import { Link } from 'react-router';
 
 const BusinessIndexPageItem = ({business}) => {
 
-  const renderStars = (rating) => {
+
+  const renderStars = (ratings) => {
     let stars = [1, 2, 3, 4, 5];
     return stars.map((ele)=>{
       return (
-        <span key={ele} className={ele <= this.state.rating ? 'active_star' : ''} onClick={()=>{this.setState({rating: ele})}} >☆</span>
+        <span key={ele} className={ele <= ratings ? 'active_star' : 'no_star'} >☆</span>
       )
     })
   }
@@ -36,10 +37,11 @@ const BusinessIndexPageItem = ({business}) => {
       <div className="business__index-box-right">
         <div className="business__review-box">
           <span className="business__review-rating">
-            {renderStars}
+            {renderStars(business.ratings)}
           </span>
-
-          <span className="business__review-count">{business.review_count} Reviews</span>
+          <span className="business__review-count">
+            {business.review_count} Reviews
+          </span>
         </div>
 
         <div className="business__price">

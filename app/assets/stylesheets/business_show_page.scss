@@ -113,12 +113,22 @@
 //   }
 // }
 
-.active_star{
+.active_star {
   font-size: 36px;
   content: "\2605";
   // position: relative;
   font: #fff;
   color: orange;
+  border-radius: 1px;
+  indent: 5px;
+}
+
+.no_star {
+  font-size: 36px;
+  content: "\2605";
+  // position: relative;
+  font: #fff;
+  color: black;
   border-radius: 1px;
   indent: 5px;
 }

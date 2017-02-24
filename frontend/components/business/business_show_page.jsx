@@ -6,10 +6,9 @@ class BusinessPageShow extends React.Component{
 // need createreview method
   constructor(props) {
     super(props)
-    this.state = {
-      rating: null
-    }
-    this.renderStars = this.renderStars.bind(this)
+    // this.state = {
+    //   rating: null
+    // }
   }
 
   componentDidMount() {
@@ -17,20 +16,20 @@ class BusinessPageShow extends React.Component{
     // this.setState({reviews: this.props.reviews})
   };
 
-  componentWillUpdateProps(newProps) {
+  componentWillReceiveProps(newProps) {
     if (this.props.params.id !== newProps.params.id) {
-      console.log("newprops param", this.props.businesses.currentBusiness.reviews)
+      console.log("newprops param", this.props.business.reviews)
       // console.log("thisProps param", newProps.currentBusiness.reviews)
       this.props.fetchBusiness(newProps.params.id)
     }
     console.log(this.props.reviews)
   }
 
-  renderStars() {
+  renderStars(ratings) {
     let stars = [1, 2, 3, 4, 5];
     return stars.map((ele)=>{
       return (
-        <span className={ele <= this.state.rating ? 'active_star' : ''} onClick={()=>{this.setState({rating: ele})}} key={ele}>☆</span>
+        <span className={ele <= ratings ? 'active_star' : 'no_star'} key={ele}>☆</span>
       )
     })
   }
@@ -38,6 +37,7 @@ class BusinessPageShow extends React.Component{
 
   render () {
     let { business } = (this.props);
+    console.log(business)
     return (
       <div className="business__show-container">
         <div className="business__show-box">
@@ -50,7 +50,7 @@ class BusinessPageShow extends React.Component{
 
               <div className="business__review-box">
                 <span className="business__review-rating">
-                  {this.renderStars()}
+                  {this.renderStars(business.ratings)}
                 </span>
 
                 <span className="business__review-count">{business.review_count} Reviews</span>
@@ -111,12 +111,11 @@ class BusinessPageShow extends React.Component{
 
               <div className="reviews__container-reviews">
                   <BusinessShowReview
-                    reviews={this.props.reviews}
-                    renderStars={this.renderStars}
-                    createReview={this.props.createReview}
+                    reviews={business.reviews}
+                    createReview={business.createReview}
                     businessId={this.props.params.id}
-                    fetchBusiness={this.props.fetchBusiness}
-                    deleteReview={this.props.deleteReview}
+                    fetchBusiness={business.fetchBusiness}
+                    deleteReview={business.deleteReview}
                   />
               </div>
 
