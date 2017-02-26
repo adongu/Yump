@@ -9,7 +9,7 @@ class BusinessShowReview extends React.Component {
       rating: 0,
       review: "",
       imageFile: null,
-      imageUrl: ""
+      imageUrl: "",
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -89,10 +89,10 @@ class BusinessShowReview extends React.Component {
             </li>
             <li>Zip:
               {reviewer.zip}
+              <div className="reviews__body-images">
+                <img  src={review.image_url} />
+              </div>
             </li>
-            <div className="reviews__body-images">
-              <img  src={review.image_url} />
-            </div>
           </ul>
         </div>
 
@@ -124,7 +124,6 @@ class BusinessShowReview extends React.Component {
               <div className="business__reviews-form-left">
                 <div className="business__reviews-rating-container">
                     {this.renderReviewStars()}
-                    <img className="review__img" src={`${this.state.image_url}`}/>
                 </div>
                 <div className="business__reviews-review-container">
                   <label className="business__reviews-upload-label" >Your Review</label>
@@ -136,7 +135,8 @@ class BusinessShowReview extends React.Component {
                 <input className="business__reviews-upload-input" type="file" onChange={this.updateFile} />
               </div>
             </form>
-            <div className="business__reviews-form-right"> />
+            <div className="business__reviews-form-right">
+              <img className="review__img" src={this.state.image_url}/>
             </div>
           </div>
         </div>
