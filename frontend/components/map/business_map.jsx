@@ -9,8 +9,9 @@ import MarkerManager from '../../util/marker_manager';
   });
 
   let _mapOptions = {
-    center: {lat: 40.7128, lng: -74.0059}, // New York City coords
-    zoom: 13
+    // 40.752225, -73.986490
+    center: {lat: 40.752225, lng: -73.986490}, // New York City coords
+    zoom: 11
   };
 
 class BusinessMap extends React.Component{
@@ -48,6 +49,7 @@ class BusinessMap extends React.Component{
   //   });
   // }
   render() {
+    console.log("Hit Render map", this.props.results);
     return(
       <span>
         <div className='business__search-map' ref='map'>

@@ -37,6 +37,14 @@ class SearchBar extends React.Component {
     }
   }
 
+  handleInput(e) {
+    if (this.props.params !== "/") {
+      this.handleRTSearch(e);
+    } else {
+      this.update(e);
+    }
+  }
+
   handleRTSearch(e) {
     // e.preventDefault();
     if (this.state) {
@@ -49,8 +57,8 @@ class SearchBar extends React.Component {
   }
 
 
-  update(keywords) {
-    return (e) => this.setState({ [keywords]: e.target.value })
+  update(e) {
+    return (e) => this.setState({ "keywords": e.target.value })
   }
 
 

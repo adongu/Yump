@@ -14,6 +14,7 @@ export default class MarkerManager {
   updateMarkers(businesses){
     console.log("markers businesses", businesses)
     this.businesses = businesses;
+    // debugger
     this._businessesToAdd().forEach(this._createMarkerFrombusiness);
     this._markersToRemove().forEach(this._removeMarker);
   }
@@ -30,6 +31,7 @@ export default class MarkerManager {
 
   _createMarkerFrombusiness(business) {
     const pos = new google.maps.LatLng(business.latitude, business.longitude);
+    console.log(business.latitude, business.longitude)
     const marker = new google.maps.Marker({
       position: pos,
       map: this.map,

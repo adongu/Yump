@@ -8,7 +8,7 @@ class SearchResults extends React.Component {
     this.renderStars = this.renderStars.bind(this)
   }
 
-  componentDidMount(){
+  componentWillMount(){
     this.props.fetchResults(this.props.location.query.query)
   }
 

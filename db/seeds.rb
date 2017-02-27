@@ -8,12 +8,9 @@
 
 User.destroy_all
 users = User.create!([
-  {username: "Foodie", password:"cupcake", f_name: "mario", l_name: "luigi", email: "mario@yumper.com", zip: "10009"},
-  {username: "a", password:"asdasd", f_name: "mario", l_name: "luigi", email: "a@gmail.com", zip: "10009"}, {username: "b", password:"asdasd", f_name: "mario", l_name: "luigi", email: "b@gmail.com", zip: "10009"}])
-
-# user1 = User.create!(username: "Foodie", password:"cupcake", f_name: "mario", l_name: "luigi", email: "mario@yumper.com", zip: "10009")
-# user2 = User.create!(username: "a", password:"asdasd", f_name: "mario", l_name: "luigi", email: "a@gmail.com", zip: "10009")
-# user3 = User.create!(username: "b", password:"asdasd", f_name: "mario", l_name: "luigi", email: "b@gmail.com", zip: "10009")
+  {username: "Foodie", password:"cupcake", f_name: "Mario", l_name: "Penne", email: "mario@yumper.com", zip: "10009"},
+  {username: "a", password:"asdasa", f_name: "Fabio", l_name: "Feragamo", email: "a@gmail.com", zip: "10009"}, {username: "b", password:"asdasb", f_name: "Amagio", l_name: "Venachela", email: "b@gmail.com", zip: "10001"}])
+  {username: "c", password:"asdasc", f_name: "Dominic", l_name: "Avuachi", email: "c@gmail.com", zip: "10002"}, {username: "d", password:"asdasd", f_name: "James", l_name: "Lebron", email: "d@gmail.com", zip: "10002"}])
 
 images = [
   "https://s3.amazonaws.com/yumpapp-pro/9a1b74fdcadf63cb37dc529cc48c3a85.jpg",
@@ -30,8 +27,18 @@ images = [
 
 
 businesses = [];
-randomBizLat = rand(40.7114..40.8473)
-randomBizLng = rand(-74.0406..-73.8209)
+randomBizLat = (40.7038..40.8234)
+randomBizLng = (-74.0180..-73.9383)
+randomBizZip = %w{10026 10027 10030 10037 10039
+  10001 10011 10018 10019 10020
+  10036 10029 10035 10010 10016
+  10017 10022 10012 10013 10014
+  10004 10005 10006 10007 10038
+  10280 10002 10003 10009 10021
+  10028 10044 10065 10075 10128
+10023 10024 10025}
+randomBizPrice = %w{$ $$ $$$ $$$$}
+randomBizAreaCode = %w(212 718 917 347 929)
 
 Business.destroy_all
 Faker::Config.locale = 'en-US'
@@ -41,25 +48,27 @@ Faker::Config.locale = 'en-US'
     street: Faker::Address.street_address,
     city: "New York City",
     state: "NY",
-    zip: Faker::Address.zip_code,
-    phone: Faker::PhoneNumber.phone_number,
+    zip: (randomBizZip).sample,
+    phone: "#{randomBizAreaCode.sample}-#{Faker::PhoneNumber.exchange_code}-#{Faker::PhoneNumber.subscriber_number}",
     image: images[n],
-    price: "$$",
-    latitude: randomBizLat,
-    longitude: randomBizlng
+    price: randomBizPrice.sample,
+    latitude: rand(randomBizLat),
+    longitude: rand(randomBizLng)
   })
 end
 
 reviews = [];
 
 Review.destroy_all
-3.times do
-  reviews << Review.create!({
-    user_id: users[0].id,
-    business_id: businesses[2].id,
-    review: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    rating: 3
-  })
+10.times do |b|
+  rand(1..4).times do |n|
+    reviews << Review.create!({
+      user_id: users[n+1].id,
+      business_id: businesses[b].id,
+      review: Faker::ChuckNorris.fact,
+      rating: rand(1..5)
+    })
+  end
 end
 
 tags = [];
@@ -73,6 +82,8 @@ Tagging.destroy_all
 taggings = [];
 randomBizNum = rand(businesses[0].id..businesses[9].id)
 randomUserNum = rand(tags[0].id..tags[-1].id)
-5.times do |n|
-  taggings << Tagging.create!({business_id: businesses[n].id, tag_id: tags[n].id})
+businesses.length.times do |b|
+  3.times do |n|
+    taggings << Tagging.create!({business_id: b, tag_id: tags[n].id})
+  end
 end
