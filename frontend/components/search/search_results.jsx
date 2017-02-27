@@ -32,35 +32,37 @@ class SearchResults extends React.Component {
   render(){
   return (
     <div className="business__search-parent">
-      <div className="business__search-index-box">
-        {
-          this.props.results.map( business => {
-            return (
-            <div key={`bizness-${business.id}`} className='business__search-item'>
+      <div className="business__search-container">
+        <div className="business__search-index-box">
+          {
+            this.props.results.map( business => {
+              return (
+              <div key={`bizness-${business.id}`} className='business__search-item'>
 
-              <div className='business__search-left'>
-              <div className="business__search-index-item">
-                <Link className="business__search-pic" to={`/businesses/${business.id}`}>{business.name}</Link>
-                <div>{this.renderStars(business.ratings)}</div>
-                <div>{business.review_count} Reviews</div>
-                <div>{business.price}</div>
+                <div className='business__search-left'>
+                <div className="business__search-index-item">
+                  <Link className="business__search-pic" to={`/businesses/${business.id}`}>{business.name}</Link>
+                  <div>{this.renderStars(business.ratings)}</div>
+                  <div>{business.review_count} Reviews</div>
+                  <div>{business.price}</div>
+                </div>
+                </div>
+                <ul className="business__search-right">
+                    <li>{business.street}</li>
+                    <li>{business.city}</li>
+                    <li>{business.state}</li>
+                    <li>{business.zip}</li>
+                    <li>{business.phone}</li>
+                </ul>
               </div>
-              </div>
-              <ul className="business__search-right">
-                  <li>{business.street}</li>
-                  <li>{business.city}</li>
-                  <li>{business.state}</li>
-                  <li>{business.zip}</li>
-                  <li>{business.phone}</li>
-              </ul>
-            </div>
+              )
+            }
             )
           }
-          )
-        }
-      <BusinessMap
-        results={this.props.results}
-      />
+        </div>
+        <BusinessMap
+          results={this.props.results}
+        />
       </div>
     </div>
     )

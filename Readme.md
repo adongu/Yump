@@ -20,8 +20,12 @@
 #### Back end
 the app was built on Ruby on Rails in the back end with postgreSQL database. JSON API was used to perform all AJAX requests. RESTful routes were used for performing CRUD.
 
+
+
 #### Search
-Yump utilizes [pg_search][pg_search] multisearch with trigram and tsearch to search for businesses with whole text, partial text, and typos within 3 letters. Attributes such as business name, address, rating, price range 
+Yump utilizes [pg_search][pg_search] multisearch with trigram and tsearch to search for businesses with whole text, partial text, and typos within 3 letters. Attributes such as business name, address, rating, price range
 
 [yump]: http://www.alexliang.co/
 [pg_search]:https://github.com/Casecommons/pg_search
+[React]:https://facebook.github.io/react/
+[Redux]:https://facebook.github.io/react/

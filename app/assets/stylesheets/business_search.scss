@@ -1,11 +1,17 @@
 .business__search {
 
-
   &-parent {
     width: 100%;
     height: 1060px;
-    // display: flex;
-    // flex-direction: column;
+    margin: auto;
+  }
+
+  &-container {
+    width: 100%;
+    max-width: 960px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
   }
   &-index-box {
     width: 100%;
@@ -19,13 +25,13 @@
   &-item {
     padding-top: 30px;
     font-size: 16px;
-
     border-bottom: 1px solid #ccc;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
-    height: 150px;
+    height: auto;
+    margin: auto;
   }
 
   &-index-item {
@@ -51,4 +57,14 @@
     min-width: 150px;
     width: 60%;
   }
+}
+
+// map
+.business__search {
+  &-map-container {
+    width: 25%;
+    height: 100%;
+    border: 1px solid #ccc;
+  }
+
 }

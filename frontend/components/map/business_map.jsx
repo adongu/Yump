@@ -48,7 +48,7 @@ class BusinessMap extends React.Component{
   // }
   render() {
     return(
-      <span>
+      <span className="business__search-map-container">
         <div className='business__search-map' ref='map'>
           Map
         </div>

@@ -60,13 +60,12 @@ class SearchBar extends React.Component {
     return (e) => this.setState({ "keywords": e.target.value })
   }
 
-
 // <input onChange={this.update("keywords")}
   render(){
     return(
       <form onSubmit={this.handleSubmit} className="header__nav-search-box">
         <label className="header__nav-search-find-label"> <span>Find</span>
-          <input onInput={this.handleInput} className="header__nav-search-find-input" placeholder="tacos, cheap dinner, Jeff's"></input>
+          <input onInput={this.handleRTSearch} className="header__nav-search-find-input" placeholder="tacos, cheap dinner, Jeff's"></input>
         </label>
 
         <button className="header__nav-search-btn"><i className="fa fa-search fa" aria-hidden="true" ></i></button>
