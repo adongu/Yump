@@ -32,9 +32,14 @@ Front end portion of the app is built on Facebook's views library [React.js][rea
 - [figaro](https://github.com/laserlemon/figaro) to securely store keys and other important data.
 
 #### Search
-Yump utilizes [pg_search][pg_search] multisearch with trigram and tsearch to search for businesses with whole text, partial text, and typos within 3 letters. Attributes such as business name, address, rating, price range
+Yump utilizes [pg_search][pg_search] multisearch with trigram and tsearch to search for businesses with whole text, partial text, with typos within 3 letters. Attributes such as business name, address, rating, price range.
+
+
+#### Map
+[Google Map][map] is used for displaying locations of businesses. Users have the ability search for restaurants and click on markers to redirect to business page.
 
 [yump]: http://www.alexliang.co/
 [pg_search]:https://github.com/Casecommons/pg_search
 [react]:https://facebook.github.io/react/
 [redux]:https://github.com/reactjs/redux
+[map]:https://developers.google.com/maps/
