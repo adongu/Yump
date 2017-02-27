@@ -17,15 +17,24 @@
 
 ##Overall APP Structure
 
-#### Back end
-the app was built on Ruby on Rails in the back end with postgreSQL database. JSON API was used to perform all AJAX requests. RESTful routes were used for performing CRUD.
+#### Back End
+[Yump][yump] was built on Ruby on Rails in the back end with postgreSQL database. JSON API was used to perform all AJAX requests. Associations were used for many-to-many relationships between different models for querying. RESTful routes were used for performing CRUD.
 
+#### Front End
+Front end portion of the app is built on Facebook's views library [React.js][react] with ES6 and utilizes Redux[redux] architecture for single stream of states. React allows quick re-rendering of views through its use of virtual DOM, allowing React to wait until end of event loop to apply actual changes. React takes care of real DOM manipulation by making the bare minimal changes needed.
 
+#### Libraries
+- [React.js][react]
+- [Redux][redux]
+- [pg_search][pg_search]
+- [BCrypt](https://github.com/codahale/bcrypt-ruby) for authorization
+- [Paperclip](https://github.com/thoughtbot/paperclip) to store user profile images using Amazon Web Services
+- [figaro](https://github.com/laserlemon/figaro) to securely store keys and other important data.
 
 #### Search
 Yump utilizes [pg_search][pg_search] multisearch with trigram and tsearch to search for businesses with whole text, partial text, and typos within 3 letters. Attributes such as business name, address, rating, price range
 
 [yump]: http://www.alexliang.co/
 [pg_search]:https://github.com/Casecommons/pg_search
-[React]:https://facebook.github.io/react/
-[Redux]:https://facebook.github.io/react/
+[react]:https://facebook.github.io/react/
+[redux]:https://github.com/reactjs/redux

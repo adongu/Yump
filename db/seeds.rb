@@ -8,9 +8,16 @@
 
 User.destroy_all
 users = User.create!([
-  {username: "Foodie", password:"cupcake", f_name: "Mario", l_name: "Penne", email: "mario@yumper.com", zip: "10009"},
-  {username: "a", password:"asdasa", f_name: "Fabio", l_name: "Feragamo", email: "a@gmail.com", zip: "10009"}, {username: "b", password:"asdasb", f_name: "Amagio", l_name: "Venachela", email: "b@gmail.com", zip: "10001"}])
-  {username: "c", password:"asdasc", f_name: "Dominic", l_name: "Avuachi", email: "c@gmail.com", zip: "10002"}, {username: "d", password:"asdasd", f_name: "James", l_name: "Lebron", email: "d@gmail.com", zip: "10002"}])
+  {username: "Foodie", password: "cupcake", f_name: "Mario", l_name: "Penne", email: "mario@yumper.com", zip: "10009"}, {username: "a", password: "asdasa", f_name: "Fabio", l_name: "Feragamo", email: "a@gmail.com", zip: "10001"},
+  {username: "b", password: "asdasb", f_name: "Penne", l_name: "Vichi", email: "b@gmail.com", zip: "10002"},
+  {username: "c", password: "asdasc", f_name: "James", l_name: "Black", email: "c@gmail.com", zip: "10003"},
+  {username: "d", password: "asdasd", f_name: "Jamie", l_name: "Oliver", email: "d@gmail.com", zip: "10004"}, {username: "e", password: "asdase", f_name: "Alton", l_name: "Brown", email: "e@gmail.com", zip: "10005"}])
+
+User.destroy_all
+users = User.create!([
+  {username: "Foodie", password:"cupcake", f_name: "mario", l_name: "luigi", email: "mario@yumper.com", zip: "10009"},
+  {username: "a", password:"asdasd", f_name: "mario", l_name: "luigi", email: "a@gmail.com", zip: "10009"},
+  {username: "b", password:"asdasd", f_name: "mario", l_name: "luigi", email: "b@gmail.com", zip: "10009"}])
 
 images = [
   "https://s3.amazonaws.com/yumpapp-pro/9a1b74fdcadf63cb37dc529cc48c3a85.jpg",
@@ -61,9 +68,10 @@ reviews = [];
 
 Review.destroy_all
 10.times do |b|
-  rand(1..4).times do |n|
+  rand(1..3).times do |n|
+  nextNum = n+1
     reviews << Review.create!({
-      user_id: users[n+1].id,
+      user_id: users[nextNum].id,
       business_id: businesses[b].id,
       review: Faker::ChuckNorris.fact,
       rating: rand(1..5)
