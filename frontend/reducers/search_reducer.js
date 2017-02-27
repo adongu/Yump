@@ -10,10 +10,10 @@ const SearchReducer = (oldState = _NullSearch, action) => {
   switch (action.type) {
     case RECEIVE_RESULTS:
 
-      let results = action.results
-      return Object.assign({}, {results: action.results} )
+    let results = action.results
+    return Object.assign({}, {results: action.results} )
     default:
-      return oldState;
+    return oldState;
   }
 
 }

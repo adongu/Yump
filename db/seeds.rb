@@ -27,7 +27,11 @@ images = [
   "https://s3.amazonaws.com/yumpapp-pro/steak.jpg",
   "https://s3.amazonaws.com/yumpapp-pro/sushi-wallpaper-2.jpg"
 ]
+
+
 businesses = [];
+randomBizLat = rand(40.7114..40.8473)
+randomBizLng = rand(-74.0406..-73.8209)
 
 Business.destroy_all
 Faker::Config.locale = 'en-US'
@@ -35,14 +39,14 @@ Faker::Config.locale = 'en-US'
   businesses << Business.create!({
     name: Faker::Company.name,
     street: Faker::Address.street_address,
-    city: Faker::Address.city,
-    state: Faker::Address.state,
+    city: "New York City",
+    state: "NY",
     zip: Faker::Address.zip_code,
     phone: Faker::PhoneNumber.phone_number,
     image: images[n],
     price: "$$",
-    latitude: Faker::Address.latitude,
-    longitude: Faker::Address.longitude
+    latitude: randomBizLat,
+    longitude: randomBizlng
   })
 end
 

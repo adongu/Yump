@@ -6,8 +6,7 @@
     <%= favicon_link_tag "peace_large.jpg"%>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <!-- <script src="https://maps.googleapis.com/maps/api/js" charset="utf-8"></script> -->
-    <!-- <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV["google_map_key"]}" %> -->
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV["google_map_key"]}" %>
   </head>
 
   <body>
