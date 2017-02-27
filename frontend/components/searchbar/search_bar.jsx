@@ -14,11 +14,9 @@ class SearchBar extends React.Component {
   }
 
   componentDidMount (){
-    debugger
     this.setState={keywords: location.search}
   }
   componentWillReceiveProps (newProps){
-    debugger
     if (newProps.location) {
       if (this.props.location.query.query !== newProps.location.query.query) {
         this.setState({keywords: newProps.location.query.query})

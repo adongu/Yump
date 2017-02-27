@@ -32,13 +32,15 @@
     margin: 0 70px;
   }
   &-logo-img {
-    overflow: hidden;
+    // overflow: hidden;
     width: 140px;
     height: auto;
   }
   &-logo-img:hover {
     transform: scale(1.2);
     transition: transform 0.25s ease-out;
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -217,7 +219,14 @@
 }
 
 
+// all reviews
+.reviews__container-reviews {
+
+}
 // Reviews
+.business__reviews-all {
+
+}
 .business__show-reviews {
 
 }
@@ -231,10 +240,5 @@
 }
 
 .business__review-rating {
-
-}
-
-// all reviews
-.reviews__container-reviews {
 
 }
