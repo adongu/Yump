@@ -21,21 +21,21 @@
 Yump is an web application excited by Yelp and built using Ruby on Rails and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
 - [x] 1. New account creation, login, guest/demo login
-- [ ] 2. A production README [sample](./sample_production_readme.md)
+- [x] 2. A production README [sample](./sample_production_readme.md)
 - [x] 3. Hosting on Heroku
-- [ ] 4. Business Page
+- [x] 4. Business Page
   *  Has business information
   * Can leave reviews
   * Have pictures
-- [ ] 5. Search / filters
+- [x] 5. Search / filters
   * Filter by price/orientation/location/rating/popularity
   * Search has name and location input
   * Has suggestions dropdown
-- [ ] 6. Reviews / ratings
+- [x] 6. Reviews / ratings
   * Has form to leave review and leave start ratings(between 1-5)
   * Can add/delete pictures
   * Can add/update/delete reviews
-- [ ] 7. Map
+- [x] 7. Map
   * Shows 10 businesses in the zip code filtered
   * User can drag map around
   * map updates page with 10 new business within near location(persisting search filters)

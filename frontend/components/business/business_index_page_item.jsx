@@ -22,7 +22,7 @@ const BusinessIndexPageItem = ({business}) => {
 
       <div className="business__index">
         <ul className="business__index-item-container">
-          <li className="business__title">{business.name}</li>
+          <li className="business__title"><Link to={`/businesses/${business.id}`}>{business.name}</Link></li>
           <li>{business.street}</li>
           <li>{business.city}</li>
           <li>{business.state}</li>

@@ -4,6 +4,26 @@
   max-height: 1060px;
 }
 
+.business__pic-box {
+  width: 100%;
+  height: 216px;
+}
+
+.business__pic-box img {
+  // max-width: 30%;
+  height: 216px;
+}
+
+.business__ {
+  &review-count {
+    font-size: 18px;
+  }
+
+  &price {
+    font-size: 18px;
+  }
+}
+
 .business__index-box {
   max-width: 960px;
   width: 100%;
@@ -33,9 +53,4 @@
   font-size: 13px;
   font-weight: bold;
   // overflow: hidden;
-}
-
-.business__img img {
-  // max-width: 30%;
-  height: 18%;
 }
