@@ -5,16 +5,13 @@ export default class MarkerManager {
     this.map = map;
     this.handleClick = handleClick;
     this.markers = [];
-    //permanently bind instance methods
     this._createMarkerFrombusiness = this._createMarkerFrombusiness.bind(this);
     this._removeMarker = this._removeMarker.bind(this);
     this._markersToRemove = this._markersToRemove.bind(this);
   }
 
   updateMarkers(businesses){
-    console.log("markers businesses", businesses)
     this.businesses = businesses;
-    // debugger
     this._businessesToAdd().forEach(this._createMarkerFrombusiness);
     this._markersToRemove().forEach(this._removeMarker);
   }
@@ -31,7 +28,6 @@ export default class MarkerManager {
 
   _createMarkerFrombusiness(business) {
     const pos = new google.maps.LatLng(business.latitude, business.longitude);
-    console.log(business.latitude, business.longitude)
     const marker = new google.maps.Marker({
       position: pos,
       map: this.map,

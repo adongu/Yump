@@ -30,8 +30,7 @@ class SearchResults extends React.Component {
   }
 
   render(){
-    console.log("searchresults", this.props.results)
-    return (
+  return (
     <div className="business__search-parent">
       <div className="business__search-index-box">
         {

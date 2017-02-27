@@ -27,7 +27,6 @@ class BusinessMap extends React.Component{
       this.MarkerManager.updateMarkers(this.props.results);
     };
     //  this._registerListeners();
-    console.log("props", this.props.results)
       //  }
       // this.listenForMove();
 
@@ -35,7 +34,6 @@ class BusinessMap extends React.Component{
 
   componentDidUpdate() {
     this.MarkerManager.updateMarkers(this.props.results);
-    console.log("Uplodated biz map results", this.props.results)
   }
 
   _handleMarkerClick(business) {
@@ -49,7 +47,6 @@ class BusinessMap extends React.Component{
   //   });
   // }
   render() {
-    console.log("Hit Render map", this.props.results);
     return(
       <span>
         <div className='business__search-map' ref='map'>

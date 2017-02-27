@@ -14,9 +14,11 @@ class SearchBar extends React.Component {
   }
 
   componentDidMount (){
+    debugger
     this.setState={keywords: location.search}
   }
   componentWillReceiveProps (newProps){
+    debugger
     if (newProps.location) {
       if (this.props.location.query.query !== newProps.location.query.query) {
         this.setState({keywords: newProps.location.query.query})
@@ -38,15 +40,14 @@ class SearchBar extends React.Component {
   }
 
   handleInput(e) {
-    if (this.props.params !== "/") {
+    // if (this.params !== "/") {
       this.handleRTSearch(e);
-    } else {
-      this.update(e);
-    }
+    // } else {
+      // this.update(e);
+    // }
   }
 
   handleRTSearch(e) {
-    // e.preventDefault();
     if (this.state) {
       let query = e.target.value
       hashHistory.push({
@@ -57,7 +58,7 @@ class SearchBar extends React.Component {
   }
 
 
-  update(e) {
+  update() {
     return (e) => this.setState({ "keywords": e.target.value })
   }
 
@@ -67,7 +68,7 @@ class SearchBar extends React.Component {
     return(
       <form onSubmit={this.handleSubmit} className="header__nav-search-box">
         <label className="header__nav-search-find-label"> <span>Find</span>
-          <input onInput={this.handleRTSearch} className="header__nav-search-find-input" placeholder="tacos, cheap dinner, Jeff's"></input>
+          <input onInput={this.handleInput} className="header__nav-search-find-input" placeholder="tacos, cheap dinner, Jeff's"></input>
         </label>
 
         <button className="header__nav-search-btn"><i className="fa fa-search fa" aria-hidden="true" ></i></button>
