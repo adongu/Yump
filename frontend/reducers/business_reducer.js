@@ -5,10 +5,10 @@ import {
 import {
   RECEIVE_REVIEW,
   UPDATE_REVIEW,
-  DELETE_REVIEW
+  REMOVE_REVIEW
 } from '../actions/review_actions';
 
-import { merge } from 'lodash';
+import { merge, pull } from 'lodash';
 
 let _nullBusiness = Object.freeze({
   businesses: [],
@@ -19,33 +19,36 @@ let _nullBusiness = Object.freeze({
   errors: []
 });
 
-const BusinessReducer = (preLoadedState = _nullBusiness, action) => {
-  Object.freeze(preLoadedState);
-  let newState = merge({}, preLoadedState)
+const BusinessReducer = (oldState = _nullBusiness, action) => {
+  Object.freeze(oldState);
+  let newState = merge({}, oldState)
   switch (action.type) {
     case RECEIVE_ALL_BUSINESSES:
       let businesses = action.businesses
-      let businessesResult = merge({}, preLoadedState, {businesses: [...businesses]});
+      let businessesResult = merge({}, oldState, {businesses: [...businesses]});
       return businessesResult;
     case RECEIVE_BUSINESS:
       let business = action.business;
       newState.currentBusiness = action.business
-      // let businessResult = Object.assign({}, preLoadedState, { currentBusiness: business });
+      // let businessResult = Object.assign({}, oldState, { currentBusiness: business });
       return newState;
     case RECEIVE_ERRORS:
       let errors = action.errors
-      return merge({}, preLoadedState, errors)
+      return merge({}, oldState, errors)
     case RECEIVE_REVIEW:
       let review = action.review;
-      newState.currentBusiness.reviews.push( review )
-      // let businessReviews = Object.assign({}, preLoadedState, { currentBusiness: {reviews: review }});
+      newState.currentBusiness.reviews.unshift( review )
+      // let businessReviews = Object.assign({}, oldState, { currentBusiness: {reviews: review }});
       return newState;
-    case DELETE_REVIEW:
+    case REMOVE_REVIEW:
+      let newReviews = newState.currentBusiness.reviews;
 
-      delete newState.currentBusiness.reviews[ action.review ];
-      return newState
+      newState.currentBusiness.reviews = newReviews.filter (review => {
+          return review.id !== action.review.id;
+      })
+      return newState;
     default:
-      return preLoadedState
+      return oldState
   }
 }
 

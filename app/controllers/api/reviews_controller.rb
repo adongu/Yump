@@ -24,9 +24,8 @@ class Api::ReviewsController < ApplicationController
   def destroy
     # debugger
     @review = current_user.reviews.find(params[:id])
-    if @review
+    if @review.destroy
 
-      render :show
     else
       render json: ["Please log in to delete review"], status: 401
     end
