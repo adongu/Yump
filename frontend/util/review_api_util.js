@@ -35,9 +35,13 @@ export const updateReview = (formData) => {
   })
 }
 
-export const deleteReview = (id) => {
+export const deleteReview = (review) => {
   return $.ajax({
     method:"DELETE",
-    url: `api/reviews/${id}`
-  })
+    url: `api/reviews/${review.id}`
+  }).then((res) => {
+    // if(res.code === 200){
+      return review;
+    // }
+  });
 }

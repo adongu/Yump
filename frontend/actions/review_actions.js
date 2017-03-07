@@ -15,10 +15,13 @@ const receiveReview = (review) => ({
   review
 })
 
-const removeReview = (review) => ({
-  type: REMOVE_REVIEW,
-  review
-})
+const removeReview = (review) => {
+  console.log("hit removeReview", review);
+  return {
+    type: REMOVE_REVIEW,
+    review
+  }
+}
 
 export const fetchReviews = () => dispatch => {
   return APIUtil.fetchReviews().then((reviews) => dispatch(receiveAllReviews(reviews)));
@@ -41,5 +44,5 @@ export const updateReview = (id) => dispatch => {
 }
 
 export const deleteReview = (review) => dispatch => {
-  return APIUtil.deleteReview(review).then((review) => dispatch(removeReview(review)));
+  return APIUtil.deleteReview(review).then((review) =>  dispatch(removeReview(review)));
 }

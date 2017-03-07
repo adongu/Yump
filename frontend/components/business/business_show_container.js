@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch, { location }) => {
   return {
     fetchBusiness: (id) => dispatch(fetchBusiness(id)),
     createReview: (formData) => dispatch(createReview(formData)),
-    deleteReview: (formData) => dispatch(deleteReview(formData))
+    deleteReview: (review) => dispatch(deleteReview(review))
   }
 };
 
