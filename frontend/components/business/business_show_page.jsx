@@ -9,6 +9,7 @@ class BusinessPageShow extends React.Component{
     // this.state = {
     //   rating: null
     // }
+    this.renderBusinessImgs = this.renderBusinessImgs.bind(this);
   }
 
   componentDidMount() {
@@ -30,6 +31,33 @@ class BusinessPageShow extends React.Component{
       )
     })
   }
+
+  renderBusinessImgs(business) {
+    if (business.reviews[0]) {
+      return(
+        <div className="business__show-images row">
+          <section>
+            <img
+              className="business__header-images"
+              src={business.reviews[0].image_url}
+              />
+          </section>
+          <section>
+            <img
+              className="business__header-images active"
+              src={business.reviews[1].image_url}
+              />
+          </section>
+          <section>
+            <img
+              className="business__header-images"
+              src={business.reviews[2].image_url}
+              />
+          </section>
+        </div>
+      )
+    }
+  };
 
 
   render () {
@@ -78,26 +106,7 @@ class BusinessPageShow extends React.Component{
               </ul>
             </div>
 
-            <div className="business__show-images row">
-              <section>
-                <img
-                  className="business__header-images"
-                  src={ window.assets.oysters }
-                  />
-              </section>
-              <section>
-                <img
-                  className="business__header-images active"
-                  src={ window.assets.steak }
-                  />
-              </section>
-              <section>
-              <img
-                className="business__header-images"
-                src={ window.assets.soup }
-                />
-              </section>
-            </div>
+              { this.renderBusinessImgs(business) }
           </div>
 
           <div className="business__show-reviews-container">
@@ -114,7 +123,7 @@ class BusinessPageShow extends React.Component{
                   />
               </div>
 
-            </div>
+              </div>
           </div>
         </div>
       </div>

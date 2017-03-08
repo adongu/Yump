@@ -68,7 +68,8 @@ Review.destroy_all
       user_id: users[nextNum].id,
       business_id: businesses[b].id,
       review: Faker::ChuckNorris.fact,
-      rating: rand(1..5)
+      rating: rand(1..5),
+      image: images[rand(1..5)]
     })
   end
 end
