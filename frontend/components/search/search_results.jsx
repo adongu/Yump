@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import BusinessMap from '../map/business_map'
+import BusinessMap from '../map/business_map';
 
 class SearchResults extends React.Component {
   constructor (props) {
@@ -61,7 +61,7 @@ class SearchResults extends React.Component {
           }
         </div>
         <BusinessMap
-          results={this.props.results}
+          results={[this.props.business]}
         />
       </div>
     </div>

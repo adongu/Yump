@@ -12,7 +12,7 @@ const mapStateToProps = ({ session, businesses }) => {
     business: businesses.currentBusiness,
     errors: businesses.errors,
     reviews: businesses.currentBusiness.reviews,
-    currentUserId: session.currentUser.id
+    currentUser: session.currentUser
   })
 }
 

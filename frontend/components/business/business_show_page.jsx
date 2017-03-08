@@ -1,14 +1,12 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import BusinessShowReview from './reviews/business_show_reviews';
+import BusinessMap from '../map/business_map';
 
 class BusinessPageShow extends React.Component{
-// need createreview method
   constructor(props) {
     super(props)
-    // this.state = {
-    //   rating: null
-    // }
+
     this.renderBusinessImgs = this.renderBusinessImgs.bind(this);
   }
 
@@ -92,11 +90,10 @@ class BusinessPageShow extends React.Component{
 
           <div className="business__map-img-box row">
             <div className="business__map">
-              <img
-                className="business__header-map-image"
-                src={ window.assets.static_map }
+              <BusinessMap
+                results={this.props}
               />
-
+          
               <ul className="business__current-info">
                 <li className="business__current-address">{business.street}</li>
                 <li className="business__current-address">{business.city}</li>
@@ -116,7 +113,7 @@ class BusinessPageShow extends React.Component{
                   <BusinessShowReview
                     reviews={business.reviews}
                     createReview={this.props.createReview}
-                    currentUserId={this.props.currentUserId}
+                    currentUser={this.props.currentUser}
                     businessId={this.props.params.id}
                     fetchBusiness={this.props.fetchBusiness}
                     deleteReview={this.props.deleteReview}

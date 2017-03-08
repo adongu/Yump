@@ -62,7 +62,7 @@ reviews = [];
 
 Review.destroy_all
 10.times do |b|
-  rand(1..3).times do |n|
+  rand(3..4).times do |n|
   nextNum = n+1
     reviews << Review.create!({
       user_id: users[nextNum].id,

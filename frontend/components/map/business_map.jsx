@@ -9,15 +9,12 @@ import MarkerManager from '../../util/marker_manager';
   });
 
   let _mapOptions = {
-    // 40.752225, -73.986490
-    center: {lat: 40.752225, lng: -73.986490}, // New York City coords
+    center: {lat: 40.752225, lng: -73.986490}, // New York City
     zoom: 11
   };
 
+
 class BusinessMap extends React.Component{
-  // constructor(props) {
-  //   super(props)
-  // }
 
   componentDidMount() {
     const map = this.refs.map;
@@ -26,10 +23,6 @@ class BusinessMap extends React.Component{
     if (this.props.results.length > 0) {
       this.MarkerManager.updateMarkers(this.props.results);
     };
-    //  this._registerListeners();
-      //  }
-      // this.listenForMove();
-
   }
 
   componentDidUpdate() {
@@ -40,12 +33,6 @@ class BusinessMap extends React.Component{
     this.props.router.push(`businesses/${business.id}`);
   }
 
-  // _handleClick(coords) {
-  //   this.props.router.push({
-  //     pathname: "businesses/new",
-  //     query: coords
-  //   });
-  // }
   render() {
     return(
       <span className="business__search-map-container">

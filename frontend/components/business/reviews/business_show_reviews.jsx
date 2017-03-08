@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-
 class BusinessShowReview extends React.Component {
   constructor (props) {
     super(props)
@@ -115,9 +114,9 @@ class BusinessShowReview extends React.Component {
   }
 
   renderDeleteBtn(review) {
-    if (this.props.currentUserId === review.reviewer.id) {
-      console.log(this.props.currentUserId);
-      console.log(review.reviewer.id);
+    if (this.props.currentUser && (this.props.currentUser.id === review.reviewer.id)) {
+      // console.log(this.props.currentUser.id);
+      // console.log(review.reviewer.id);
       return (
         <button className="business__review-delete"  onClick={() => this.props.deleteReview(review)}>Delete Review</button>
       )

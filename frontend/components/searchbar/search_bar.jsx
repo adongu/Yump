@@ -16,7 +16,7 @@ class SearchBar extends React.Component {
   componentDidMount (){
     this.setState={keywords: location.search}
   }
-  componentWillReceiveProps (newProps){
+  componentDidReceiveProps (newProps){
     if (newProps.location) {
       if (this.props.location.query.query !== newProps.location.query.query) {
         this.setState({keywords: newProps.location.query.query})
@@ -24,7 +24,6 @@ class SearchBar extends React.Component {
       }
     }
   }
-
 
   handleSubmit(e) {
     e.preventDefault();
