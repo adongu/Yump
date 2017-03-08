@@ -107,6 +107,7 @@ class BusinessPageShow extends React.Component{
                   <BusinessShowReview
                     reviews={business.reviews}
                     createReview={this.props.createReview}
+                    currentUserId={this.props.currentUserId}
                     businessId={this.props.params.id}
                     fetchBusiness={this.props.fetchBusiness}
                     deleteReview={this.props.deleteReview}

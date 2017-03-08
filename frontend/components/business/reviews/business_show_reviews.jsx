@@ -14,6 +14,7 @@ class BusinessShowReview extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
+    this.renderDeleteBtn = this.renderDeleteBtn.bind(this);
   }
 
   renderReviewStars() {
@@ -113,6 +114,16 @@ class BusinessShowReview extends React.Component {
     )
   }
 
+  renderDeleteBtn(review) {
+    if (this.props.currentUserId === review.reviewer.id) {
+      console.log(this.props.currentUserId);
+      console.log(review.reviewer.id);
+      return (
+        <button className="business__review-delete"  onClick={() => this.props.deleteReview(review)}>Delete Review</button>
+      )
+    }
+  }
+
   render (){
 
     return (
@@ -148,7 +159,7 @@ class BusinessShowReview extends React.Component {
                   {this.renderReviews(review)}
 
                   <div className="delete__review">
-                    <button className="business__review-delete"  onClick={() => this.props.deleteReview(review)}>Delete Review</button>
+                    {this.renderDeleteBtn(review)}
                   </div>
 
               </div>

@@ -3,7 +3,7 @@ import { fetchBusiness } from '../../actions/business_actions';
 import { createReview, deleteReview } from '../../actions/review_actions';
 import BusinessShowPage from './business_show_page';
 
-const mapStateToProps = ({ businesses }) => {
+const mapStateToProps = ({ session, businesses }) => {
   let reviews = [];
   if (businesses.currentBusiness.reviews) {
     reviews = businesses.currentBusiness.reviews;
@@ -11,7 +11,8 @@ const mapStateToProps = ({ businesses }) => {
   return ({
     business: businesses.currentBusiness,
     errors: businesses.errors,
-    reviews: businesses.currentBusiness.reviews
+    reviews: businesses.currentBusiness.reviews,
+    currentUserId: session.currentUser.id
   })
 }
 
