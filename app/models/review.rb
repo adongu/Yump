@@ -23,8 +23,13 @@ class Review < ApplicationRecord
   validates :rating, inclusion: { in: 1..5 , message: "%(value) is not a valid value" }
   validates :user_id, uniqueness: { scope: :business_id}
 
-  has_attached_file :image, default_url: "steak.jpg"
- validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  has_attached_file :image,
+  :styles => {
+    :large => {:geometry => "616x450#"}
+  },
+  :s3_protocol => :https,
+  default_url: "steak.jpg"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   belongs_to :reviewer,
   primary_key: :id,

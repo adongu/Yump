@@ -28,8 +28,13 @@ class Business < ApplicationRecord
   validates :zip, length: { minimum: 5 }
   validates :price, inclusion: { in: %w($ $$ $$$ $$$$), message: "%{value} is not a valid price"}
 
-  has_attached_file :image, default_url: "oysters.jpg"
- validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  has_attached_file :image,
+  :styles => {
+    :large => {:geometry => "616x450#"}
+  },
+  :s3_protocol => :https,
+  default_url: "oysters.jpg"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   has_many :taggings
   has_many :tags, through: :taggings
