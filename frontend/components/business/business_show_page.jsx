@@ -84,7 +84,7 @@ class BusinessPageShow extends React.Component{
             </div>
 
             <div className="business__header-right">
-              <button>⭐ Write a Review</button>
+                <a href="#business__reviews-form">⭐ Write a Review</a>
             </div>
           </div>
 

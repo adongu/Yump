@@ -16,7 +16,7 @@ users = User.create!([
 images = [
   "https://s3.amazonaws.com/yumpapp-pro/9a1b74fdcadf63cb37dc529cc48c3a85.jpg",
   "https://s3.amazonaws.com/yumpapp-pro/Thai-Food.jpg",
-  "https://s3.amazonaws.com/yumpapp-pro/Thai-street-food-1-of-11.jpg",
+  "https://s3.amazonaws.com/yumpapp-pro/hotpot.jpg",
   "https://s3.amazonaws.com/yumpapp-pro/fancy-chocolate-desserts-wallpaper-4.jpg",
   "https://s3.amazonaws.com/yumpapp-pro/oysters.jpg",
   "https://s3.amazonaws.com/yumpapp-pro/pasta_time_freeze.jpg",

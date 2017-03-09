@@ -29,9 +29,12 @@ class Business < ApplicationRecord
   validates :price, inclusion: { in: %w($ $$ $$$ $$$$), message: "%{value} is not a valid price"}
 
   has_attached_file :image,
-  :styles => {
-    :large => {:geometry => "616x450#"}
+  styles: {
+    thumb: "100x100>",
+    medium: "200x200>",
+    large: {:geometry => "616x450#"},
   },
+  processors: [:thumbnail, :paperclip_optimizer],
   :s3_protocol => :https,
   default_url: "oysters.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/

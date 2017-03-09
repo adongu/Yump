@@ -37,6 +37,8 @@ gem 'bcrypt'
 # for seeding
 gem 'faker'
 gem 'paperclip', '5.0.0.beta1'
+gem 'image_optim_bin', group: :production
+gem 'paperclip-optimizer'
 gem 'figaro'
 gem 'aws-sdk', '>= 2.0'
 # Use Capistrano for deployment
