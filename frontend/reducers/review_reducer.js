@@ -16,7 +16,6 @@ const ReviewReducer = (preLoadedState = _NullState, action) => {
     case REMOVE_REVIEW:
       let newReviews = oldState[reviews].filter((review) => review !== action.review )
       oldState[reviews] = newReviews;
-      // console.log('oldState after: ', preLoadedState, deletedEle);
       return oldState;
     default:
       return preLoadedState;

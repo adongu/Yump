@@ -115,8 +115,6 @@ class BusinessShowReview extends React.Component {
 
   renderDeleteBtn(review) {
     if (this.props.currentUser && (this.props.currentUser.id === review.reviewer.id)) {
-      // console.log(this.props.currentUser.id);
-      // console.log(review.reviewer.id);
       return (
         <button className="business__review-delete"  onClick={()=>this.props.deleteReview(review)}>Delete Review</button>
       )

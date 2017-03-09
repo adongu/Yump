@@ -16,7 +16,6 @@ const receiveReview = (review) => ({
 })
 
 const removeReview = (review) => {
-  console.log("hit removeReview", review);
   return {
     type: REMOVE_REVIEW,
     review
