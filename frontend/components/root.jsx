@@ -2,7 +2,7 @@ import React from 'react';
 import App from './app';
 import { Provider } from "react-redux";
 //  react router accepts store and renders routes wrapped by Provider
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-router';
 import SessionFormContainer from './session_form/session_form_container';
 import BusinessIndexContainer from './business/business_index_container';
 import BusinessShowContainer from './business/business_show_container';

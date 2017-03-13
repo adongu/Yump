@@ -84,7 +84,7 @@ class BusinessPageShow extends React.Component{
             </div>
 
             <div className="business__header-right">
-                <a href="#business__reviews-form">⭐ Write a Review</a>
+                <button onClick={() => window.scrollTo(0,500)}>⭐ Write a Review</button>
             </div>
           </div>
 
