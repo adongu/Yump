@@ -1,3 +1,8 @@
+.show__search-container {
+  width: 57%;
+  display: flex;
+}
+
 .business__search {
 
   &-parent {
@@ -14,7 +19,7 @@
     flex-direction: row;
   }
   &-index-box {
-    width: 95%;
+    width: 100%;
     // height: auto;
     max-width: 960px;
     display: flex;

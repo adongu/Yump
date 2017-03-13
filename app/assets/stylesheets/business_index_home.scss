@@ -46,6 +46,7 @@
     display: flex;
     background: white;
     max-width: 960px;
+    width: 70%;
     margin: auto;
     padding-top: 30px;
     height: 28px;
@@ -61,7 +62,7 @@
 // search bar
 .home__nav-search {
   &-box {
-    width: 60%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;

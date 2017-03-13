@@ -42,7 +42,9 @@ const HomePage = ({currentUser, logout, router}) => {
         <div className="show__nav-container">
           <div className="show__nav-box">
             <HeaderBar />
-            <SearchBar />
+            <div className="show__search-container">
+              <SearchBar />
+            </div>
             {sessionBar()}
           </div>
         </div>
@@ -61,7 +63,6 @@ const HomePage = ({currentUser, logout, router}) => {
 
             <div className='home__nav-search-bar'>
               <SearchBar />
-
             </div>
           </div>
         </div>

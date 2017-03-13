@@ -84,7 +84,7 @@ class BusinessPageShow extends React.Component{
             </div>
 
             <div className="business__header-right">
-                <button onClick={() => window.scrollTo(0,500)}>⭐ Write a Review</button>
+                <button onClick={() => window.scrollTo(0,600)}>⭐ Write a Review</button>
             </div>
           </div>
 
