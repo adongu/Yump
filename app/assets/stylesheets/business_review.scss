@@ -193,9 +193,8 @@
   }
   &__container-right {
     width: 80%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+
+    // flex-direction: column;
   }
 
   &__reviewer-name {
@@ -204,7 +203,7 @@
 
   &__body-header {
     font-size: 18px;
-    // padding: 20px 0;
+    padding-bottom: 10px;
   }
   &__ratings {
   }
@@ -218,8 +217,10 @@
     word-wrap:break-word;
     font-size: 13px;
     font-weight: bold;
-
+    overflow: auto;
+    padding-bottom: 100px;
   }
+
   &__body-images {
     width: 220px;
   }
