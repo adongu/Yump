@@ -61,7 +61,7 @@ class SearchResults extends React.Component {
           }
         </div>
         <BusinessMap
-          results={[this.props.business]}
+          results={this.props.results}
         />
       </div>
     </div>

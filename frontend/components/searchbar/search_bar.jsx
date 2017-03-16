@@ -37,11 +37,11 @@ class SearchBar extends React.Component {
   }
 
   handleInput(e) {
-    // if (this.params !== "/") {
+    if (this.params !== "/") {
       this.handleRTSearch(e);
-    // } else {
-      // this.update(e);
-    // }
+    } else {
+      this.update(e);
+    }
   }
 
   handleRTSearch(e) {
