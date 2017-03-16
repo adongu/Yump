@@ -139,18 +139,23 @@
   height: 336px;
 }
 // map
-.business__map {
+// .business__map {
+//   flex-basis: 33.333333%;
+//   border: 1px solid #ccc;
+//   padding: 5px 5px;
+//   background: #fff;
+// }
+
+.business__map-show-section {
   flex-basis: 33.333333%;
   border: 1px solid #ccc;
   padding: 5px 5px;
   background: #fff;
 }
 
-.business__map-show {
-  flex-basis: 33.333333%;
-  border: 1px solid #ccc;
-  padding: 5px 5px;
-  background: #fff;
+.business__show-map-box {
+  width: 100%;
+  height: 50%;
 }
 
 .business__header-map-image {

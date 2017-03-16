@@ -89,7 +89,7 @@ class BusinessPageShow extends React.Component{
           </div>
 
           <div className="business__map-img-box row">
-            <div className="business__map-show">
+            <div className="business__map-show-section">
               <div className="business__show-map-box">
                 <BusinessMap
                   results={[this.props.business]}
@@ -99,8 +99,7 @@ class BusinessPageShow extends React.Component{
               <ul className="business__current-info">
                 <li className="business__current-address">{business.street}</li>
                 <li className="business__current-address">{business.city}</li>
-                <li className="business__current-address">{business.state}</li>
-                <li className="business__current-address">{business.zip}</li>
+                <li className="business__current-address">{business.state}, {business.zip}</li>
                 <li>{business.phone}</li>
               </ul>
             </div>
