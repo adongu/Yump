@@ -84,12 +84,12 @@ class BusinessPageShow extends React.Component{
             </div>
 
             <div className="business__header-right">
-                <button onClick={() => window.scrollTo(0,600)}>⭐ Write a Review</button>
+                <button onClick={() => window.scrollTo(0, 580)}>⭐ Write a Review</button>
             </div>
           </div>
 
           <div className="business__map-img-box row">
-            <div className="business__map">
+            <div className="business__map-show">
               <BusinessMap
                 results={[this.props.business]}
               />

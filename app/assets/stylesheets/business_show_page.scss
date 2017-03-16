@@ -22,7 +22,7 @@
   &-logo-box {
       width: 15%;
       padding: 12px 0;
-      margin: 5px 30px;
+      margin: 5px 12px;
   }
 
   &-logo-img-home {
@@ -76,43 +76,10 @@
   font-weight: bold;
 }
 
-.business__review-box {
-
+.business__review-box > * {
+  padding-bottom: 5px;
 }
-
-// .business__review {
-//   &-rating {
-//     text-align: center;
-//   }
-//   &-rating > span {
-//     display: inline-block;
-//     position: relative;
-//     width: 1.0em;
-//     indent: 5px;
-//     border-radius: 5px;
-//     color: white;
-//     background: #ccc;
-//   }
-//   &-rating:hover > span {
-//   	background: transparent;
-//     cursor: pointer;
-//     border: 1px solid orange;
-//   }
-//   &-rating > span:hover ~ span {
-//   	// background: black;
-//   }
-//   &-rating:hover > span:before {
-//   	content: "\2605";
-//   	position: absolute;
-//   	left: 0;
-//   	background: orange;
-//     border-radius: 1px;
-//   }
-//   &-rating > span:hover ~ span:before {
-//   	background: transparent;
-//   }
-// }
-
+// rating stars
 .active_star {
   font-size: 36px;
   content: "\2605";
@@ -173,6 +140,13 @@
 }
 // map
 .business__map {
+  flex-basis: 33.333333%;
+  border: 1px solid #ccc;
+  padding: 5px 5px;
+  background: #fff;
+}
+
+.business__map-show {
   flex-basis: 33.333333%;
   border: 1px solid #ccc;
   padding: 5px 5px;

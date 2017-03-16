@@ -52,8 +52,8 @@
 
   &-left {
     height: auto;
-    width: 67%
-
+    width: 67%;
+    padding-left: 30px;
   }
 
   &-right {
@@ -69,6 +69,7 @@
 .business__search {
   &-map-container {
     width: 30%;
+    padding-top: 30px;
   }
 
   &-map {

@@ -15,7 +15,7 @@ class Api::UsersController < ApplicationController
     if @user
       render "api/users/show"
     else
-      render json: ["This username does not match any of our users, please signup or try again to continue"], status: 403
+      render json: ["This username does not match any of our users, please signup or try again to continue"], status: 422
     end
   end
 

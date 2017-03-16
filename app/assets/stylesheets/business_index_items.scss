@@ -41,16 +41,25 @@
   text-decoration: none;
 }
 
-.business__index-individual {
-  display: flex;
-  align-items: center;
-  flex-basis: 30%;
-  height: 100%;
-  padding: 13px;
-  margin: 20px 0;
-  border: 1px solid #ccc;
-  justify-content: space-between;
-  font-size: 13px;
-  font-weight: bold;
-  // overflow: hidden;
+.business__index {
+  &-individual {
+    display: flex;
+    align-items: center;
+    flex-basis: 30%;
+    height: 100%;
+    padding: 13px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  &-item-container > * {
+    padding-bottom: 5px;
+  }
+
+  &-item-container:first-child {
+    padding-top: 10px;
+  }
 }
