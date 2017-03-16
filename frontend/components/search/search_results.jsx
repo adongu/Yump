@@ -50,8 +50,7 @@ class SearchResults extends React.Component {
                 <ul className="business__search-right">
                     <li>{business.street}</li>
                     <li>{business.city}</li>
-                    <li>{business.state}</li>
-                    <li>{business.zip}</li>
+                    <li>{business.state}, {business.zip}</li>
                     <li>{business.phone}</li>
                 </ul>
               </div>
