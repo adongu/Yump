@@ -11,10 +11,10 @@ const SessionReducer = (oldState = _nullUser, action) => {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       let currentUser = action.currentUser;
-      return merge({}, oldState, { currentUser });
+      return Object.assign({}, oldState, { currentUser, errors: [] });
     case RECEIVE_ERRORS:
       let errors = action.errors;
-      return merge({}, _nullUser, { errors })
+      return Object.assign({}, oldState, { errors: errors })
     case CLEAR_ERRORS:
       return Object.assign({}, { errors: []})
     default:
