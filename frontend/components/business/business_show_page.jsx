@@ -90,9 +90,11 @@ class BusinessPageShow extends React.Component{
 
           <div className="business__map-img-box row">
             <div className="business__map-show">
-              <BusinessMap
-                results={[this.props.business]}
-              />
+              <div className="business__show-map-box">
+                <BusinessMap
+                  results={[this.props.business]}
+                />
+              </div>
 
               <ul className="business__current-info">
                 <li className="business__current-address">{business.street}</li>

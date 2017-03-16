@@ -27,12 +27,13 @@ class SearchBar extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.state) {
+    if (this.state && this.state.keywords) {
       let query = this.state.keywords
       hashHistory.push({
         pathname:`/searches`,
         query: { query }
       })
+      this.setState({ keywords: query })
     }
   }
 

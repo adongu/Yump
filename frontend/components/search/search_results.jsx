@@ -59,9 +59,11 @@ class SearchResults extends React.Component {
             )
           }
         </div>
-        <BusinessMap
-          results={this.props.results}
-        />
+        <div className="business__search-map-box">
+          <BusinessMap
+            results={this.props.results}
+          />
+        </div>
       </div>
     </div>
     )
