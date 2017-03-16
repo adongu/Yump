@@ -82,17 +82,15 @@ class BusinessShowReview extends React.Component {
     return (
       <div className="reviews__container">
         <div className="reviews__container-left">
-          <ul>
+          <ul className="reviews__container-left-info">
             <li className="reviews__reviewer-name">
               <span>{reviewer.f_name}</span>
               <span>{reviewer.l_name}</span>
             </li>
-            <li>Zip:
-              {reviewer.zip}
-              <div className="reviews__body-images">
-                <img  src={review.image_url} />
-              </div>
-            </li>
+            <li>Zip: {reviewer.zip}</li>
+            <div className="reviews__body-images">
+              <img src={review.image_url} />
+            </div>
           </ul>
         </div>
 

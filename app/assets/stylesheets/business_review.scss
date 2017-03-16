@@ -3,13 +3,16 @@
   max-width: 960px;
   width: 100%;
   // height: 1060px;
-  border-bottom: 1px solid #ccc;
+  // border-bottom: 1px solid #ccc;
 }
 
 .reviews__container-box {
   width: 100%;
 }
 
+.reviews__container-left-info > * {
+  padding-bottom: 10px;
+}
 
 .business__reviews {
   &-container-box {
@@ -31,9 +34,14 @@
   }
 
   &-form-container {
+    padding-top: 10px;
     width: 100%;
     display: flex;
     justify-content: space-between;
+  }
+
+  &-form-container > *{
+    padding-bottom: 10px;
   }
 
   &-box {
@@ -52,6 +60,11 @@
     height: 100%;
     width: 100%;
   }
+
+  &-form-left > * {
+    padding-bottom: 10px;
+  }
+
   &-rating-container {
     width: 100%;
     height: 25%
@@ -67,7 +80,7 @@
     flex-direction: column;
   }
   &-upload-label {
-    font-size: 13px;
+    font-size: 16px;
     font-weight: bold;
     width: 100%;
 
@@ -82,6 +95,7 @@
   &-buttons {
     // border-bottom: 1px solid #ccc;
     width: 100%;
+    padding-top: 15px;
   }
   &-upload-input{
     // display: inline-block;
@@ -169,7 +183,7 @@
   &__container {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 80%;
   }
   &__container-left {
     width: 50%;
@@ -189,13 +203,14 @@
   }
 
   &__body-header {
-    font-size: 16px;
-    padding: 20px;
+    font-size: 18px;
+    // padding: 20px 0;
   }
   &__ratings {
   }
   &__date {
-
+    font-size: 15px;
+    padding-left: 10px;
   }
 
   &__body-text {
@@ -206,7 +221,12 @@
 
   }
   &__body-images {
+    width: 220px;
+  }
 
+  &__body-images > img{
+    width: 100%;
+    -webkit-backface-visibility: hidden;
   }
 }
 
