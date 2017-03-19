@@ -45,10 +45,11 @@
   &-individual {
     display: flex;
     align-items: center;
-    flex-basis: 30%;
+    flex-basis: 29%;
     height: 100%;
     padding: 13px;
-    margin: 20px 0;
+    border-radius: 3px;
+    margin: 20px 10px 20px 0;
     border: 1px solid #ccc;
     justify-content: space-between;
     font-size: 13px;
