@@ -41,21 +41,21 @@ randomBizZip = %w{10026 10027 10030 10037 10039
 randomBizPrice = %w{$ $$ $$$ $$$$}
 randomBizAreaCode = %w(212 718 917 347 929)
 
-nameArr = ["Le Bernardin", "Eleven Madison Park", "Momofuku Ko", "Jungsik", "L’Appart", "Jean-Georges", "Bouley"]
-streetArr = ["155 W 51st St", "11 Madison Ave", "8 Extra Pl", "2 Harrison St", "225 Liberty St", "1 Central Park W"]
+bizNameArr = ["Masa", "Le Bernardin", "Eleven Madison Park", "Momofuku Ko", "Jungsik", "L’Appart", "Jean-Georges", "Bouley", "Per Se"]
+streetArr = ["10 Columbus Cir, Fl 4", "155 W 51st St", "11 Madison Ave", "8 Extra Pl", "2 Harrison St", "225 Liberty St", "1 Central Park W", "163 Duane St", "10 Columbus Cir, Fl 4"]
 cityArr = ["New York"]
-zipArr = ["10019", "10010", "10003", "10013", "10281", "10023"]
-phoneArr = ["(212) 554-1515", "(212) 889-0905", "(212) 500-0831)", "(212) 219-0900", "(212) 981-8577", "(212) 299-3900"]
-latitude = ["40.7615691", "40.741726", "40.724783"]
-longitude = ["-73.981805", "-73.987173", "-73.991441"]
+zipArr = ["10019", "10019", "10010", "10003", "10013", "10281", "10023", "10013", "10019"]
+phoneArr = ["(212) 823-9800", "(212) 554-1515", "(212) 889-0905", "(212) 500-0831)", "(212) 219-0900", "(212) 981-8577", "(212) 299-3900", "(212) 964-2525", "(212) 823-9335"]
+latitude = ["40.768573", "40.7615691", "40.741726", "40.724783", "40.718827", "40.711984", "40.769069", "40.716969", "40.768227"]
+longitude = ["-73.983045", "-73.981805", "-73.987173", "-73.991441", "-74.009075", "-74.015265", "-73.981560", "-74.008958", "-73.982859"]
 
 Business.destroy_all
 Faker::Config.locale = 'en-US'
 10.times do |n|
   businesses << Business.create!({
-    name: Faker::Company.name,
+    name: name,
     street: Faker::Address.street_address,
-    city: "New York City",
+    city: "New York",
     state: "NY",
     zip: (randomBizZip).sample,
     phone: "#{randomBizAreaCode.sample}-#{Faker::PhoneNumber.exchange_code}-#{Faker::PhoneNumber.subscriber_number}",
