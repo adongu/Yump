@@ -51,7 +51,6 @@ longitudeArr = ["-73.983045", "-73.981805", "-73.987173", "-73.991441", "-74.009
 Business.destroy_all
 # Faker::Config.locale = 'en-US'
 10.times do |n|
-  debugger
   businesses << Business.create!({
     name: bizNameArr[n],
     street: streetArr[n],
@@ -67,6 +66,7 @@ Business.destroy_all
   })
 end
 
+
 reviewsArr = [
   "It was much better than I expected. I was happy to see how clean everything was. The waitress was prompt and polite. After my meal, I was knocked into a food coma. The ambiance gives off an earthy feel-good vibe. Satisfactory experience, will come again.",
   "This place was nearby and I decided to check it out. There were a lot of interesting decorations on the walls. The service was good for the most part but the waiter was a bit slow. Some of my favorite dishes are no longer available. I found the entrees to be somewhat agreeable to my personal flavor-profile. Satisfactory experience, will come again.",
@@ -80,7 +80,9 @@ reviewsArr = [
   "I have been here several times before. The entree I had was sublime. The decor was unique and incredible. I had to take one star away because my coffee mug was dirty.",
   "Best experience ever! I was happy to see how clean everything was. The food was flavorful, savory, and succulent. I found the ambiance to be very charming. The waitress was prompt and polite. Easily earned their 5 stars!",
   "I am never coming back here! The service wasn't that good and the waitress was unprofessional. Some of my favorite dishes are no longer available. Meh."
-  ];
+];
+
+reviews = []
 
 Review.destroy_all
 10.times do |b|
