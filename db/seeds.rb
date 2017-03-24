@@ -8,9 +8,9 @@
 
 User.destroy_all
 users = User.create!([
-  {username: "Foodie", password: "cupcake", f_name: "Mario", l_name: "Penne", email: "mario@yumper.com", zip: "10009"}, {username: "a", password: "asdasa", f_name: "Fabio", l_name: "Feragamo", email: "a@gmail.com", zip: "10001"},
-  {username: "b", password: "asdasb", f_name: "Penne", l_name: "Vichi", email: "b@gmail.com", zip: "10002"},
-  {username: "c", password: "asdasc", f_name: "James", l_name: "Black", email: "c@gmail.com", zip: "10003"},
+  {username: "Foodie", password: "cupcake", f_name: "Mario", l_name: "Batali", email: "mario@yumper.com", zip: "10009"}, {username: "a", password: "asdasa", f_name: "Anthony", l_name: "Bourdain", email: "a@gmail.com", zip: "10001"},
+  {username: "b", password: "asdasb", f_name: "Bobby", l_name: "Flay", email: "b@gmail.com", zip: "10002"},
+  {username: "c", password: "asdasc", f_name: "Gordon", l_name: "Ramsay", email: "c@gmail.com", zip: "10003"},
   {username: "d", password: "asdasd", f_name: "Jamie", l_name: "Oliver", email: "d@gmail.com", zip: "10004"}, {username: "e", password: "asdase", f_name: "Alton", l_name: "Brown", email: "e@gmail.com", zip: "10005"}])
 
 images = [
