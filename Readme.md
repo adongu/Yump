@@ -18,7 +18,7 @@
 ##Overall APP Structure
 
 #### Back End
-[Yump][yump] was built on Ruby on Rails in the back end with postgreSQL database. JSON API was used to perform all AJAX requests. Associations were used for many-to-many relationships between different models for querying. RESTful routes were used for performing CRUD.
+[Yump][yump] was built on Ruby on Rails in the back end with postgreSQL database. AJAX calls were made in the frontend and RESTful API routes were used to perform requests to backend.  Associations were used for many-to-many relationships between different models for querying.
 
 #### Front End
 Front end portion of the app is built on Facebook's views library [React.js][react] with ES6 and utilizes [Redux][redux] architecture for single stream of states. React allows quick re-rendering of views through its use of virtual DOM, allowing React to wait until end of event loop to apply actual changes. React takes care of real DOM manipulation by making the bare minimal changes needed.
@@ -36,7 +36,7 @@ Yump utilizes [pg_search][pg_search] multisearch with trigram and tsearch to sea
 
 
 #### Map
-[Google Map][map] is used for displaying locations of businesses. Users have the ability search for restaurants and click on markers to redirect to business page.
+[Google Maps][map] is used for displaying locations of businesses. Users have the ability search for restaurants and click on markers to redirect to business page.
 
 [yump]: https://www.yump.website/
 [pg_search]:https://github.com/Casecommons/pg_search
