@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 
 class BusinessShowReview extends React.Component {
   constructor (props) {
@@ -35,18 +35,23 @@ class BusinessShowReview extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let formData = new FormData();
-    formData.append("review[rating]", this.state.rating);
-    formData.append("review[review]", this.state.review);
-    formData.append("review[business_id]", this.props.businessId);
-    if (this.state.imageFile) {
-      formData.append("review[image]", this.state.imageFile);
+    if (this.props.currentUser) {
+      let formData = new FormData();
+      formData.append("review[rating]", this.state.rating);
+      formData.append("review[review]", this.state.review);
+      formData.append("review[business_id]", this.props.businessId);
+      if (this.state.imageFile) {
+        formData.append("review[image]", this.state.imageFile);
+      }
+      this.props.createReview(formData);
+      this.setState({rating: 0,
+        review: "",
+        imageUrl: ""})
+    } else {
+      hashHistory.push({
+        pathname:`/login`
+      })
     }
-    this.props.createReview(formData);
-    this.setState({rating: 0,
-    review: "",
-    imageUrl: ""})
-
   }
 
   updateFile(e) {
@@ -120,7 +125,7 @@ class BusinessShowReview extends React.Component {
   }
 
   render (){
-
+    let submitText = this.props.currentUser ? "Post Review" : "Sign in to Review";
     return (
       <div className="business-reviews-box">
 
@@ -137,7 +142,7 @@ class BusinessShowReview extends React.Component {
                 </div>
               </div>
               <div className="business__reviews-buttons">
-                <button className="business__reviews-submit-btn" onClick={this.handleSubmit}>Post Review</button>
+                <button className="business__reviews-submit-btn" onClick={this.handleSubmit}>{submitText}</button>
                 <input className="business__reviews-upload-input" type="file" onChange={this.updateFile} />
               </div>
             </form>

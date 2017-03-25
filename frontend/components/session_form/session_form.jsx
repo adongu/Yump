@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from "react-router";
+import { Link, withRouter, hashHistory } from "react-router";
 import LogInForm from "./log_in_form";
 import SignUpForm from "./sign_up_form";
 
@@ -21,12 +21,17 @@ class SessionForm extends React.Component {
   }
 
   componentDidUpdate(newProps) {
-    this.redirectIfLogged();
+    () => this.redirectIfLogged();
   }
 
   redirectIfLogged() {
     if (this.props.loggedIn) {
-      this.props.router.push("/")
+      // if (this.props.router) {
+        this.props.router.goBack();
+        // debugger
+      // } else {
+        // this.props.router.push("/")
+      // }
     }
   }
 
