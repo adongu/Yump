@@ -13,9 +13,9 @@
 * Add, edit, and delete review and rating for restaurants.
 * Search and filters out restaurants base on restaurant information and location(name, ratings, price, address, tags)
 * Search instantly searches from each keystroke to bring user live search results
-* View location of restaurants on Google map with markers when searching for restaurants
+* View location of restaurants on Google Maps with markers when searching for restaurants
 
-##Overall APP Structure
+## Overall APP Structure
 
 #### Back End
 [Yump][yump] was built on Ruby on Rails in the back end with postgreSQL database. AJAX calls were made in the frontend and RESTful API routes were used to perform requests to backend.  Associations were used for many-to-many relationships between different models for querying.
