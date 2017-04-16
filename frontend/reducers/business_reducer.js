@@ -5,9 +5,9 @@ import {
 import {
   RECEIVE_REVIEW,
   UPDATE_REVIEW,
+  REMOVE_REVIEW,
   RECEIVE_ERRORS,
-  CLEAR_ERRORS,
-  REMOVE_REVIEW
+  CLEAR_ERRORS
 } from '../actions/review_actions';
 
 import { merge, pull } from 'lodash';
@@ -36,19 +36,16 @@ const BusinessReducer = (oldState = _nullBusiness, action) => {
       return newState;
     case RECEIVE_ERRORS:
       let errors = action.errors;
-      let newObj = merge({}, oldState, { errors: [...errors]});
-      console.log("Hit receive errors reducer", newObj);
-      return newObj
+      return merge({}, newState, { errors: [...errors]});
     case CLEAR_ERRORS:
-        return Object.assign({}, errors: [])
+      return merge({}, newState, { errors: []});
     case RECEIVE_REVIEW:
       let review = action.review;
       newState.currentBusiness.reviews.unshift( review )
       // let businessReviews = Object.assign({}, oldState, { currentBusiness: {reviews: review }});
-      return newState;
+      return Object.assign({}, newState, { errors: []});
     case REMOVE_REVIEW:
       let newReviews = newState.currentBusiness.reviews;
-
       newState.currentBusiness.reviews = newReviews.filter (review => {
           return review.id !== action.review.id;
       })

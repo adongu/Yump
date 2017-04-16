@@ -31,7 +31,7 @@ const receiveErrors = (errors) => {
   }
 };
 
-const clearErrors = (errors) => ({
+export const clearErrors = () => ({
   type: CLEAR_ERRORS
 });
 

@@ -126,7 +126,6 @@ class BusinessShowReview extends React.Component {
   }
 
   renderErrors() {
-    console.log("render error", this.props.errors);
     return(
       <div className="review__errors-box">
         <ul className="review__errors">

@@ -118,6 +118,7 @@ class BusinessPageShow extends React.Component{
                     businessId={this.props.params.id}
                     fetchBusiness={this.props.fetchBusiness}
                     deleteReview={this.props.deleteReview}
+                    clearErrors={this.props.clearErrors}
                     errors={this.props.errors}
                   />
               </div>
