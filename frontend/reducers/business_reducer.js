@@ -36,7 +36,7 @@ const BusinessReducer = (oldState = _nullBusiness, action) => {
       return newState;
     case RECEIVE_ERRORS:
       let errors = action.errors;
-      console.log(errors);
+      console.log("Hit receive errors reducer", errors);
       return Object.assign({}, oldState, errors: errors )
     case CLEAR_ERRORS:
         return Object.assign({}, errors: [])

@@ -14,6 +14,7 @@ class BusinessShowReview extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
     this.renderDeleteBtn = this.renderDeleteBtn.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   renderReviewStars() {
@@ -125,6 +126,7 @@ class BusinessShowReview extends React.Component {
   }
 
   renderErrors() {
+    console.log("render error", this.props.errors);
     return(
       <div className="review__errors-box">
         <ul className="review__errors">
@@ -156,7 +158,7 @@ class BusinessShowReview extends React.Component {
                 </div>
                 <div className="business__reviews-review-container">
                   <label className="business__reviews-upload-label" >Your Review</label>
-                  <span>{this.renderErrors()}</span>
+                  <div>{this.renderErrors()}</div>
                   <textarea className="business__reviews-review" value={this.state.review} onChange={this.update("review")} />
                 </div>
               </div>

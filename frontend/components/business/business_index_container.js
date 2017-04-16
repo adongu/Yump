@@ -8,7 +8,7 @@ const mapStateToProps = ({ businesses }) => {
     allBiz = businesses;
   }
   return {
-    businesses: Object.keys(allBiz.businesses).map( id => businesses.businesses[id]),
+    businesses: Object.keys(allBiz.businesses).map( id => businesses.businesses[id] ),
     errors: businesses.errors
   }
 }
