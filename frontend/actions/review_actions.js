@@ -20,7 +20,7 @@ const receiveReview = (review) => ({
 const removeReview = (review) => {
   return {
     type: REMOVE_REVIEW,
-    review2
+    review
   }
 }
 
