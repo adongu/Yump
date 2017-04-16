@@ -124,6 +124,24 @@ class BusinessShowReview extends React.Component {
     }
   }
 
+  renderErrors() {
+    return(
+      <div className="review__errors-box">
+        <ul className="review__errors">
+          {
+            this.props.errors.map((error, i) => {
+              return (
+                <li key={`review_error-${i}`}>
+                  {error}
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
+    );
+  };
+
   render (){
     let submitText = this.props.currentUser ? "Post Review" : "Sign in to Review";
     return (
@@ -138,6 +156,7 @@ class BusinessShowReview extends React.Component {
                 </div>
                 <div className="business__reviews-review-container">
                   <label className="business__reviews-upload-label" >Your Review</label>
+                  <span>{this.renderErrors()}</span>
                   <textarea className="business__reviews-review" value={this.state.review} onChange={this.update("review")} />
                 </div>
               </div>

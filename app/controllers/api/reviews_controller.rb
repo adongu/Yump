@@ -14,7 +14,7 @@ class Api::ReviewsController < ApplicationController
       if @review.save
         render :show
       else
-        render json: ["Hmm... We would love to hear more about your experience, please describe your experience in more detail."], status: 401
+        render json: ["Reviews must be at least 25 characters long and have rating higher than 0 star"], status: 401
       end
     else
       render json: ["Please Sign Up or Log In to create reviews"], status: 401

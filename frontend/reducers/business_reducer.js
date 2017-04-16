@@ -1,10 +1,12 @@
 import {
   RECEIVE_ALL_BUSINESSES,
-  RECEIVE_BUSINESS,
-  RECEIVE_ERRORS } from '../actions/business_actions';
+  RECEIVE_BUSINESS
+} from '../actions/business_actions';
 import {
   RECEIVE_REVIEW,
   UPDATE_REVIEW,
+  RECEIVE_ERRORS,
+  CLEAR_ERRORS,
   REMOVE_REVIEW
 } from '../actions/review_actions';
 
@@ -33,8 +35,11 @@ const BusinessReducer = (oldState = _nullBusiness, action) => {
       // let businessResult = Object.assign({}, oldState, { currentBusiness: business });
       return newState;
     case RECEIVE_ERRORS:
-      let errors = action.errors
-      return merge({}, oldState, errors)
+      let errors = action.errors;
+      console.log(errors);
+      return Object.assign({}, oldState, errors: errors )
+    case CLEAR_ERRORS:
+        return Object.assign({}, errors: [])
     case RECEIVE_REVIEW:
       let review = action.review;
       newState.currentBusiness.reviews.unshift( review )
