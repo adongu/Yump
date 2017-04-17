@@ -5,7 +5,8 @@ import { fetchResults } from '../../actions/search_actions';
 const mapStateToProps = ({results}) => {
 
   return {
-    results: results.results
+    results: results.results,
+    // location: location
   }
 }
 

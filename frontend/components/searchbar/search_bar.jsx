@@ -1,25 +1,29 @@
 import React from 'react';
-import { Link, hashHistory, router } from 'react-router'
+import { Link, hashHistory, router, withRouter } from 'react-router'
 
 class SearchBar extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = { keywords:"" };
+    this.state = { keywords: "" };
 
-    // this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleInput = this.handleInput.bind(this)
     this.update = this.update.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleRTSearch = this.handleRTSearch.bind(this)
   }
 
   componentDidMount (){
-    this.setState={keywords: location.search}
+    this.setState({
+      keywords: location.search
+    });
   }
   componentDidReceiveProps (newProps){
     if (newProps.location) {
       if (this.props.location.query.query !== newProps.location.query.query) {
-        this.setState({keywords: newProps.location.query.query})
+        this.setState({
+          keywords: newProps.location.query.query
+        })
         this.props.fetchResults(newProps.location.query.query)
       }
     }
@@ -38,7 +42,8 @@ class SearchBar extends React.Component {
   }
 
   handleInput(e) {
-    if (this.params !== "/") {
+    // console.log(this.props.location.pathname);
+    if (this.props.location.pathname !== "/") {
       this.handleRTSearch(e);
     } else {
       this.update(e);
@@ -55,9 +60,12 @@ class SearchBar extends React.Component {
     }
   }
 
-
-  update() {
-    return (e) => this.setState({ "keywords": e.target.value })
+  update(e) {
+    // console.log("state", this.state);
+    // return (e) =>
+    this.setState({
+      keywords: e.target.value
+    });
   }
 
 // <input onChange={this.update("keywords")}
@@ -65,7 +73,7 @@ class SearchBar extends React.Component {
     return(
       <form onSubmit={this.handleSubmit} className="header__nav-search-box">
         <label className="header__nav-search-find-label"> <span>Find</span>
-          <input onInput={this.handleRTSearch} className="header__nav-search-find-input" placeholder="tacos, cheap dinner, Jeff's"></input>
+          <input onInput={this.handleInput} className="header__nav-search-find-input" placeholder="tacos, cheap dinner, Jeff's"></input>
         </label>
 
         <button className="header__nav-search-btn"><i className="fa fa-search fa" aria-hidden="true" ></i></button>
@@ -75,4 +83,4 @@ class SearchBar extends React.Component {
 }
 
 
-export default SearchBar;
+export default withRouter(SearchBar);

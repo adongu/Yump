@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { withRouter, Link } from 'react-router';
 import BusinessMap from '../map/business_map';
 
 class SearchResults extends React.Component {
@@ -70,4 +70,4 @@ class SearchResults extends React.Component {
   }
 }
 
-export default SearchResults
+export default withRouter(SearchResults)
