@@ -31,18 +31,19 @@ class SearchBar extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.state && this.state.keywords && this.state.keywords !== this.params.query ) {
+    if (this.props.location.pathname === "/" || (this.params && this.state.keywords !== this.params.query)) {
       let query = this.state.keywords
-      hashHistory.push({
-        pathname:`/searches`,
-        query: { query }
-      })
-      this.setState({ keywords: query })
+        hashHistory.push({
+          pathname:`/searches`,
+          query: { query }
+        })
+        // this.setState({ keywords: query })
     }
   }
 
   handleInput(e) {
     // console.log(this.props.location.pathname);
+    // console.log("this.params", this);
     if (this.props.location.pathname !== "/") {
       this.handleRTSearch(e);
     } else {
