@@ -14,9 +14,12 @@ class SearchBar extends React.Component {
   }
 
   componentDidMount (){
-    this.setState({
-      keywords: location.search
-    });
+    console.log(this.props.location.query.query);
+    if (this.props.location.query) {
+      this.setState({
+        keywords: this.props.location.query.query
+      });
+    }
   }
   componentDidReceiveProps (newProps){
     if (newProps.location) {
@@ -71,10 +74,11 @@ class SearchBar extends React.Component {
 
 // <input onChange={this.update("keywords")}
   render(){
+    let keyword_value = this.state.keywords;
     return(
       <form onSubmit={this.handleSubmit} className="header__nav-search-box">
         <label className="header__nav-search-find-label"> <span>Find</span>
-          <input onInput={this.handleInput} className="header__nav-search-find-input" placeholder="tacos, cheap dinner, Jeff's"></input>
+          <input onInput={this.handleInput} className="header__nav-search-find-input" placeholder="tacos, cheap dinner, Jeff's" value={this.state.keywords || ''}></input>
         </label>
 
         <button className="header__nav-search-btn"><i className="fa fa-search fa" aria-hidden="true" ></i></button>
