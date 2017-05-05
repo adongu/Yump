@@ -32,15 +32,23 @@ class SearchBar extends React.Component {
     }
   }
 
+  componentDidUpdate (prevProps, prevState){
+    if (newProps.location) {
+      console.log(newProps.location);
+      if (newProps.location.pathname !== "/searches") {
+        this.setState({ keywords: "" })
+      }
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     if (this.props.location.pathname === "/" || (this.params && this.state.keywords !== this.params.query)) {
       let query = this.state.keywords
-        hashHistory.push({
-          pathname:`/searches`,
-          query: { query }
-        })
-        // this.setState({ keywords: query })
+      hashHistory.push({
+        pathname:`/searches`,
+        query: { query }
+      })
     }
   }
 
@@ -77,7 +85,7 @@ class SearchBar extends React.Component {
     return(
       <form onSubmit={this.handleSubmit} className="header__nav-search-box">
         <label className="header__nav-search-find-label"> <span>Find</span>
-          <input onInput={this.handleInput} className="header__nav-search-find-input" placeholder="tacos, cheap dinner, Jeff's" defaultValue={this.props.location.query.query}></input>
+          <input onInput={this.handleInput} className="header__nav-search-find-input" placeholder="tacos, cheap dinner, Jeff's" defaultValue={this.props.location.query.query || ""}></input>
         </label>
 
         <button className="header__nav-search-btn"><i className="fa fa-search fa" aria-hidden="true"></i></button>
