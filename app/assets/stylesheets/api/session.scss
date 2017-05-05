@@ -5,7 +5,6 @@
 .home__nav {
   // login
   &-login-box {
-    // width: 100%;
     display: flex;
     justify-content: flex-end;
   }
@@ -49,9 +48,7 @@
     width: 120px;
     height: 100%;
     display: flex;
-    // margin: auto;
     justify-content: space-around;
-    // align-items: center;
     color: white;
     font-weight: bold;
     font-size: 16px;
@@ -59,7 +56,6 @@
     border-radius: 5px;
   }
   &-profile-content {
-    // width: 100%
     display: block;
     padding: 5px;
   }
@@ -77,6 +73,5 @@
   }
   &-profile-logout-btn:hover {
     border-bottom: 3px solid white;
-    // border: 1px solid #3A3A3A;
   }
 }

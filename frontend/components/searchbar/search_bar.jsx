@@ -32,14 +32,13 @@ class SearchBar extends React.Component {
     }
   }
 
-  componentDidUpdate (prevProps, prevState){
-    if (newProps.location) {
-      console.log(newProps.location);
-      if (newProps.location.pathname !== "/searches") {
-        this.setState({ keywords: "" })
-      }
-    }
-  }
+  // componentDidUpdate (prevProps, prevState){
+  //   if (newProps.location) {
+  //     if (newProps.location.pathname !== "/searches") {
+  //       this.setState({ keywords: "" })
+  //     }
+  //   }
+  // }
 
   handleSubmit(e) {
     e.preventDefault();

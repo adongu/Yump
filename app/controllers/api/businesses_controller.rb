@@ -5,6 +5,7 @@ class Api::BusinessesController < ApplicationController
   end
 
   def show
+    # debugger
     @business = Business.includes(:tags, reviews: :reviewer).find(params[:id])
     if @business
       render :show

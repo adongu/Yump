@@ -2,7 +2,7 @@ class Api::ReviewsController < ApplicationController
 
   def index
     @business = Business.find(params[:id])
-    @reviews = @business.reviews.order(created_at: :desc)
+    @reviews = @business.reviews.order(created_at: :DESC)
     render :index
   end
 
