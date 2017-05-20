@@ -17,6 +17,17 @@ class BusinessShowReview extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.reviews.length !== this.props.reviews.length) {
+      this.setState({
+        rating: 0,
+        review: "",
+        imageFile: null,
+        imageUrl: "",
+      });
+    }
+  }
+
   renderReviewStars() {
     let stars = [1, 2, 3, 4, 5];
     return stars.map((ele)=>{
@@ -44,10 +55,12 @@ class BusinessShowReview extends React.Component {
       if (this.state.imageFile) {
         formData.append("review[image]", this.state.imageFile);
       }
-      this.props.createReview(formData);
-      this.setState({rating: 0,
-        review: "",
-        imageUrl: ""})
+      if(!this.props.createReview(formData)) {
+        this.setState({rating: this.state.rating,
+          review: this.state.review,
+          imageUrl: this.state.imageFile})
+      }
+
     } else {
       hashHistory.push({
         pathname:`/login`
