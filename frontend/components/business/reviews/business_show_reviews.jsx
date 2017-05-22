@@ -23,7 +23,7 @@ class BusinessShowReview extends React.Component {
         rating: 0,
         review: "",
         imageFile: null,
-        imageUrl: "",
+        imageUrl: ""
       });
     }
   }
@@ -56,9 +56,11 @@ class BusinessShowReview extends React.Component {
         formData.append("review[image]", this.state.imageFile);
       }
       if(!this.props.createReview(formData)) {
-        this.setState({rating: this.state.rating,
+        this.setState({
+          rating: this.state.rating,
           review: this.state.review,
-          imageUrl: this.state.imageFile})
+          imageUrl: this.state.imageFile
+        })
       }
 
     } else {
@@ -72,7 +74,10 @@ class BusinessShowReview extends React.Component {
     let file = e.currentTarget.files[0];
     let fileReader = new FileReader();
     fileReader.onloadend = function () {
-      this.setState({ imageFile: file, imageUrl: fileReader.result });
+      this.setState({
+        imageFile: file,
+        imageUrl: fileReader.result
+      });
     }.bind(this)
 
     if (file) {
