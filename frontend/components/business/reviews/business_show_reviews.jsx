@@ -8,7 +8,7 @@ class BusinessShowReview extends React.Component {
       rating: 0,
       review: "",
       imageFile: null,
-      imageUrl: "",
+      imageUrl: ""
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
