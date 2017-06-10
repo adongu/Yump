@@ -2,6 +2,7 @@ import {
   RECEIVE_ALL_BUSINESSES,
   RECEIVE_BUSINESS
 } from '../actions/business_actions';
+
 import {
   RECEIVE_REVIEW,
   UPDATE_REVIEW,
@@ -51,7 +52,7 @@ const BusinessReducer = (oldState = _nullBusiness, action) => {
       })
       return newState;
     default:
-      return oldState
+      return oldState;
   }
 }
 
