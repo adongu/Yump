@@ -32,38 +32,28 @@ class SearchBar extends React.Component {
     }
   }
 
-  // componentDidUpdate (prevProps, prevState){
-  //   if (newProps.location) {
-  //     if (newProps.location.pathname !== "/searches") {
-  //       this.setState({ keywords: "" })
-  //     }
-  //   }
-  // }
-
   handleSubmit(e) {
     e.preventDefault();
-    if (this.props.location.pathname === "/" || (this.params && this.state.keywords !== this.params.query)) {
-      let query = this.state.keywords
+    // if (this.props.location.pathname === "/" || (this.state.keywords && this.state.keywords !== this.params.query)) {
+      let query = this.state.keywords;
       hashHistory.push({
         pathname:`/searches`,
         query: { query }
       })
-    }
+    // }
   }
 
   handleInput(e) {
-    // console.log(this.props.location.pathname);
-    // console.log("this.params", this);
-    if (this.props.location.pathname !== "/") {
-      this.handleRTSearch(e);
-    } else {
+    // if (this.props.location.pathname !== "/") {
+    //   this.handleRTSearch(e);
+    // } else {
       this.update(e);
-    }
+    // }
   }
 
   handleRTSearch(e) {
     if (this.state) {
-      let query = e.target.value
+      let query = e.target.value;
       hashHistory.push({
         pathname:`/searches`,
         query: { query }
@@ -84,7 +74,7 @@ class SearchBar extends React.Component {
     return(
       <form onSubmit={this.handleSubmit} className="header__nav-search-box">
         <label className="header__nav-search-find-label"> <span>Find</span>
-          <input onInput={this.handleInput} className="header__nav-search-find-input" placeholder="tacos, cheap dinner, Jeff's" defaultValue={this.props.location.query.query || ""}></input>
+          <input onInput={this.handleInput} className="header__nav-search-find-input" placeholder="tacos, cheap dinner, Jeff's" defaultValue={this.props.location.query.query}></input>
         </label>
 
         <button className="header__nav-search-btn"><i className="fa fa-search fa" aria-hidden="true"></i></button>

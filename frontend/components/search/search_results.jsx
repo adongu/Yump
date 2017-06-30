@@ -31,7 +31,6 @@ class SearchResults extends React.Component {
   }
 
   renderSearchResults(props) {
-    console.log(this.props.location.query.query.length)
     if(props.results.length < 1) {
       return (
         <div className='business__search-item-error'>
