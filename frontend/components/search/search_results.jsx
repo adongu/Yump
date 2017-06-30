@@ -34,7 +34,7 @@ class SearchResults extends React.Component {
     if(props.results.length < 1) {
       return (
         <div className='business__search-item-error'>
-          <div>{`No Results for ${props.location.query.query}`}</div>
+          <div>No Results for <span className="business__search-item-query">{`${props.location.query.query}`}</span></div>
           <div>please try another keyword </div>
         </div>
       )

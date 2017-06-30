@@ -74,7 +74,7 @@ class SearchBar extends React.Component {
     return(
       <form onSubmit={this.handleSubmit} className="header__nav-search-box">
         <label className="header__nav-search-find-label"> <span>Find</span>
-          <input onInput={this.handleInput} className="header__nav-search-find-input" placeholder="tacos, cheap dinner, Jeff's" defaultValue={this.props.location.query.query}></input>
+          <input onInput={this.handleInput} className="header__nav-search-find-input" maxLength="65" placeholder="Masa, Chef's" defaultValue={this.props.location.query.query}></input>
         </label>
 
         <button className="header__nav-search-btn"><i className="fa fa-search fa" aria-hidden="true"></i></button>
