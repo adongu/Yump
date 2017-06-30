@@ -25,7 +25,8 @@ class Review < ApplicationRecord
 
   has_attached_file :image,
   :styles => {
-    :large => {:geometry => "616x450#"}
+    :large => {:geometry => "616x450#"},
+    :medium => {:geometry => "278x216#"}
   },
   :s3_protocol => :https,
   default_url: "steak.jpg"

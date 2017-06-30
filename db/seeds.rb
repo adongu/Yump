@@ -26,7 +26,6 @@ images = [
   "https://s3.amazonaws.com/yumpapp-pro/sushi-wallpaper-2.jpg"
 ]
 
-
 businesses = [];
 # randomBizLat = (40.7038..40.8234)
 # randomBizLng = (-74.0180..-73.9383)
@@ -97,6 +96,8 @@ Review.destroy_all
     })
   end
 end
+
+Review.all.each { |r| r.image.reprocess! }
 
 tags = [];
 Tag.destroy_all
