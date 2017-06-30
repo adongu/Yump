@@ -4,6 +4,7 @@ import { logout } from '../../actions/session_actions';
 
 // state is { session } like in reducer
 const mapStateToProps = ({ session }, ownProps) => {
+  console.log(session.currentUser);
   return {
     currentUser: session.currentUser
   }

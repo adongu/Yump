@@ -16,7 +16,11 @@ json.reviews business.reviews.sort { |r_a, r_b| r_b.updated_at <=> r_a.updated_a
 
 
   json.reviewer do
-    json.extract! review.reviewer, :id, :f_name, :l_name, :zip
+    # json.extract! review.reviewer, :id, :f_name, :l_name, :zip
+    json.id review.reviewer.id
+    json.f_name review.reviewer.f_name
+    json.l_name review.reviewer.l_name[0]
+    json.zip review.reviewer.zip
   end
 end
 

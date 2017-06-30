@@ -19,7 +19,7 @@ const personalGreeting = (currentUser, logout ) => {
     return (
       <div className="home__nav-profile-box">
         <hgroup className="home__nav-profile-content">
-          <h2 className="home__nav-profile-greeting">Hi, {currentUser.username}!</h2>
+          <h2 className="home__nav-profile-greeting">{`Hi, ${currentUser.f_name} ${currentUser.l_name}`}. !</h2>
           <button className="home__nav-profile-logout-btn" onClick={logout}>Log Out</button>
         </hgroup>
       </div>
