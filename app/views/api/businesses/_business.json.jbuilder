@@ -1,5 +1,5 @@
 json.extract! business, :id, :name, :street, :city, :state, :price, :zip, :phone, :latitude, :longitude
-json.image_url asset_path(business.image.url)
+json.image_url asset_path(business.image.url(:large))
 reviewsArray = business.reviews
 json.review_count(reviewsArray.length)
 json.ratings business.averageRating
