@@ -80,6 +80,10 @@
 .business__review-box > * {
   padding-bottom: 5px;
 }
+
+.business__review-box:hover {
+  cursor: default;
+}
 // rating stars
 .active_star {
   font-size: 26px;

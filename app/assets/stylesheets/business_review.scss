@@ -70,6 +70,10 @@
     // height: 25%
   }
 
+  &-rating-container:hover{
+    cursor: pointer;
+  }
+
   &-rating {
     padding-right: 10px;
   }
