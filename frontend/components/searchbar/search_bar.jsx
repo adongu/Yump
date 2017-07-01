@@ -62,7 +62,6 @@ class SearchBar extends React.Component {
   }
 
   update(e) {
-    // console.log("state", this.state);
     // return (e) =>
     this.setState({
       keywords: e.target.value

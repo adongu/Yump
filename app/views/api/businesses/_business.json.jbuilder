@@ -12,8 +12,7 @@ json.reviews business.reviews.sort { |r_a, r_b| r_b.updated_at <=> r_a.updated_a
   json.created_at review.created_at.strftime("%m/%d/%Y")
   json.rating review.rating
   json.review review.review
-  json.image_url asset_path(review.image.url)
-
+  json.image_url asset_path(review.image.url(:medium))
 
   json.reviewer do
     # json.extract! review.reviewer, :id, :f_name, :l_name, :zip
