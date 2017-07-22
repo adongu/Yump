@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from 'react-router';
 
 const BusinessIndexPageItem = ({business}) => {
-
-
   const renderStars = (ratings) => {
     let stars = [1, 2, 3, 4, 5];
     return stars.map((ele)=>{

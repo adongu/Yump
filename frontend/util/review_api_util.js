@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export const fetchReviews = () => {
   return $.ajax({
     method: "GET",
