@@ -32,8 +32,7 @@ class BusinessShowReview extends React.Component {
     let stars = [1, 2, 3, 4, 5];
     return stars.map((ele)=>{
       return (
-        <span className={ele <= this.state.rating ? 'active_star' : 'no_star'} onClick={()=>{this.setState({rating: ele})}}
-          onMouseOver={()=>{this.setState({rating: ele})}} key={ele}>☆</span>
+        <span className={ele <= this.state.rating ? 'active_star' : 'no_star'} onClick={()=>{this.setState({rating: ele})}} key={ele}>☆</span>
       )
     })
   }
