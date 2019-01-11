@@ -1,10 +1,7 @@
 # Yump
 
-[Yump Live][yump]
-
-
 ## Summary
-[Yump][yump] is an web application excited by Yelp and built using Ruby on Rails and React.js/Redux architecture. Yump users have the ability to:
+Yump is an web application excited by Yelp and built using Ruby on Rails and React.js/Redux architecture. Yump users have the ability to:
 
 * Create an account
 * Log in / Log out
@@ -18,7 +15,7 @@
 ## Overall APP Structure
 
 #### Back End
-[Yump][yump] was built on Ruby on Rails in the back end with postgreSQL database. AJAX calls were made in the frontend and RESTful API routes were used to perform requests to backend.  Associations were used for many-to-many relationships between different models for querying.
+Yump was built on Ruby on Rails in the back end with postgreSQL database. AJAX calls were made in the frontend and RESTful API routes were used to perform requests to backend.  Associations were used for many-to-many relationships between different models for querying.
 
 #### Front End
 Front end portion of the app is built on Facebook's views library [React.js][react] with ES6 and utilizes [Redux][redux] architecture for single stream of states. React allows quick re-rendering of views through its use of virtual DOM, allowing React to wait until end of event loop to apply actual changes. React takes care of real DOM manipulation by making the bare minimal changes needed.
